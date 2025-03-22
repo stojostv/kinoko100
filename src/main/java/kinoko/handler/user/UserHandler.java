@@ -77,19 +77,12 @@ public final class UserHandler {
 
     @Handler(InHeader.UserMove)
     public static void handleUserMove(User user, InPacket inPacket) {
-        inPacket.decodeInt(); // 0
-        inPacket.decodeInt(); // 0
         final byte fieldKey = inPacket.decodeByte(); // bFieldKey
         if (user.getFieldKey() != fieldKey) {
             user.dispose();
             return;
         }
-        inPacket.decodeInt(); // 0
-        inPacket.decodeInt(); // 0
         final int crc = inPacket.decodeInt(); // dwCrc
-        inPacket.decodeInt(); // 0
-        inPacket.decodeInt(); // Crc32
-
         final Field field = user.getField();
         if (field.getFieldCrc() != crc) {
             log.warn("Received mismatching CRC for field ID : {}", field.getFieldId());
@@ -748,27 +741,27 @@ public final class UserHandler {
             log.error("Received unknown map transfer request type : {}", type);
             return;
         }
-        final boolean canTransferContinent = inPacket.decodeBoolean(); // bCanTransferContinent
+        final byte rockType = inPacket.decodeByte(); // bCanTransferContinent in v95
         try (var locked = user.acquire()) {
             final MapTransferInfo mapTransferInfo = locked.get().getMapTransferInfo();
             if (requestType == MapTransferRequestType.DeleteList) {
                 final int targetField = inPacket.decodeInt(); // dwTargetField
-                if (!mapTransferInfo.delete(targetField, canTransferContinent)) {
+                if (!mapTransferInfo.delete(targetField, rockType)) {
                     log.error("Could not delete field {} from map transfer info", targetField);
                     return;
                 }
-                user.write(MapTransferPacket.deleteList(mapTransferInfo, canTransferContinent));
+                user.write(MapTransferPacket.deleteList(mapTransferInfo, rockType));
             } else {
                 final Field field = user.getField();
                 if (field.isMapTransferLimit()) {
                     user.write(MapTransferPacket.registerFail()); // This map is not available to enter for the list.
                     return;
                 }
-                if (!mapTransferInfo.register(field.getFieldId(), canTransferContinent)) {
+                if (!mapTransferInfo.register(field.getFieldId(), rockType)) {
                     log.error("Could not register field {} to map transfer info", field.getFieldId());
                     return;
                 }
-                user.write(MapTransferPacket.registerList(mapTransferInfo, canTransferContinent));
+                user.write(MapTransferPacket.registerList(mapTransferInfo, rockType));
             }
         }
     }

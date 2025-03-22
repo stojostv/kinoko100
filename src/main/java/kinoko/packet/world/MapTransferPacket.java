@@ -8,12 +8,12 @@ import kinoko.world.user.data.MapTransferResultType;
 public final class MapTransferPacket {
     // CWvsContext::OnMapTransferResult --------------------------------------------------------------------------------
 
-    public static OutPacket deleteList(MapTransferInfo mapTransferInfo, boolean canTransferContinent) {
-        return MapTransferPacket.update(MapTransferResultType.DeleteList, mapTransferInfo, canTransferContinent);
+    public static OutPacket deleteList(MapTransferInfo mapTransferInfo, int rockType) {
+        return MapTransferPacket.update(MapTransferResultType.DeleteList, mapTransferInfo, rockType);
     }
 
-    public static OutPacket registerList(MapTransferInfo mapTransferInfo, boolean canTransferContinent) {
-        return MapTransferPacket.update(MapTransferResultType.RegisterList, mapTransferInfo, canTransferContinent);
+    public static OutPacket registerList(MapTransferInfo mapTransferInfo, int rockType) {
+        return MapTransferPacket.update(MapTransferResultType.RegisterList, mapTransferInfo, rockType);
     }
 
     public static OutPacket unknown() {
@@ -32,14 +32,23 @@ public final class MapTransferPacket {
         return MapTransferPacket.of(MapTransferResultType.RegisterFail);
     }
 
-    private static OutPacket update(MapTransferResultType resultType, MapTransferInfo mapTransferInfo, boolean canTransferContinent) {
+    private static OutPacket update(MapTransferResultType resultType, MapTransferInfo mapTransferInfo, int rockType) {
         final OutPacket outPacket = OutPacket.of(OutHeader.MapTransferResult);
         outPacket.encodeByte(resultType.getValue());
-        outPacket.encodeByte(canTransferContinent);
-        if (canTransferContinent) {
-            mapTransferInfo.encodeMapTransferEx(outPacket);
-        } else {
-            mapTransferInfo.encodeMapTransfer(outPacket);
+        outPacket.encodeByte(rockType);
+        switch (rockType) {
+            case 1 -> { //RegRocks
+                mapTransferInfo.encodeMapTransfer(outPacket);
+            }
+            case 2 -> { //VIP rock
+                mapTransferInfo.encodeMapTransferEx(outPacket);
+            }
+            case 3 -> { //Premium rock
+                mapTransferInfo.encodeMapTransferPremium(outPacket);
+            }
+            case 4 -> { //Hyper rock
+                mapTransferInfo.encodeMapTransferHyper(outPacket);
+            }
         }
         return outPacket;
     }

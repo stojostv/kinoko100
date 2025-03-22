@@ -264,12 +264,12 @@ public final class MigrationHandler {
             inPacket.decodeShort(); // GetPos()->y
         }
         inPacket.decodeByte(); // 0
-        final boolean premium = inPacket.decodeBoolean(); // bPremium - also set as true on normal revives, probably a client bug in CUIRevive::OnCreate
         final boolean chase = inPacket.decodeBoolean(); // bChase
         if (chase) {
             inPacket.decodeInt(); // nTargetPosition_X
             inPacket.decodeInt(); // nTargetPosition_Y
         }
+        final boolean premium = inPacket.decodeBoolean(); // bPremium - also set as true on normal revives, probably a client bug in CUIRevive::OnCreate
 
         try (var locked = user.acquire()) {
             final Field currentField = user.getField();

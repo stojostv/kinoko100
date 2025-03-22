@@ -97,7 +97,18 @@ public enum SkillStat {
     dateExpire,
     maxLevel,
     interval,
-    summonEffect;
+    summonEffect,
+
+    price,
+    extendPrice,
+    reqGuildLevel,
+    period,
+    priceUnit,
+
+    PVPdamage,
+    indiePad,
+    indieMad,
+    iceGageCon;
 
     private static final Map<String, SkillStat> nameMap = new HashMap<>();
 

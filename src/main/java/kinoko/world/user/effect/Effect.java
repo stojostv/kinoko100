@@ -21,10 +21,11 @@ public class Effect implements Encodable {
 
     @Override
     public void encode(OutPacket outPacket) {
+        //CUser::OnEffect
         outPacket.encodeByte(type.getValue());
         switch (type) {
             case LevelUp, PlayPortalSE, JobChanged, QuestComplete, MonsterBookCardGet, ItemLevelUp,
-                    ExpItemConsumed, Buff, SoulStoneUse, RepeatEffectRemove, EvolRing -> {
+                    ExpItemConsumed, Buff, SoulStoneUse, RepeatEffectRemove, EvolRing, Unk33, Unk34, Unk35 -> {
                 // no encodes
             }
             case Quest -> {
@@ -53,7 +54,7 @@ public class Effect implements Encodable {
             case IncDecHPEffect -> {
                 outPacket.encodeByte(int1); // nDelta
             }
-            case BuffItemEffect, ItemMaker -> {
+            case BuffItemEffect, ItemMaker, Unk36 -> {
                 outPacket.encodeInt(int1); // nItemID, ITEM_MAKER_RESULT
             }
             case SquibEffect -> {
@@ -96,7 +97,7 @@ public class Effect implements Encodable {
                 outPacket.encodeInt(int1); // nItemId
             }
             default -> {
-                throw new IllegalStateException("Tried to encode unsupported effect type");
+                throw new IllegalStateException(String.format("Tried to encode unsupported effect type: %d", type.getValue()));
             }
         }
     }

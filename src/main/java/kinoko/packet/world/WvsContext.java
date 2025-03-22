@@ -15,11 +15,9 @@ import kinoko.world.user.Pet;
 import kinoko.world.user.User;
 import kinoko.world.user.data.SingleMacro;
 import kinoko.world.user.data.WildHunterInfo;
-import kinoko.world.user.stat.CharacterTemporaryStat;
-import kinoko.world.user.stat.ExtendSp;
-import kinoko.world.user.stat.SecondaryStat;
-import kinoko.world.user.stat.Stat;
+import kinoko.world.user.stat.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -32,17 +30,19 @@ public final class WvsContext {
         final OutPacket outPacket = OutPacket.of(OutHeader.StatChanged);
         outPacket.encodeByte(exclRequest); // bool -> bExclRequestSent = 0
 
-        outPacket.encodeInt(Stat.from(statMap.keySet()));
+        // GW_CharacterStat::DecodeChangeStat
+        outPacket.encodeLong(Stat.from(statMap.keySet()));
         for (Stat stat : Stat.ENCODE_ORDER) {
             if (statMap.containsKey(stat)) {
                 switch (stat) {
-                    case SKIN, LEVEL -> {
+                    case SKIN, LEVEL, FATIGUE, PVPMODELEVEL -> {
                         outPacket.encodeByte((byte) statMap.get(stat));
                     }
-                    case JOB, STR, DEX, INT, LUK, AP, POP -> {
+                    case JOB, STR, DEX, INT, LUK, AP -> {
                         outPacket.encodeShort((short) statMap.get(stat));
                     }
-                    case FACE, HAIR, HP, MHP, MP, MMP, EXP, MONEY, TEMPEXP -> {
+                    case FACE, HAIR, HP, MHP, MP, MMP, EXP, POP, MONEY, TEMPEXP,
+                         CHARISMAEXP, INSIGHTEXP, WILLEXP, CRAFTEXP, SENSEEXP, CHARMEXP, PVP -> {
                         outPacket.encodeInt((int) statMap.get(stat));
                     }
                     case PETSN, PETSN2, PETSN3 -> {
@@ -54,6 +54,9 @@ public final class WvsContext {
                         } else {
                             outPacket.encodeShort((short) statMap.get(stat));
                         }
+                    }
+                    case NCSLIMIT -> {
+                        outPacket.encodeArray(new byte[12]);
                     }
                 }
             }
@@ -163,8 +166,21 @@ public final class WvsContext {
         outPacket.encodeInt(user.getCharacterId()); // dwCharacterId
         outPacket.encodeByte(user.getLevel()); // nLevel
         outPacket.encodeShort(user.getJob()); // nJob
-        outPacket.encodeShort(user.getPop()); // nPOP
+        outPacket.encodeByte(0); // Rank  //TODO: ranking
+        outPacket.encodeInt(user.getPop()); // nPOP
         outPacket.encodeByte(false); // bIsMarried
+
+        List<Short> makingSkills = new ArrayList<>();
+        for (short i = 9200; i <= 9204; i++) {
+            if (user.getSkillLevel(i * 10000) > 0) {
+                makingSkills.add(i);
+            }
+        }
+        outPacket.encodeByte(makingSkills.size()); //profession size
+        for (Short makingSkill : makingSkills) {
+            outPacket.encodeShort(makingSkill); //Profession ID (9200,9204)
+        }
+
         outPacket.encodeString(user.getGuildInfo().getGuildName()); // sCommunity
         outPacket.encodeString(user.getGuildInfo().getAllianceName()); // sAlliance
         outPacket.encodeByte(false); // bMedalInfo
@@ -202,6 +218,15 @@ public final class WvsContext {
         outPacket.encodeShort(titleQuestRecords.size());
         titleQuestRecords.forEach((qr) -> outPacket.encodeShort(qr.getQuestId())); // p_ausMedalQuestID
         // ~MedalAchievementInfo::Decode
+
+        // Traits
+        CharacterStat cs = user.getCharacterStat();
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getCharismaExp())); //ambition
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getInsightExp())); //insight
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getWillpowerExp())); //willpower
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getCraftExp())); //dilligence
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getSenseExp())); //empathy
+        outPacket.encodeByte(GameConstants.getTraitLevel(cs.getCharmExp())); //charm
 
         // aChairItem
         final Inventory installInventory = user.getInventoryManager().getInstallInventory();

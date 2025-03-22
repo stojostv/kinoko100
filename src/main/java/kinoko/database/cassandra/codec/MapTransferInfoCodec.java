@@ -34,6 +34,14 @@ public final class MapTransferInfoCodec extends MappingCodec<UdtValue, MapTransf
         if (mapTransferEx != null) {
             mapTransferInfo.getMapTransferEx().addAll(mapTransferEx);
         }
+        final List<Integer> mapTransferPremium = value.getList(MapTransferInfoUDT.MAP_TRANSFER_PREMIUM, Integer.class);
+        if (mapTransferPremium != null) {
+            mapTransferInfo.getMapTransferPremium().addAll(mapTransferPremium);
+        }
+        final List<Integer> mapTransferHyper = value.getList(MapTransferInfoUDT.MAP_TRANSFER_HYPER, Integer.class);
+        if (mapTransferHyper != null) {
+            mapTransferInfo.getMapTransferHyper().addAll(mapTransferHyper);
+        }
         return mapTransferInfo;
     }
 
@@ -44,6 +52,8 @@ public final class MapTransferInfoCodec extends MappingCodec<UdtValue, MapTransf
         }
         return getCqlType().newValue()
                 .setList(MapTransferInfoUDT.MAP_TRANSFER, mapTransferInfo.getMapTransfer(), Integer.class)
-                .setList(MapTransferInfoUDT.MAP_TRANSFER_EX, mapTransferInfo.getMapTransferEx(), Integer.class);
+                .setList(MapTransferInfoUDT.MAP_TRANSFER_EX, mapTransferInfo.getMapTransferEx(), Integer.class)
+                .setList(MapTransferInfoUDT.MAP_TRANSFER_PREMIUM, mapTransferInfo.getMapTransferPremium(), Integer.class)
+                .setList(MapTransferInfoUDT.MAP_TRANSFER_HYPER, mapTransferInfo.getMapTransferHyper(), Integer.class);
     }
 }

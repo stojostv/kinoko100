@@ -14,6 +14,8 @@ public enum QuestRecordType {
 
     UnityPortal(7050),              // Dimensional Mirror Return Map
     FreeMarket(7600),               // Free Market Return Map
+    Ardentmill(7601),               // Ardentmill Return Map (unsure which to use)
+    BattleSquare(7602),             // Battle Square Return Map (unsure which to use)
     TatamoLikeness(7810),           // Chief Tatamo Magic Seed Discount
     WorldTour(8792),                // World Tour Return Map
 

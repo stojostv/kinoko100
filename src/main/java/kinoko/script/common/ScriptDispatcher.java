@@ -1,5 +1,6 @@
 package kinoko.script.common;
 
+import kinoko.packet.world.MessagePacket;
 import kinoko.provider.map.PortalInfo;
 import kinoko.world.GameConstants;
 import kinoko.world.field.Field;
@@ -82,6 +83,7 @@ public final class ScriptDispatcher {
         final Method handler = scriptMap.get(scriptName);
         if (handler == null) {
             log.error("Could not resolve {} script with name : {}", scriptType, scriptName);
+            user.write(MessagePacket.system("Could not resolve %s script with name : %s", scriptType, scriptName));
             if (scriptType == ScriptType.ITEM || scriptType == ScriptType.PORTAL) {
                 user.dispose();
             }

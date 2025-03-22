@@ -70,18 +70,12 @@ public final class AttackHandler {
             user.dispose();
             return;
         }
-        if (inPacket.getRemaining() == 60) {
+        /*if (inPacket.getRemaining() == 60) {
             inPacket.decodeByte(); // extra byte is sent when reactor is hit, no other way to detect this
-        }
-        inPacket.decodeInt(); // ~pDrInfo.dr0
-        inPacket.decodeInt(); // ~pDrInfo.dr1
+        }*/
         attack.mask = inPacket.decodeByte(); // nDamagePerMob | (16 * nMobCount)
-        inPacket.decodeInt(); // ~pDrInfo.dr2
-        inPacket.decodeInt(); // ~pDrInfo.dr3
         attack.skillId = inPacket.decodeInt(); // nSkillID
         attack.combatOrders = inPacket.decodeByte(); // nCombatOrders
-        inPacket.decodeInt(); // dwKey
-        inPacket.decodeInt(); // Crc32
 
         attack.crc = inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
         inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
@@ -100,21 +94,25 @@ public final class AttackHandler {
 
         decodeMobAttackInfo(inPacket, attack);
 
-        attack.userX = inPacket.decodeShort(); // GetPos()->x
-        attack.userY = inPacket.decodeShort(); // GetPos()->y
         if (attack.skillId == NightWalker.POISON_BOMB) {
             attack.grenadeX = inPacket.decodeShort(); // pGrenade->GetPos()->x
             attack.grenadeY = inPacket.decodeShort(); // pGrenade->GetPos()->y
         }
+        attack.userX = inPacket.decodeShort(); // GetPos()->x
+        attack.userY = inPacket.decodeShort(); // GetPos()->y
+
         if (attack.skillId == Thief.MESO_EXPLOSION) {
             // CUserLocal::DoActiveSkill_MesoExplosion
             final int size = inPacket.decodeByte();
+            log.debug(size);
             attack.drops = new int[size];
             for (int i = 0; i < size; i++) {
                 attack.drops[i] = inPacket.decodeInt(); // aDrop
-                inPacket.decodeByte();
+                log.debug("attack.drops[{}]: {}", i, attack.drops[i]);
+                log.debug(inPacket.decodeByte());
             }
             attack.dropExplodeDelay = inPacket.decodeShort();
+            log.debug(attack.dropExplodeDelay);
         }
 
         try (var locked = user.acquire()) {
@@ -131,15 +129,9 @@ public final class AttackHandler {
             user.dispose();
             return;
         }
-        inPacket.decodeInt(); // ~pDrInfo.dr0
-        inPacket.decodeInt(); // ~pDrInfo.dr1
         attack.mask = inPacket.decodeByte(); // nDamagePerMob | (16 * nMobCount)
-        inPacket.decodeInt(); // ~pDrInfo.dr2
-        inPacket.decodeInt(); // ~pDrInfo.dr3
         attack.skillId = inPacket.decodeInt(); // nSkillID
         attack.combatOrders = inPacket.decodeByte(); // nCombatOrders
-        inPacket.decodeInt(); // dwKey
-        inPacket.decodeInt(); // Crc32
 
         attack.crc = inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
         inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
@@ -169,6 +161,7 @@ public final class AttackHandler {
         attack.userX = inPacket.decodeShort(); // GetPos()->x
         attack.userY = inPacket.decodeShort(); // GetPos()->y
         if (JobConstants.isWildHunterJob(user.getJob())) {
+            inPacket.decodeShort(); // ptBodyRelMove.x?
             inPacket.decodeShort(); // ptBodyRelMove.y
         }
         attack.ballStartX = inPacket.decodeShort(); // pt0.x
@@ -191,22 +184,12 @@ public final class AttackHandler {
             user.dispose();
             return;
         }
-        inPacket.decodeInt(); // ~pDrInfo.dr0
-        inPacket.decodeInt(); // ~pDrInfo.dr1
         attack.mask = inPacket.decodeByte(); // nDamagePerMob | (16 * nMobCount)
-        inPacket.decodeInt(); // ~pDrInfo.dr2
-        inPacket.decodeInt(); // ~pDrInfo.dr3
         attack.skillId = inPacket.decodeInt(); // nSkillID
         attack.combatOrders = inPacket.decodeByte(); // nCombatOrders
-        inPacket.decodeInt(); // dwKey
-        inPacket.decodeInt(); // Crc32
 
-        inPacket.decodeArray(16); // another DR_check
-        inPacket.decodeInt(); // dwInit
-        inPacket.decodeInt(); // Crc32
-
-        attack.crc = inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
-        inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
+        inPacket.decodeInt(); // dwKey?
+        inPacket.decodeInt(); // Crc32?
 
         if (SkillConstants.isMagicKeydownSkill(attack.skillId)) {
             attack.keyDown = inPacket.decodeInt(); // tKeyDown
@@ -214,7 +197,7 @@ public final class AttackHandler {
         attack.flag = inPacket.decodeByte(); // 0
         attack.actionAndDir = inPacket.decodeShort(); // nAttackAction & 0x7FFF | (bLeft << 15)
 
-        inPacket.decodeInt(); // GETCRC32Svr
+        attack.crc = inPacket.decodeInt(); // UNSURE - SKILLLEVELDATA::GetCrC / GETCRC32Svr
         inPacket.decodeByte(); // nAttackActionType
         attack.attackSpeed = inPacket.decodeByte(); // nAttackSpeed | (16 * nReduceCount)
         inPacket.decodeInt(); // tAttackTime
@@ -243,18 +226,16 @@ public final class AttackHandler {
             user.dispose();
             return;
         }
-        inPacket.decodeInt(); // ~pDrInfo.dr0
-        inPacket.decodeInt(); // ~pDrInfo.dr1
         attack.mask = inPacket.decodeByte(); // nDamagePerMob | (16 * nMobCount)
-        inPacket.decodeInt(); // ~pDrInfo.dr2
-        inPacket.decodeInt(); // ~pDrInfo.dr3
         attack.skillId = inPacket.decodeInt(); // nSkillID
         attack.combatOrders = inPacket.decodeByte(); // nCombatOrders
-        inPacket.decodeInt(); // dwKey
-        inPacket.decodeInt(); // Crc32
 
         attack.crc = inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
         inPacket.decodeInt(); // SKILLLEVELDATA::GetCrC
+
+        if (SkillConstants.isKeydownSkill(attack.skillId)) {
+            inPacket.decodeInt();
+        }
 
         attack.flag = inPacket.decodeByte();
         attack.actionAndDir = inPacket.decodeShort(); // nAttackAction & 0x7FFF | bLeft << 15
@@ -582,6 +563,7 @@ public final class AttackHandler {
         handleAffectedArea(user, attack);
         handleMesoExplosion(user, attack);
         handleFinalCut(user, attack);
+        handleInfiltrate(user); //TODO: unsure if done correctly, Infiltrate wouldn't cancel when attacking
         if (attack.getMobCount() > 0) {
             handleComboAbility(user, attack);
             handleComboAttack(user, attack);
@@ -945,5 +927,12 @@ public final class AttackHandler {
             return;
         }
         user.resetTemporaryStat(user.getSecondaryStat().getOption(CharacterTemporaryStat.WindWalk).rOption);
+    }
+
+    private static void handleInfiltrate(User user) {
+        if (!user.getSecondaryStat().hasOption(CharacterTemporaryStat.Sneak)) {
+            return;
+        }
+        user.resetTemporaryStat(user.getSecondaryStat().getOption(CharacterTemporaryStat.Sneak).rOption);
     }
 }

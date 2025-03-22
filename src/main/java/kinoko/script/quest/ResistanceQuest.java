@@ -105,6 +105,7 @@ public final class ResistanceQuest extends ScriptHandler {
         sm.sayBoth("Y...Yesss?", ScriptMessageParam.PLAYER_AS_SPEAKER);
         sm.sayBoth("Hmm, I see. Well, if a job instructor recommended you, I will put my trust in you as well. I apologize for my late introduction. I am the #bHead Security Officer#k in charge of the royal family's security. As you can see, I am currently in charge of security over this temporary housing and the key figures inside. We're not in the best of situations, but nevertheless, let me welcome you to the Mushking Empire.");
         sm.removeItem(4032375);
+        sm.setQRValue(QuestRecordType.MushroomCastleOpening, "1");
         sm.forceCompleteQuest(2345);
         sm.addExp(1200);
     }

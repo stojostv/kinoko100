@@ -44,6 +44,24 @@ public final class GameConstants {
     public static final int LEVEL_MAX = 200;
     public static final int[] EXP_TABLE = initializeExpTable();
 
+    public static final int TRAIT_EXP_MAX = 93596;
+    public static final int[] TRAIT_EXP_CUMULATIVE = {0, 20, 46, 80, 124, 181, 255, 351, 476, 639, 851, 1084,
+            1340, 1622, 1932, 2273, 2648, 3061, 3515, 4014, 4563, 5128,
+            5710, 6309, 6926, 7562, 8217, 8892, 9587, 10303, 11040, 11788,
+            12547, 13307, 14089, 14883, 15689, 16507, 17337, 18179, 19034, 19902,
+            20783, 21677, 22584, 23505, 24440, 25399, 26362, 27339, 28331, 29338,
+            30360, 31397, 32450, 33519, 34604, 35705, 36823, 37958, 39110, 40279,
+            41466, 32671, 43894, 45135, 46395, 47674, 48972, 50289, 51626, 52967,
+            54312, 55661, 57014, 58371, 59732, 61097, 62466, 63839, 65216, 66597,
+            67982, 69371, 70764, 72161, 73562, 74967, 76376, 77789, 79206, 80627,
+            82052, 83481, 84914, 86351, 87792, 89237, 90686, 92139, 93596, 96000};
+    public static int getTraitLevel(int exp) {
+        int index = Arrays.binarySearch(TRAIT_EXP_CUMULATIVE, exp);
+        index = -index - 2;
+
+        return Math.max(0, index);
+    }
+
     public static final int DAMAGE_MAX = 999_999;
     public static final double MASTERY_MAX = 0.95;
 
@@ -327,9 +345,9 @@ public final class GameConstants {
     private static FuncKeyMapped[] defaultFuncKeyMap() {
         final FuncKeyMapped[] defaultFuncKeyMap = new FuncKeyMapped[FUNC_KEY_MAP_SIZE];
         Arrays.fill(defaultFuncKeyMap, FuncKeyMapped.none());
-        final int[] indexArray = { 2, 3, 4, 5, 6, 7, 8, 16, 17, 18, 19, 20, 23, 24, 25, 26, 27, 29, 31, 33, 34, 35, 37, 38, 39, 40, 41, 43, 44, 45, 46, 50, 56, 57, 59, 60, 61, 62, 63, 64, 65 };
-        final int[] typeArray = { 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 4, 4, 5, 5, 6, 6, 6, 6, 6, 6, 6 };
-        final int[] idArray = { 10, 12, 13, 18, 24, 21, 29, 8, 5, 0, 4, 28, 1, 25, 19, 14, 15, 52, 2, 26, 17, 11, 3, 20, 27, 16, 23, 9, 50, 51, 6, 7, 53, 54, 100, 101, 102, 103, 104, 105, 106 };
+        final int[] indexArray = { 2, 3, 4, 5, 6, 7, 8, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 29, 31, 33, 34, 35, 37, 38, 39, 40, 41, 43, 44, 45, 46,  48, 49, 50, 56, 57, 59, 60, 61, 62, 63, 64, 65 };
+        final int[] typeArray = { 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 4, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 6, 6 };
+        final int[] idArray = { 10, 12, 13, 18, 24, 21, 29, 8, 5, 0, 4, 28, 31, 1, 25, 19, 14, 15, 52, 2, 26, 17, 11, 3, 20, 27, 16, 23, 9, 50, 51, 6, 30, 22, 7, 53, 54, 100, 101, 102, 103, 104, 105, 106 };
         for (int i = 0; i < indexArray.length; i++) {
             final FuncKeyType type = FuncKeyType.getByValue(typeArray[i]);
             assert type != null;

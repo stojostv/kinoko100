@@ -76,7 +76,7 @@ public final class MobStat {
             }
         }
         if (flag.hasFlag(MobTemporaryStat.Burned)) {
-            outPacket.encodeInt(burnedInfos.size()); // uCount;
+            outPacket.encodeByte(burnedInfos.size()); // uCount;
             for (BurnedInfo burnedInfo : burnedInfos.values()) {
                 burnedInfo.encode(outPacket);
             }

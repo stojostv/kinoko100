@@ -23,6 +23,9 @@ public enum CommodityFlag {
     PACKAGESN(0x10000),
     REQPOP(0x20000),
     REQLEV(0x40000),
+    UNK1(0x80000),
+    UNK2(0x100000),
+    UNK3(0x200000),
     ALL(0x7FFFF);
 
     private final int value;

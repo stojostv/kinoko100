@@ -58,18 +58,23 @@ public enum Job {
     DAWN_WARRIOR_1(1100),
     DAWN_WARRIOR_2(1110),
     DAWN_WARRIOR_3(1111),
+    DAWN_WARRIOR_4(1112),
     BLAZE_WIZARD_1(1200),
     BLAZE_WIZARD_2(1210),
     BLAZE_WIZARD_3(1211),
+    BLAZE_WIZARD_4(1212),
     WIND_ARCHER_1(1300),
     WIND_ARCHER_2(1310),
     WIND_ARCHER_3(1311),
+    WIND_ARCHER_4(1312),
     NIGHT_WALKER_1(1400),
     NIGHT_WALKER_2(1410),
     NIGHT_WALKER_3(1411),
+    NIGHT_WALKER_4(1412),
     THUNDER_BREAKER_1(1500),
     THUNDER_BREAKER_2(1510),
     THUNDER_BREAKER_3(1511),
+    THUNDER_BREAKER_4(1512),
 
     // ARAN -------------------------------------------------------------------
     ARAN_BEGINNER(2000),
@@ -110,7 +115,13 @@ public enum Job {
     MANAGER(800),
     GM(900),
     SUPER_GM(910),
-    ADDITIONAL_SKILLS(9000);
+    ADDITIONAL_SKILLS(9000),
+    GUILD_SKILLS(9100),
+    HERBALISM(9200),
+    MINING(9201),
+    SMITHING(9202),
+    ACCESSORY_CRAFTING(9203),
+    ALCHEMY(9204);
 
     private static final Map<Short, Job> jobMap;
 

@@ -45,8 +45,21 @@ public enum UIType {
     ACCOUNTMOREINFO(40),
     FINDFRIEND(41),
     DRAGONBOX(42),
-    WNDNO(43),
-    UNRELEASE(44);
+    CREATE_PREMIUMADVENTURER(43),
+    WNDNO(44),
+    UNRELEASE(45),
+    PROFESSION(46),
+    UNK47(47),
+    UNK48(48),
+    UNK49(49),
+    UNK50(50),
+    UNK51(51),
+    UNK52(52),
+    PVP(53),
+    ITEMPOT(54),
+    CRUSADERSET(55),
+    CARDSET1(56), //Tutorial
+    CARDSET2(57);
 
     private final int value;
 
@@ -56,5 +69,14 @@ public enum UIType {
 
     public final int getValue() {
         return value;
+    }
+
+    public static UIType getByValue(int value) {
+        for (UIType type : values()) {
+            if (type.getValue() == value) {
+                return type;
+            }
+        }
+        return ITEM;
     }
 }

@@ -31,6 +31,8 @@ public final class EquipData {
     private int iuc; // Increase Upgrade Count
     private byte chuc; // Current Hyper Upgrade Count
 
+    private short pvpDamage;
+
     private byte grade;
     private short option1;
     private short option2;
@@ -110,6 +112,7 @@ public final class EquipData {
         outPacket.encodeInt(getDurability()); // nDurability
 
         outPacket.encodeInt(getIuc()); // nIUC
+        outPacket.encodeShort(getPvpDamage()); // niPVPDamage
         outPacket.encodeByte(getGrade()); // nGrade
         outPacket.encodeByte(getChuc()); // nCHUC
 
@@ -269,6 +272,14 @@ public final class EquipData {
 
     public void setIuc(int iuc) {
         this.iuc = iuc;
+    }
+
+    public short getPvpDamage() {
+        return pvpDamage;
+    }
+
+    public void setPvpDamage(short pvpDamage) {
+        this.pvpDamage = pvpDamage;
     }
 
     public byte getChuc() {

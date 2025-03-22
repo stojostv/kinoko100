@@ -21,6 +21,7 @@ public final class MessagePacket {
                 outPacket.encodeString(questRecord.getValue()); // sQRValue
             }
             case COMPLETE -> {
+                outPacket.encodeShort(0); //unk
                 outPacket.encodeFT(questRecord.getCompletedTime()); // ftEnd
             }
         }
@@ -54,8 +55,16 @@ public final class MessagePacket {
         outPacket.encodeInt(0); // nItemBonusEXP
         outPacket.encodeInt(0); // nPremiumIPEXP
         outPacket.encodeInt(0); // nRainbowWeekEventEXP
+        outPacket.encodeByte(0); // "Monster Card Set Completion EXP (+%d)"
+        outPacket.encodeInt(0); // nBoomUpEventBonusExp
+        outPacket.encodeInt(0); // Potion Bonus EXP
+        outPacket.encodeInt(0); // %s Bonus EXP (+%d) (string bonus exp?)
+        outPacket.encodeInt(0); // Buff Bonus EXP
+        outPacket.encodeInt(0); // Rest Bonus EXP
+        outPacket.encodeInt(0); // Item Bonus EXP
         outPacket.encodeInt(0); // nPartyEXPRingEXP
         outPacket.encodeInt(0); // nCakePieEventBonus
+        outPacket.encodeInt(0); // "You have received extra EXP from Quest Booster (+%d)"
         return outPacket;
     }
 
@@ -70,6 +79,7 @@ public final class MessagePacket {
         final OutPacket outPacket = OutPacket.of(OutHeader.Message);
         outPacket.encodeByte(MessageType.IncMoney.getValue());
         outPacket.encodeInt(money);
+        outPacket.encodeInt(-1);
         return outPacket;
     }
 

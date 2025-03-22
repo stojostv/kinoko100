@@ -154,6 +154,7 @@ public final class Party implements Encodable, Lockable<Party> {
         forEachMemberForPartyData((member) -> outPacket.encodeInt(member.getJob())); // anJob
         forEachMemberForPartyData((member) -> outPacket.encodeInt(member.getLevel())); // anLevel
         forEachMemberForPartyData((member) -> outPacket.encodeInt(member.getChannelId())); // anChannelID
+        forEachMemberForPartyData((member) -> outPacket.encodeInt(1)); // unk
         outPacket.encodeInt(partyBossId); // dwPartyBossCharacterID
         forEachMemberForPartyData((member) -> outPacket.encodeInt(member.getFieldId())); // adwFieldID
         forEachMemberForPartyData((member) -> member.getTownPortal().encode(outPacket)); // aTownPortal

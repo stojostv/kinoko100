@@ -49,7 +49,7 @@ public final class SetItemInfo {
                     throw new ProviderError("Unhandled set item effect stat : %s", statEntry.getKey());
                 }
                 final ItemInfoType type = ItemInfoType.fromName(statEntry.getKey());
-                if (type == ItemInfoType.setKey) {
+                if (type == ItemInfoType.setKey || type == ItemInfoType.Option) {
                     // Visitor set property
                     continue;
                 }

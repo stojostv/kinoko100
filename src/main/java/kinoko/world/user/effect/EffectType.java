@@ -34,7 +34,11 @@ public enum EffectType {
     IncDecHPEffect_EX(29),
     DeliveryQuestItemUse(30),
     RepeatEffectRemove(31),
-    EvolRing(32);
+    EvolRing(32),
+    Unk33(33),
+    Unk34(34),
+    Unk35(35),
+    Unk36(36); //Profession craft?
 
     private final int value;
 

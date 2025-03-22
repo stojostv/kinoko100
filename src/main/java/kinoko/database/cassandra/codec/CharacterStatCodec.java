@@ -43,12 +43,23 @@ public final class CharacterStatCodec extends MappingCodec<UdtValue, CharacterSt
         cs.setAp(value.getShort(CharacterStatUDT.AP));
         cs.setSp(ExtendSp.from(value.getMap(CharacterStatUDT.SP, Integer.class, Integer.class)));
         cs.setExp(value.getInt(CharacterStatUDT.EXP));
-        cs.setPop(value.getShort(CharacterStatUDT.POP));
+        cs.setPop(value.getInt(CharacterStatUDT.POP));
         cs.setPosMap(value.getInt(CharacterStatUDT.POS_MAP));
         cs.setPortal(value.getByte(CharacterStatUDT.PORTAL));
         cs.setPetSn1(value.getLong(CharacterStatUDT.PET_1));
         cs.setPetSn2(value.getLong(CharacterStatUDT.PET_2));
         cs.setPetSn3(value.getLong(CharacterStatUDT.PET_3));
+        cs.setFatigue(value.getByte(CharacterStatUDT.FATIGUE));
+        cs.setCharismaExp(value.getInt(CharacterStatUDT.CHARISMA));
+        cs.setInsightExp(value.getInt(CharacterStatUDT.INSIGHT));
+        cs.setWillpowerExp(value.getInt(CharacterStatUDT.WILLPOWER));
+        cs.setCraftExp(value.getInt(CharacterStatUDT.CRAFT));
+        cs.setSenseExp(value.getInt(CharacterStatUDT.SENSE));
+        cs.setCharmExp(value.getInt(CharacterStatUDT.CHARM));
+        cs.setPvpExp(value.getInt(CharacterStatUDT.PVP_EXP));
+        cs.setPvpGrade(value.getByte(CharacterStatUDT.PVP_GRADE));
+        cs.setPvpPoint(value.getInt(CharacterStatUDT.PVP_POINT));
+        cs.setPvpLevel(value.getByte(CharacterStatUDT.PVP_LEVEL));
         return cs;
     }
 
@@ -76,11 +87,22 @@ public final class CharacterStatCodec extends MappingCodec<UdtValue, CharacterSt
                 .setShort(CharacterStatUDT.AP, cs.getAp())
                 .setMap(CharacterStatUDT.SP, cs.getSp().getMap(), Integer.class, Integer.class)
                 .setInt(CharacterStatUDT.EXP, cs.getExp())
-                .setShort(CharacterStatUDT.POP, cs.getPop())
+                .setInt(CharacterStatUDT.POP, cs.getPop())
                 .setInt(CharacterStatUDT.POS_MAP, cs.getPosMap())
                 .setByte(CharacterStatUDT.PORTAL, cs.getPortal())
                 .setLong(CharacterStatUDT.PET_1, cs.getPetSn1())
                 .setLong(CharacterStatUDT.PET_2, cs.getPetSn2())
-                .setLong(CharacterStatUDT.PET_3, cs.getPetSn3());
+                .setLong(CharacterStatUDT.PET_3, cs.getPetSn3())
+                .setByte(CharacterStatUDT.FATIGUE, cs.getFatigue())
+                .setInt(CharacterStatUDT.CHARISMA, cs.getCharismaExp())
+                .setInt(CharacterStatUDT.INSIGHT, cs.getInsightExp())
+                .setInt(CharacterStatUDT.WILLPOWER, cs.getWillpowerExp())
+                .setInt(CharacterStatUDT.CRAFT, cs.getCraftExp())
+                .setInt(CharacterStatUDT.SENSE, cs.getSenseExp())
+                .setInt(CharacterStatUDT.CHARM, cs.getCharmExp())
+                .setInt(CharacterStatUDT.PVP_EXP, cs.getPvpExp())
+                .setByte(CharacterStatUDT.PVP_GRADE, cs.getPvpGrade())
+                .setInt(CharacterStatUDT.PVP_POINT, cs.getPvpPoint())
+                .setByte(CharacterStatUDT.PVP_LEVEL, cs.getPvpLevel());
     }
 }

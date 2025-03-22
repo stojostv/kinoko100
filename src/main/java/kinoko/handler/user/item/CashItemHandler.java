@@ -508,7 +508,12 @@ public final class CashItemHandler extends ItemHandler {
                     changeStat(locked, itemInfo);
                 }
                 case MAPTRANSFER -> {
-                    final boolean targetUser = inPacket.decodeBoolean();
+                    boolean isHyper = itemId == 5040004;
+                    boolean worldMap = false;
+                    if (isHyper) {
+                        worldMap = inPacket.decodeBoolean();
+                    }
+                    boolean targetUser = inPacket.decodeBoolean();
                     if (targetUser) {
                         // Resolve target location
                         final String targetName = inPacket.decodeString();
@@ -529,13 +534,20 @@ public final class CashItemHandler extends ItemHandler {
                         });
                     } else {
                         final int targetField = inPacket.decodeInt(); // dwTargetField
-                        final List<Integer> availableFields = itemId / 1000 != 5040 ? // canTransferContinent
-                                user.getMapTransferInfo().getMapTransferEx() :
-                                user.getMapTransferInfo().getMapTransfer();
-                        if (!availableFields.contains(targetField)) {
-                            user.write(MapTransferPacket.unknown()); // You cannot go to that place.
-                            user.dispose();
-                            return;
+                        if(!worldMap) {
+                            List<Integer> availableFields;
+                            switch(itemId) {
+                                case 5040004 -> availableFields = user.getMapTransferInfo().getMapTransferHyper();
+                                case 5041000 -> availableFields = user.getMapTransferInfo().getMapTransferEx();
+                                case 5041001 -> availableFields = user.getMapTransferInfo().getMapTransferPremium();
+                                default      -> availableFields = user.getMapTransferInfo().getMapTransfer(); //was case 2320000, 5040000, 5040001, 5040003
+                            }
+
+                            if (!availableFields.contains(targetField)) {
+                                user.write(MapTransferPacket.unknown()); // You cannot go to that place.
+                                user.dispose();
+                                return;
+                            }
                         }
                         handleMapTransfer(user, targetField, item, position);
                     }
@@ -650,7 +662,7 @@ public final class CashItemHandler extends ItemHandler {
 
     private static void handleMapTransfer(User user, int targetFieldId, Item item, int position) {
         final Field currentField = user.getField();
-        final boolean canTransferContinent = item.getItemId() / 1000 != 5040;
+        final boolean canTransferContinent = item.getItemId() / 1000 != 5040 || item.getItemId() == 5040004;
         if (currentField.isMapTransferLimit() || (!canTransferContinent && !currentField.isSameContinent(targetFieldId))) {
             user.write(MapTransferPacket.notAllowed()); // You cannot go to that place.
             user.dispose();
@@ -678,11 +690,13 @@ public final class CashItemHandler extends ItemHandler {
             return;
         }
         // Consume item and warp
-        final Optional<InventoryOperation> removeUpgradeItemResult = user.getInventoryManager().removeItem(position, item, 1);
-        if (removeUpgradeItemResult.isEmpty()) {
-            throw new IllegalStateException(String.format("Could not remove map transfer item %d in position %d", item.getItemId(), position));
+        if (item.getItemId() != 5040004) {
+            final Optional<InventoryOperation> removeUpgradeItemResult = user.getInventoryManager().removeItem(position, item, 1);
+            if (removeUpgradeItemResult.isEmpty()) {
+                throw new IllegalStateException(String.format("Could not remove map transfer item %d in position %d", item.getItemId(), position));
+            }
+            user.write(WvsContext.inventoryOperation(removeUpgradeItemResult.get(), false));
         }
-        user.write(WvsContext.inventoryOperation(removeUpgradeItemResult.get(), false));
         user.warp(targetField, targetPortalResult.get(), false, false);
     }
 }

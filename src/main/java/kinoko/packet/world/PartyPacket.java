@@ -31,6 +31,8 @@ public final class PartyPacket {
         final OutPacket outPacket = PartyPacket.of(PartyResultType.CreateNewParty_Done);
         outPacket.encodeInt(party.getPartyId()); // nPartyID
         remoteTownPortal.encodeForPartyResult(outPacket);
+        outPacket.encodeByte(0); //unk
+        outPacket.encodeByte(0); //unk
         return outPacket;
     }
 

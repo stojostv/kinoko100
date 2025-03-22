@@ -90,18 +90,14 @@ public final class SkillHandler {
                 inPacket.decodeShort(); // tDelay
             }
         }
-        if (inPacket.getRemaining() > 2) {
+        /*if (inPacket.getRemaining() > 2) { //TODO: keeping this bugs dark sight, disabled for now
             // CUserLocal::SendSkillUseRequest, CUserLocal::DoActiveSkill_StatChangeAdmin
             final int targetCount = Byte.toUnsignedInt(inPacket.decodeByte());
             skill.targetIds = new int[targetCount];
             for (int i = 0; i < targetCount; i++) {
                 skill.targetIds[i] = inPacket.decodeInt();
-                if (skill.skillId == Thief.CHAINS_OF_HELL) {
-                    // CUserLocal::TryDoingMonsterMagnet
-                    inPacket.decodeByte(); // anMobMove[k] == 3 || anMobMove[k] == 4
-                }
             }
-        }
+        }*/
         if (skill.skillId == Thief.CHAINS_OF_HELL || skill.skillId == Citizen.CALL_OF_THE_HUNTER || SkillConstants.isSummonSkill(skill.skillId)) {
             // CUserLocal::TryDoingMonsterMagnet || CUserLocal::DoActiveSkill_SummonMonster || CUserLocal::DoActiveSkill_Summon
             skill.left = inPacket.decodeBoolean(); // nMoveAction & 1
@@ -153,6 +149,7 @@ public final class SkillHandler {
     @Handler(InHeader.UserSkillCancelRequest)
     public static void handleUserSkillCancelRequest(User user, InPacket inPacket) {
         final int skillId = inPacket.decodeInt(); // nSkillID
+        final boolean active = inPacket.decodeBoolean(); // bActive
         if (SkillConstants.isKeydownSkill(skillId)) {
             return;
         }

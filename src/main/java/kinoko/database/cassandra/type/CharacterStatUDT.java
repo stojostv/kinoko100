@@ -29,6 +29,17 @@ public final class CharacterStatUDT {
     public static final String PET_1 = "pet_1";
     public static final String PET_2 = "pet_2";
     public static final String PET_3 = "pet_3";
+    public static final String FATIGUE = "fatigue";
+    public static final String CHARISMA = "charisma";
+    public static final String INSIGHT = "insight";
+    public static final String WILLPOWER = "willpower";
+    public static final String CRAFT = "craft";
+    public static final String SENSE = "sense";
+    public static final String CHARM = "charm";
+    public static final String PVP_EXP = "pvp_exp";
+    public static final String PVP_GRADE = "pvp_grade";
+    public static final String PVP_POINT = "pvp_point";
+    public static final String PVP_LEVEL = "pvp_level";
 
     private static final String typeName = "character_stat_type";
 
@@ -58,12 +69,23 @@ public final class CharacterStatUDT {
                         .withField(AP, DataTypes.SMALLINT)
                         .withField(SP, DataTypes.frozenMapOf(DataTypes.INT, DataTypes.INT))
                         .withField(EXP, DataTypes.INT)
-                        .withField(POP, DataTypes.SMALLINT)
+                        .withField(POP, DataTypes.INT)
                         .withField(POS_MAP, DataTypes.INT)
                         .withField(PORTAL, DataTypes.TINYINT)
                         .withField(PET_1, DataTypes.BIGINT)
                         .withField(PET_2, DataTypes.BIGINT)
                         .withField(PET_3, DataTypes.BIGINT)
+                        .withField(FATIGUE, DataTypes.TINYINT)
+                        .withField(CHARISMA, DataTypes.INT)
+                        .withField(INSIGHT, DataTypes.INT)
+                        .withField(WILLPOWER, DataTypes.INT)
+                        .withField(CRAFT, DataTypes.INT)
+                        .withField(SENSE, DataTypes.INT)
+                        .withField(CHARM, DataTypes.INT)
+                        .withField(PVP_EXP, DataTypes.INT)
+                        .withField(PVP_GRADE, DataTypes.TINYINT)
+                        .withField(PVP_POINT, DataTypes.INT)
+                        .withField(PVP_LEVEL, DataTypes.TINYINT)
                         .build()
         );
     }

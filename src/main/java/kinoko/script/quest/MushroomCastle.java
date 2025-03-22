@@ -17,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 
 public final class MushroomCastle extends ScriptHandler {
     public static void enterThemeDungeon(ScriptManager sm) {
-        if (sm.getQRValue(QuestRecordType.MushroomCastleOpening).equals("1")) {
-            sm.warp(106020000, "left00"); // Mushroom Castle : Mushroom Forest Field
-        } else {
+        if (sm.getQRValue(QuestRecordType.MushroomCastleOpening).isEmpty()) {
             sm.warp(106020001); // TD_MC_Openning
+        } else {
+            sm.warp(106020000, "left00"); // Mushroom Castle : Mushroom Forest Field
         }
     }
 
@@ -507,7 +507,7 @@ public final class MushroomCastle extends ScriptHandler {
     @Script("TD_MC_Openning")
     public static void TD_MC_Openning(ScriptManager sm) {
         // null (106020001)
-        sm.setQRValue(QuestRecordType.MushroomCastleOpening, "1");
+        sm.setQRValue(QuestRecordType.MushroomCastleOpening, "s");
         sm.setDirectionMode(true, 0);
         sm.reservedEffect("Effect/Direction2.img/open/back0");
         sm.reservedEffect("Effect/Direction2.img/open/back1");

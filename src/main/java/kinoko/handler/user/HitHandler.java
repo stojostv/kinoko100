@@ -46,7 +46,7 @@ public final class HitHandler {
     private static final Logger log = LogManager.getLogger(HitHandler.class);
 
     @Handler(InHeader.UserHit)
-    public static void handleUserHit(User user, InPacket inPacket) {
+    public static void handleUserHit(User user, InPacket inPacket) { //TODO: Fix damage, dealing 25k on migrate, 1 when changing maps
         // CUserLocal::SetDamaged, CUserLocal::Update
         final HitInfo hitInfo = new HitInfo();
         inPacket.decodeInt(); // get_update_time()

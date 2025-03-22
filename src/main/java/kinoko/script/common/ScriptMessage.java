@@ -69,8 +69,13 @@ public final class ScriptMessage implements Encodable {
                     outPacket.encodeString(image); // sPath
                 }
             }
-            case ASKYESNO, ASKACCEPT, ASKMENU -> {
+            case ASKYESNO, ASKMENU -> {
                 outPacket.encodeString(text); // sText
+            }
+            case ASKACCEPT -> { //Was missing two bytes
+                outPacket.encodeString(text); // sText
+                outPacket.encodeByte(hasPrev); //TODO: not sure if this is correct
+                outPacket.encodeByte(hasNext);
             }
             case ASKTEXT -> {
                 outPacket.encodeString(text); // sText

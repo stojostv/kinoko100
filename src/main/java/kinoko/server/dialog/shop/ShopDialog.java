@@ -194,6 +194,9 @@ public final class ShopDialog implements Dialog {
     public void encode(OutPacket outPacket, User user) {
         // CShopDlg::SetShopDlg
         outPacket.encodeInt(npcTemplate.getId()); // dwNpcTemplateID
+
+        outPacket.encodeByte(false); //if shopranks.size > 0 //TODO: Shop ranks (PVP shop)
+
         outPacket.encodeShort(items.size()); // nCount
         for (ShopItem item : items) {
             outPacket.encodeInt(item.getItemId()); // nItemID

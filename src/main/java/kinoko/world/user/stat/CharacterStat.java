@@ -6,6 +6,7 @@ import kinoko.util.Util;
 import kinoko.world.GameConstants;
 import kinoko.world.job.JobConstants;
 
+import java.time.Instant;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -30,12 +31,23 @@ public final class CharacterStat implements Encodable {
     private short ap;
     private ExtendSp sp;
     private int exp;
-    private short pop;
+    private int pop;
     private int posMap;
     private byte portal;
     private long petSn1;
     private long petSn2;
     private long petSn3;
+    private byte fatigue;
+    private int charismaExp;
+    private int insightExp;
+    private int willpowerExp;
+    private int craftExp;
+    private int senseExp;
+    private int charmExp;
+    private int pvpExp;
+    private byte pvpGrade;
+    private int pvpPoint;
+    private byte pvpLevel;
 
     public int getId() {
         return id;
@@ -197,11 +209,11 @@ public final class CharacterStat implements Encodable {
         this.exp = exp;
     }
 
-    public short getPop() {
+    public int getPop() {
         return pop;
     }
 
-    public void setPop(short pop) {
+    public void setPop(int pop) {
         this.pop = pop;
     }
 
@@ -243,6 +255,94 @@ public final class CharacterStat implements Encodable {
 
     public void setPetSn3(long petSn3) {
         this.petSn3 = petSn3;
+    }
+
+    public byte getFatigue() {
+        return fatigue;
+    }
+
+    public void setFatigue(byte fatigue) {
+        this.fatigue = fatigue;
+    }
+
+    public int getCharismaExp() {
+        return charismaExp;
+    }
+
+    public void setCharismaExp(int charismaExp) {
+        this.charismaExp = charismaExp;
+    }
+
+    public int getInsightExp() {
+        return insightExp;
+    }
+
+    public void setInsightExp(int insightExp) {
+        this.insightExp = insightExp;
+    }
+
+    public int getWillpowerExp() {
+        return willpowerExp;
+    }
+
+    public void setWillpowerExp(int willpowerExp) {
+        this.willpowerExp = willpowerExp;
+    }
+
+    public int getCraftExp() {
+        return craftExp;
+    }
+
+    public void setCraftExp(int craftExp) {
+        this.craftExp = craftExp;
+    }
+
+    public int getSenseExp() {
+        return senseExp;
+    }
+
+    public void setSenseExp(int senseExp) {
+        this.senseExp = senseExp;
+    }
+
+    public int getCharmExp() {
+        return charmExp;
+    }
+
+    public void setCharmExp(int charmExp) {
+        this.charmExp = charmExp;
+    }
+
+    public void setPvpExp(int pvpExp) {
+        this.pvpExp = pvpExp;
+    }
+
+    public int getPvpExp() {
+        return pvpExp;
+    }
+
+    public void setPvpGrade(byte pvpGrade) {
+        this.pvpGrade = pvpGrade;
+    }
+
+    public byte getPvpGrade() {
+        return pvpGrade;
+    }
+
+    public void setPvpPoint(int pvpPoint) {
+        this.pvpPoint = pvpPoint;
+    }
+
+    public int getPvpPoint() {
+        return pvpPoint;
+    }
+
+    public void setPvpLevel(byte pvpLevel) {
+        this.pvpLevel = pvpLevel;
+    }
+
+    public byte getPvpLevel() {
+        return pvpLevel;
     }
 
 
@@ -442,11 +542,25 @@ public final class CharacterStat implements Encodable {
         }
 
         outPacket.encodeInt(exp); // nEXP
-        outPacket.encodeShort(pop); // nPOP
+        outPacket.encodeInt(pop); // nPOP
         outPacket.encodeInt(0); // nTempEXP
         outPacket.encodeInt(posMap); // dwPosMap
         outPacket.encodeByte(portal); // nPortal
         outPacket.encodeInt(0); // nPlayTime
         outPacket.encodeShort(subJob); // nSubJob
+
+        outPacket.encodeByte(fatigue); // nFatigue
+        outPacket.encodeInt(System.currentTimeMillis()); // nLastFatigueUpdateTime
+        outPacket.encodeInt(charismaExp); // nCharismaEXP
+        outPacket.encodeInt(insightExp); // nInsightEXP
+        outPacket.encodeInt(willpowerExp); // nWillEXP
+        outPacket.encodeInt(craftExp); // nCraftEXP
+        outPacket.encodeInt(senseExp); // nSenseEXP
+        outPacket.encodeInt(charmExp); // nCharmEXP
+        outPacket.encodeArray(new byte[0xC]); // DayLimit
+        outPacket.encodeInt(pvpExp); // nPvPExp
+        outPacket.encodeByte(pvpGrade); // nPvPGrade
+        outPacket.encodeInt(pvpPoint); // nPvPPoint
+        outPacket.encodeByte(pvpLevel); // nPvPModeLevel
     }
 }

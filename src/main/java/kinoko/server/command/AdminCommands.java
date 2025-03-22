@@ -23,6 +23,7 @@ import kinoko.script.common.ScriptDispatcher;
 import kinoko.server.ServerConfig;
 import kinoko.server.cashshop.CashShop;
 import kinoko.server.cashshop.Commodity;
+import kinoko.server.dialog.UIType;
 import kinoko.util.BitFlag;
 import kinoko.util.Rect;
 import kinoko.util.Util;
@@ -50,6 +51,7 @@ import kinoko.world.user.effect.Effect;
 import kinoko.world.user.stat.*;
 
 import java.lang.reflect.Method;
+import java.time.Instant;
 import java.util.*;
 
 public final class AdminCommands {
@@ -62,6 +64,14 @@ public final class AdminCommands {
             user.setConsumeItemEffect(ItemProvider.getItemInfo(2022181).orElseThrow());
             user.dispose();
         });
+    }
+
+    @Command("ui")
+    @Arguments("UI type")
+    public static void ui(User user, String[] args) {
+        int type = Integer.parseInt(args[1]);
+
+        user.write(UserLocal.openUI(UIType.getByValue(type)));
     }
 
     @Command("dispose")
@@ -652,6 +662,76 @@ public final class AdminCommands {
             user.validateStat();
             user.write(WvsContext.statChanged(statMap, true));
             user.write(MessagePacket.system("Set %s to %d", stat, value));
+        }
+    }
+
+    @Command("trait")
+    @Arguments({ "ambition/empathy/insight/willpower/diligence/charm", "new exp" })
+    public static void trait(User user, String[] args) {
+        final String trait = args[1].toLowerCase();
+        final int value = Integer.parseInt(args[2]);
+        try (var locked = user.acquire()) {
+            final CharacterStat cs = locked.get().getCharacterStat();
+            final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
+            switch (trait) {
+                case "ambition", "a", "charisma" -> {
+                    cs.setCharismaExp(value);
+                    statMap.put(Stat.CHARISMAEXP, cs.getCharismaExp());
+                }
+                case "insight", "i" -> {
+                    cs.setInsightExp(value);
+                    statMap.put(Stat.INSIGHTEXP, cs.getInsightExp());
+                }
+                case "willpower", "w" -> {
+                    cs.setWillpowerExp(value);
+                    statMap.put(Stat.WILLEXP, cs.getWillpowerExp());
+                }
+                case "diligence", "d", "craft" -> {
+                    cs.setCraftExp(value);
+                    statMap.put(Stat.CRAFTEXP, cs.getCraftExp());
+                }
+                case "empathy", "e", "sense" -> {
+                    cs.setSenseExp(value);
+                    statMap.put(Stat.SENSEEXP, cs.getSenseExp());
+                }
+                case "charm", "c" -> {
+                    cs.setCharmExp(value);
+                    statMap.put(Stat.CHARMEXP, cs.getCharmExp());
+                }
+                default -> {
+                    user.write(MessagePacket.system("Syntax : %strait ambition/empathy/insight/willpower/diligence/charm <new level>", ServerConfig.COMMAND_PREFIX));
+                    return;
+                }
+            }
+            user.validateStat();
+            user.write(WvsContext.statChanged(statMap, true));
+            user.write(MessagePacket.system("Set %s to %d", trait, value));
+        }
+    }
+
+    @Command("traits")
+    public static void traits(User user, String[] args) {
+        CharacterStat cs = user.getCharacterStat();
+        user.write(MessagePacket.system("Ambition : %d (%d)", GameConstants.getTraitLevel(cs.getCharismaExp()), cs.getCharismaExp()));
+        user.write(MessagePacket.system("Empathy : %d (%d)", GameConstants.getTraitLevel(cs.getSenseExp()), cs.getSenseExp()));
+        user.write(MessagePacket.system("Insight : %d (%d)", GameConstants.getTraitLevel(cs.getInsightExp()), cs.getInsightExp()));
+        user.write(MessagePacket.system("Willpower : %d (%d)", GameConstants.getTraitLevel(cs.getWillpowerExp()), cs.getWillpowerExp()));
+        user.write(MessagePacket.system("Dilligence : %d (%d)", GameConstants.getTraitLevel(cs.getCraftExp()), cs.getCraftExp()));
+        user.write(MessagePacket.system("Charm : %d (%d)", GameConstants.getTraitLevel(cs.getCharmExp()), cs.getCharmExp()));
+    }
+
+    @Command("fatigue")
+    @Arguments("new fatigue")
+    public static void fatigue(User user, String[] args) {
+        final byte value = (byte) Integer.parseInt(args[1]);
+        try (var locked = user.acquire()) {
+            final CharacterStat cs = locked.get().getCharacterStat();
+            final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
+            cs.setFatigue(value);
+            statMap.put(Stat.FATIGUE, cs.getFatigue());
+            user.validateStat();
+            user.write(WvsContext.statChanged(statMap, true));
+            user.write(MessagePacket.system("Set fatigue to %d", value));
         }
     }
 
