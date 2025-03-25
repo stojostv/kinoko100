@@ -10,13 +10,12 @@ import kinoko.packet.user.UserPacket;
 import kinoko.packet.user.UserRemote;
 import kinoko.packet.world.BroadcastPacket;
 import kinoko.packet.world.MapTransferPacket;
+import kinoko.packet.world.MessagePacket;
 import kinoko.packet.world.WvsContext;
 import kinoko.provider.ItemProvider;
 import kinoko.provider.NpcProvider;
 import kinoko.provider.StringProvider;
-import kinoko.provider.item.ItemInfo;
-import kinoko.provider.item.ItemInfoType;
-import kinoko.provider.item.ItemOptionInfo;
+import kinoko.provider.item.*;
 import kinoko.provider.map.PortalInfo;
 import kinoko.provider.npc.NpcTemplate;
 import kinoko.server.dialog.shop.ShopDialog;
@@ -508,12 +507,7 @@ public final class CashItemHandler extends ItemHandler {
                     changeStat(locked, itemInfo);
                 }
                 case MAPTRANSFER -> {
-                    boolean isHyper = itemId == 5040004;
-                    boolean worldMap = false;
-                    if (isHyper) {
-                        worldMap = inPacket.decodeBoolean();
-                    }
-                    boolean targetUser = inPacket.decodeBoolean();
+                    final boolean targetUser = inPacket.decodeBoolean();
                     if (targetUser) {
                         // Resolve target location
                         final String targetName = inPacket.decodeString();
@@ -534,20 +528,13 @@ public final class CashItemHandler extends ItemHandler {
                         });
                     } else {
                         final int targetField = inPacket.decodeInt(); // dwTargetField
-                        if(!worldMap) {
-                            List<Integer> availableFields;
-                            switch(itemId) {
-                                case 5040004 -> availableFields = user.getMapTransferInfo().getMapTransferHyper();
-                                case 5041000 -> availableFields = user.getMapTransferInfo().getMapTransferEx();
-                                case 5041001 -> availableFields = user.getMapTransferInfo().getMapTransferPremium();
-                                default      -> availableFields = user.getMapTransferInfo().getMapTransfer(); //was case 2320000, 5040000, 5040001, 5040003
-                            }
-
-                            if (!availableFields.contains(targetField)) {
-                                user.write(MapTransferPacket.unknown()); // You cannot go to that place.
-                                user.dispose();
-                                return;
-                            }
+                        final List<Integer> availableFields = itemId / 1000 != 5040 ? // canTransferContinent
+                                user.getMapTransferInfo().getMapTransferEx() :
+                                user.getMapTransferInfo().getMapTransfer();
+                        if (!availableFields.contains(targetField)) {
+                            user.write(MapTransferPacket.unknown()); // You cannot go to that place.
+                            user.dispose();
+                            return;
                         }
                         handleMapTransfer(user, targetField, item, position);
                     }
@@ -609,6 +596,52 @@ public final class CashItemHandler extends ItemHandler {
                     user.write(WvsContext.statChanged(Stat.FACE, user.getCharacterStat().getFace(), true));
                     user.getField().broadcastPacket(UserRemote.avatarModified(user), user);
                 }
+                case REWARD -> {
+                    // Resolve reward info
+                    final Optional<ItemRewardInfo> itemRewardInfoResult = ItemProvider.getItemRewardInfo(itemId);
+                    if (itemRewardInfoResult.isEmpty()) {
+                        log.error("Could not resolve reward info for item ID : {}", itemId);
+                        user.dispose();
+                        return;
+                    }
+                    final ItemRewardInfo itemRewardInfo = itemRewardInfoResult.get();
+                    // Resolve reward
+                    if (!itemRewardInfo.canAddReward(locked)) {
+                        user.write(MessagePacket.system("You do not have enough inventory space."));
+                        user.dispose();
+                        return;
+                    }
+                    final Optional<ItemRewardEntry> rewardResult = Util.getRandomFromCollection(itemRewardInfo.getEntries(), ItemRewardEntry::getProbability);
+                    if (rewardResult.isEmpty()) {
+                        log.error("Could not resolve lottery item reward for item {}", itemId);
+                        return;
+                    }
+                    final ItemRewardEntry rewardEntry = rewardResult.get();
+                    final Optional<ItemInfo> rewardItemInfoResult = ItemProvider.getItemInfo(rewardEntry.getItemId());
+                    if (rewardItemInfoResult.isEmpty()) {
+                        log.error("Could not resolve item info for item ID : {}", rewardEntry.getItemId());
+                        return;
+                    }
+                    // Consume item
+                    final Optional<InventoryOperation> removeItemResult = im.removeItem(position, item, 1);
+                    if (removeItemResult.isEmpty()) {
+                        throw new IllegalStateException(String.format("Could not remove reward item %d in position %d", item.getItemId(), position));
+                    }
+                    user.write(WvsContext.inventoryOperation(removeItemResult.get(), false));
+                    // Add reward item
+                    final Item rewardItem = rewardItemInfoResult.get().createItem(user.getNextItemSn(), rewardEntry.getCount());
+                    if (rewardEntry.getPeriod() > 0) {
+                        rewardItem.setDateExpire(Instant.now().plus(rewardEntry.getPeriod(), ChronoUnit.MINUTES));
+                    }
+                    final Optional<List<InventoryOperation>> addResult = user.getInventoryManager().addItem(rewardItem);
+                    if (addResult.isEmpty()) {
+                        throw new IllegalStateException("Could not add reward item to inventory");
+                    }
+                    user.write(WvsContext.inventoryOperation(addResult.get(), true));
+                    if (rewardEntry.hasEffect()) {
+                        user.write(UserLocal.effect(Effect.lotteryUse(itemId, rewardEntry.getEffect())));
+                    }
+                }
                 case null -> {
                     log.error("Unknown cash item type for item ID : {}", item.getItemId());
                     user.dispose();
@@ -662,7 +695,7 @@ public final class CashItemHandler extends ItemHandler {
 
     private static void handleMapTransfer(User user, int targetFieldId, Item item, int position) {
         final Field currentField = user.getField();
-        final boolean canTransferContinent = item.getItemId() / 1000 != 5040 || item.getItemId() == 5040004;
+        final boolean canTransferContinent = item.getItemId() / 1000 != 5040;
         if (currentField.isMapTransferLimit() || (!canTransferContinent && !currentField.isSameContinent(targetFieldId))) {
             user.write(MapTransferPacket.notAllowed()); // You cannot go to that place.
             user.dispose();
@@ -690,13 +723,11 @@ public final class CashItemHandler extends ItemHandler {
             return;
         }
         // Consume item and warp
-        if (item.getItemId() != 5040004) {
-            final Optional<InventoryOperation> removeUpgradeItemResult = user.getInventoryManager().removeItem(position, item, 1);
-            if (removeUpgradeItemResult.isEmpty()) {
-                throw new IllegalStateException(String.format("Could not remove map transfer item %d in position %d", item.getItemId(), position));
-            }
-            user.write(WvsContext.inventoryOperation(removeUpgradeItemResult.get(), false));
+        final Optional<InventoryOperation> removeItemResult = user.getInventoryManager().removeItem(position, item, 1);
+        if (removeItemResult.isEmpty()) {
+            throw new IllegalStateException(String.format("Could not remove map transfer item %d in position %d", item.getItemId(), position));
         }
+        user.write(WvsContext.inventoryOperation(removeItemResult.get(), false));
         user.warp(targetField, targetPortalResult.get(), false, false);
     }
 }
