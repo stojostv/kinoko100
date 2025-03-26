@@ -232,7 +232,7 @@
   gender: 1
   onSale: false
 
-# Preschool Pants
+# Pre-School Pants
 10000026:
   itemId: 1060067
   count: 1
@@ -7630,7 +7630,7 @@
   gender: 2
   onSale: false
 
-# Horoscope Overall (Male)
+# Horoscope Overall
 10000850:
   itemId: 1050120
   count: 1
@@ -7639,7 +7639,7 @@
   gender: 2
   onSale: false
 
-# Horoscope Overall (Female)
+# Horoscope Overall
 10000851:
   itemId: 1051128
   count: 1
@@ -13804,7 +13804,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (m)
+# Blue Kitty Hood
 10001536:
   itemId: 1050141
   count: 1
@@ -13813,7 +13813,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (f)
+# Kitty Hoodie
 10001537:
   itemId: 1051164
   count: 1
@@ -15163,7 +15163,7 @@
   gender: 2
   onSale: false
 
-# Buddy Overall Jeans (M)
+# Buddy Overall Jeans
 10001687:
   itemId: 1050146
   count: 1
@@ -15172,7 +15172,7 @@
   gender: 2
   onSale: false
 
-# Buddy Overall Jeans (F)
+# Buddy Overall Jeans
 10001688:
   itemId: 1051170
   count: 1
@@ -20392,7 +20392,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(10%)
+# Vega's Spell (10%)
 10002272:
   itemId: 5610000
   count: 1
@@ -20401,7 +20401,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(60%)
+# Vega's Spell (60%)
 10002273:
   itemId: 5610001
   count: 1
@@ -22151,8 +22151,8 @@
 10002467:
   itemId: 5062000
   count: 1
-  price: 1200
-  period: 90
+  price: 960
+  period: 7
   gender: 2
   onSale: false
 
@@ -22300,7 +22300,7 @@
   gender: 2
   onSale: false
 
-# Sudden Raid Mastery
+# Blade Fury Mastery
 10002484:
   itemId: 9102263
   count: 1
@@ -25268,7 +25268,7 @@
   price: 6300
   period: 0
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pilot Suit
 10002814:
@@ -25277,7 +25277,7 @@
   price: 7200
   period: 0
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pilot Boots
 10002815:
@@ -25286,7 +25286,7 @@
   price: 3600
   period: 0
   gender: 2
-  onSale: true
+  onSale: false
 
 # Yo Yo
 10002816:
@@ -25385,7 +25385,7 @@
   price: 6400
   period: 0
   gender: 1
-  onSale: true
+  onSale: false
 
 # Henesys Academy Uniform (Female)
 10002827:
@@ -25394,7 +25394,7 @@
   price: 5400
   period: 0
   gender: 1
-  onSale: true
+  onSale: false
 
 # Henesys Academy Uniform (Male)
 10002828:
@@ -25403,7 +25403,7 @@
   price: 5400
   period: 0
   gender: 0
-  onSale: true
+  onSale: false
 
 # Henesys Academy Shoes (Female)
 10002829:
@@ -25412,6 +25412,1500 @@
   price: 3200
   period: 0
   gender: 1
+  onSale: false
+
+# Star Trainer Jacket
+10002830:
+  itemId: 1042207
+  count: 1
+  price: 5000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Star Trainer Pants
+10002831:
+  itemId: 1062133
+  count: 1
+  price: 3000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Star Head Wrap
+10002832:
+  itemId: 1003170
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# White Boots
+10002833:
+  itemId: 1072483
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Rider Jacket
+10002834:
+  itemId: 1042206
+  count: 1
+  price: 4600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Brown Hunting Cap
+10002835:
+  itemId: 1003163
+  count: 1
+  price: 3700
+  period: 0
+  gender: 2
+  onSale: false
+
+# Brown Ankle Boots
+10002836:
+  itemId: 1072478
+  count: 1
+  price: 3200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Bow
+10002837:
+  itemId: 1003132
+  count: 1
+  price: 5500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Combat Boots
+10002838:
+  itemId: 1072464
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cygnus Effect
+10002839:
+  itemId: 5010079
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Purple Wings
+10002840:
+  itemId: 1102253
+  count: 1
+  price: 8200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Bow
+10002841:
+  itemId: 1003131
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+10002842:
+  itemId: 5220000
+  count: 100
+  price: 80000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+10002843:
+  itemId: 5072000
+  count: 35
+  price: 31500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+10002844:
+  itemId: 5062000
+  count: 11
+  price: 8400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Small B-Day Surprise
+10002845:
+  itemId: 5222015
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Medium B-Day Surprise
+10002846:
+  itemId: 5222016
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Large B-Day Surprise
+10002847:
+  itemId: 5222017
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: false
+
+# 2x Point Card (3 hrs)
+10002848:
+  itemId: 5530106
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# 2x Point Card (1 day)
+10002849:
+  itemId: 5530107
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: false
+
+# 2x Point Card (7 days)
+10002850:
+  itemId: 5530108
+  count: 1
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Summoning Sack
+10002851:
+  itemId: 5670000
+  count: 1
+  price: 500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mini Barricade
+10002852:
+  itemId: 5670001
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Hat
+10002853:
+  itemId: 1003241
+  count: 1
+  price: 3000
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Ball
+10002854:
+  itemId: 1102300
+  count: 1
+  price: 4100
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Glasses
+10002855:
+  itemId: 1022122
+  count: 1
+  price: 2700
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Wand
+10002856:
+  itemId: 1702310
+  count: 1
+  price: 4700
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Package
+10002857:
+  itemId: 9102451
+  count: 1
+  price: 14500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Spring Jacket
+10002858:
+  itemId: 1042212
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pink Spring Jacket
+10002859:
+  itemId: 1042213
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rainbow Bracelet
+10002860:
+  itemId: 1082312
+  count: 1
+  price: 2500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pink Winged Shoes
+10002861:
+  itemId: 1072514
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Spring Sweater Set
+10002862:
+  itemId: 1042214
+  count: 1
+  price: 7000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cake Megaphone
+10002863:
+  itemId: 5079001
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cake Megaphone
+10002864:
+  itemId: 5079001
+  count: 10
+  price: 11000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cake Megaphone
+10002865:
+  itemId: 5079001
+  count: 15
+  price: 15000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+10002866:
+  itemId: 5079002
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+10002867:
+  itemId: 5079002
+  count: 10
+  price: 11000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+10002868:
+  itemId: 5079002
+  count: 15
+  price: 15000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Peacock Effect
+10002869:
+  itemId: 5010081
+  count: 1
+  price: 5000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pearl Anklet
+10002870:
+  itemId: 1072507
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Riding Hood Package
+10002871:
+  itemId: 9102393
+  count: 1
+  price: 10000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Riding Hood
+10002872:
+  itemId: 1003203
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red's Dress
+10002873:
+  itemId: 1052338
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red's Shoes
+10002874:
+  itemId: 1072509
+  count: 1
+  price: 3000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Riding Hood
+10002875:
+  itemId: 1003203
+  count: 1
+  price: 3000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red's Dress
+10002876:
+  itemId: 1052338
+  count: 1
+  price: 5000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red's Shoes
+10002877:
+  itemId: 1072509
+  count: 1
+  price: 2000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Lab Gear (F)
+10002878:
+  itemId: 1052339
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Lab Gear (M)
+10002879:
+  itemId: 1052340
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Alien Mug
+10002880:
+  itemId: 1702302
+  count: 1
+  price: 7560
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Hat
+10002881:
+  itemId: 1003241
+  count: 1
+  price: 4500
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Ball
+10002882:
+  itemId: 1102300
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Glasses
+10002883:
+  itemId: 1022122
+  count: 1
+  price: 4100
+  period: 0
+  gender: 2
+  onSale: false
+
+# 6th B-Day Party Wand
+10002884:
+  itemId: 1702310
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Premium Miracle Cube
+10002885:
+  itemId: 5062001
+  count: 1
+  price: 3100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Summoning Sack
+10002886:
+  itemId: 5670000
+  count: 1
+  price: 99
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mini Barricade
+10002887:
+  itemId: 5670001
+  count: 1
+  price: 99
+  period: 90
+  gender: 2
+  onSale: false
+
+# Summoning Sack
+10002888:
+  itemId: 5670000
+  count: 6
+  price: 495
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mini Barricade
+10002889:
+  itemId: 5670001
+  count: 6
+  price: 495
+  period: 90
+  gender: 2
+  onSale: false
+
+# Summoning Sack
+10002890:
+  itemId: 5670000
+  count: 12
+  price: 990
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mini Barricade
+10002891:
+  itemId: 5670001
+  count: 12
+  price: 990
+  period: 90
+  gender: 2
+  onSale: false
+
+# Shielding Ward
+10002892:
+  itemId: 5064000
+  count: 1
+  price: 100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Microwave
+10002893:
+  itemId: 5060004
+  count: 1
+  price: 100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Quest Booster (2x EXP)
+10002894:
+  itemId: 5710000
+  count: 1
+  price: 100
+  period: 10
+  gender: 2
+  onSale: false
+
+# Aura Pendant
+10002895:
+  itemId: 1122121
+  count: 1
+  price: 3300
+  period: 30
+  gender: 2
+  onSale: false
+
+# Tim's Secret lab
+10002896:
+  itemId: 5534000
+  count: 1
+  price: 100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hyper Teleport Rock
+10002897:
+  itemId: 5040004
+  count: 1
+  price: 2900
+  period: 1
+  gender: 2
+  onSale: false
+
+# Persian Cat
+10002898:
+  itemId: 5000111
+  count: 1
+  price: 9900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Corgi Pup
+10002899:
+  itemId: 5000076
+  count: 1
+  price: 9900
+  period: 0
+  gender: 2
+  onSale: true
+
+# Fish
+10002900:
+  itemId: 1802072
+  count: 1
+  price: 3800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Birdy
+10002901:
+  itemId: 1802073
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: true
+
+# Canned Food
+10002902:
+  itemId: 5240035
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Canned Food
+10002903:
+  itemId: 5240035
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Doggy Bone
+10002904:
+  itemId: 5240034
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Doggy Bone
+10002905:
+  itemId: 5240034
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Carrot
+10002906:
+  itemId: 1702305
+  count: 1
+  price: 6900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Baby Bottle
+10002907:
+  itemId: 1702303
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pink Polka Dot Bow
+10002908:
+  itemId: 1003221
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Polka Dot Bow
+10002909:
+  itemId: 1003222
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pirate Captain's Coat
+10002910:
+  itemId: 1052348
+  count: 1
+  price: 7400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pirate Captain's Hat
+10002911:
+  itemId: 1003216
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Mage Gear
+10002912:
+  itemId: 1052330
+  count: 1
+  price: 7000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Mage Gear
+10002913:
+  itemId: 1052331
+  count: 1
+  price: 7000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Lion Slippers
+10002914:
+  itemId: 1072515
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: true
+
+# Lion Head
+10002915:
+  itemId: 1003237
+  count: 1
+  price: 5000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Layered Denim Pants
+10002916:
+  itemId: 1062136
+  count: 1
+  price: 4400
+  period: 0
+  gender: 2
+  onSale: true
+
+# Blue Stars Tee
+10002917:
+  itemId: 1042219
+  count: 1
+  price: 6400
+  period: 0
+  gender: 2
+  onSale: true
+
+# Suitcase
+10002918:
+  itemId: 1702293
+  count: 1
+  price: 8000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Persian Cat
+10002919:
+  itemId: 5000111
+  count: 1
+  price: 9440
+  period: 0
+  gender: 2
+  onSale: false
+
+# Fish
+10002920:
+  itemId: 1802072
+  count: 1
+  price: 3610
+  period: 0
+  gender: 2
+  onSale: false
+
+# Canned Food
+10002921:
+  itemId: 5240035
+  count: 1
+  price: 950
+  period: 90
+  gender: 2
+  onSale: false
+
+# 2 Scrolls for Pet Equip for Weapon ATT 60% Exchange Ticket
+10002922:
+  itemId: 5530052
+  count: 1
+  price: 0
+  period: 90
+  gender: 2
+  onSale: false
+
+# 2 Scrolls for Pet Equip for Magic ATT 60% Exchange Ticket
+10002923:
+  itemId: 5530053
+  count: 1
+  price: 0
+  period: 90
+  gender: 2
+  onSale: false
+
+# Persian Cat Package
+10002924:
+  itemId: 9102504
+  count: 1
+  price: 14000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Persian Cat Package
+10002925:
+  itemId: 9102505
+  count: 1
+  price: 14000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Corgi Pup Package
+10002926:
+  itemId: 9102506
+  count: 1
+  price: 12800
+  period: 0
+  gender: 2
+  onSale: true
+
+# Corgi Pup
+10002927:
+  itemId: 5000110
+  count: 1
+  price: 8800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Birdy
+10002928:
+  itemId: 1802073
+  count: 1
+  price: 3200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Doggy Bone
+10002929:
+  itemId: 5240034
+  count: 1
+  price: 800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Fatigue Reset Drink
+10002930:
+  itemId: 5680015
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Hyper Teleport Rock
+10002931:
+  itemId: 5040004
+  count: 1
+  price: 9900
+  period: 7
+  gender: 2
+  onSale: false
+
+# Pink Teru Cape
+10002932:
+  itemId: 1102285
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Blue Teru Cape
+10002933:
+  itemId: 1102286
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Yellow Teru Cape
+10002934:
+  itemId: 1102287
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Mount Gachapon Ticket
+10002935:
+  itemId: 5220082
+  count: 1
+  price: 4500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Ribbon
+10002936:
+  itemId: 1802085
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Mini Kargo Wings
+10002937:
+  itemId: 1802086
+  count: 1
+  price: 7400
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Top Hat
+10002938:
+  itemId: 1802087
+  count: 1
+  price: 7400
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Top Hat
+10002939:
+  itemId: 1802088
+  count: 1
+  price: 7400
+  period: 90
+  gender: 2
+  onSale: true
+
+# Yellow Hat
+10002940:
+  itemId: 1802089
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Hat
+10002941:
+  itemId: 1802090
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Black Hat
+10002942:
+  itemId: 1802091
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pink Laced Cap
+10002943:
+  itemId: 1802092
+  count: 1
+  price: 7100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Sky Blue Laced Cap
+10002944:
+  itemId: 1802093
+  count: 1
+  price: 7100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Scarf
+10002945:
+  itemId: 1802094
+  count: 1
+  price: 7400
+  period: 90
+  gender: 2
+  onSale: true
+
+# Mushroom Suit
+10002946:
+  itemId: 1802095
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Husky Yellow Tights
+10002947:
+  itemId: 1802096
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Dino King & Queen
+10002948:
+  itemId: 1802097
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Bunny Suit
+10002949:
+  itemId: 1802098
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Monkey Sack
+10002950:
+  itemId: 1802099
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Bare Bones
+10002951:
+  itemId: 1802300
+  count: 1
+  price: 7700
+  period: 90
+  gender: 2
+  onSale: true
+
+# Ghosty
+10002952:
+  itemId: 1802301
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pet-o-Lantern
+10002953:
+  itemId: 1802302
+  count: 1
+  price: 7100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Clown Dress
+10002954:
+  itemId: 1802303
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Penguin Earmuff Set
+10002955:
+  itemId: 1802304
+  count: 1
+  price: 7100
+  period: 90
+  gender: 2
+  onSale: true
+
+# White Tiger Suit
+10002956:
+  itemId: 1802305
+  count: 1
+  price: 7800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Oinker Suit
+10002957:
+  itemId: 1802306
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pelvis Hair
+10002958:
+  itemId: 1802307
+  count: 1
+  price: 7800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Prince Pepe
+10002959:
+  itemId: 1802308
+  count: 1
+  price: 8200
+  period: 90
+  gender: 2
+  onSale: true
+
+# Crimson Mask
+10002960:
+  itemId: 1802309
+  count: 1
+  price: 8500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Cowboy Kargo
+10002961:
+  itemId: 1802310
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# White Angel
+10002962:
+  itemId: 1802311
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Guitar 
+10002963:
+  itemId: 1802312
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Cute Beggar Overall
+10002964:
+  itemId: 1802313
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Baby Turkey Carriage
+10002965:
+  itemId: 1802314
+  count: 1
+  price: 7700
+  period: 90
+  gender: 2
+  onSale: true
+
+# Dragon Armor
+10002966:
+  itemId: 1802315
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Porcupine Sunglasses
+10002967:
+  itemId: 1802316
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Jr. Reaper Sign (I'm with stoopid)
+10002968:
+  itemId: 1802317
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Jr. Reaper Sign (cc plz)
+10002969:
+  itemId: 1802318
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Snowman Gear
+10002970:
+  itemId: 1802319
+  count: 1
+  price: 7600
+  period: 90
+  gender: 2
+  onSale: true
+
+# Jr. Reaper Sign (<--Noob)
+10002971:
+  itemId: 1802320
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Jr. Reaper Sign (I love pie)
+10002972:
+  itemId: 1802321
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Chestnut Cap
+10002973:
+  itemId: 1802322
+  count: 1
+  price: 7700
+  period: 90
+  gender: 2
+  onSale: true
+
+# Gas Mask
+10002974:
+  itemId: 1802323
+  count: 1
+  price: 8100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Jail Bird Pet Costume
+10002975:
+  itemId: 1802324
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Scuba Mask
+10002976:
+  itemId: 1802325
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Kino's Green Mushroom Hat
+10002977:
+  itemId: 1802326
+  count: 1
+  price: 6900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Starry Stereo Headset
+10002978:
+  itemId: 1802327
+  count: 1
+  price: 7700
+  period: 90
+  gender: 2
+  onSale: true
+
+# Baby Tiger Wings
+10002979:
+  itemId: 1802328
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Alien's Pet
+10002980:
+  itemId: 1802329
+  count: 1
+  price: 8200
+  period: 90
+  gender: 2
+  onSale: true
+
+# Dragon Egg Shell
+10002981:
+  itemId: 1802330
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Rabbit Ears
+10002982:
+  itemId: 1802331
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pink Oxygen Tank
+10002983:
+  itemId: 1802332
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# B-Day Candle
+10002984:
+  itemId: 1802333
+  count: 1
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Fish
+10002985:
+  itemId: 1802334
+  count: 1
+  price: 7000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Birdy
+10002986:
+  itemId: 1802335
+  count: 1
+  price: 6800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Mini Celestial Wand
+10002987:
+  itemId: 1802038
+  count: 1
+  price: 7900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Additional Pendant Slot
+10002988:
+  itemId: 5550000
+  count: 1
+  price: 3200
+  period: 0
+  gender: 2
+  onSale: true
+
+# EXP Booster (4hr)
+10002989:
+  itemId: 5530146
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: true
+
+# EXP Booster 11pack (4hr)
+10002990:
+  itemId: 5530147
+  count: 1
+  price: 12000
+  period: 90
+  gender: 2
+  onSale: true
+
+# EXP Booster 35pack (4hr)
+10002991:
+  itemId: 5530148
+  count: 1
+  price: 36000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Rising Star Baggy Digs
+10002992:
+  itemId: 1052354
+  count: 1
+  price: 6500
+  period: 0
+  gender: 2
+  onSale: true
+
+# Blue Snowdrop Cunning Hat
+10002993:
+  itemId: 1003214
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: true
+
+# Pink Snowdrop Cunning Hat
+10002994:
+  itemId: 1003215
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: true
+
+# Pink Snow Flower Wear
+10002995:
+  itemId: 1051228
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
   onSale: true
 
 # Michael Wings
@@ -34594,7 +36088,7 @@
   gender: 2
   onSale: false
 
-# Preschool Pants
+# Pre-School Pants
 10101020:
   itemId: 1060067
   count: 1
@@ -37640,7 +39134,7 @@
 10101358:
   itemId: 5200000
   count: 1
-  price: 400
+  price: 500
   period: 90
   gender: 2
   onSale: false
@@ -37649,7 +39143,7 @@
 10101359:
   itemId: 5200001
   count: 1
-  price: 1920
+  price: 2400
   period: 90
   gender: 2
   onSale: false
@@ -37658,7 +39152,7 @@
 10101360:
   itemId: 5200002
   count: 1
-  price: 3600
+  price: 4500
   period: 90
   gender: 2
   onSale: false
@@ -42125,7 +43619,7 @@
   price: 7500
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # AP Reset
 10101857:
@@ -42134,7 +43628,7 @@
   price: 13000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # AP Reset
 10101858:
@@ -42143,7 +43637,7 @@
   price: 20000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # SP Reset (1st job)
 10101859:
@@ -42152,7 +43646,7 @@
   price: 6000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # SP Reset (2nd job)
 10101860:
@@ -42161,7 +43655,7 @@
   price: 14700
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # SP Reset (3rd job)
 10101861:
@@ -42170,7 +43664,7 @@
   price: 32550
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # SP Reset (4th job)
 10101862:
@@ -42179,7 +43673,7 @@
   price: 42000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Royal Hair Coupon
 10101863:
@@ -44098,7 +45592,7 @@
   gender: 2
   onSale: false
 
-# Buddy Overall Jeans (F)
+# Buddy Overall Jeans
 10102076:
   itemId: 1051170
   count: 1
@@ -44566,7 +46060,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (m)
+# Blue Kitty Hood
 10102128:
   itemId: 1050141
   count: 1
@@ -44669,10 +46163,10 @@
 10102139:
   itemId: 5570000
   count: 2
-  price: 5500
+  price: 8500
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Safety Charm
 10102140:
@@ -46508,7 +48002,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Premium Silver Master Key
 10102344:
@@ -46517,7 +48011,7 @@
   price: 1500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Premium Cash Shop Surprise
 10102345:
@@ -48083,7 +49577,7 @@
   price: 3300
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Golden Temple Invitation
 10102559:
@@ -48092,7 +49586,7 @@
   price: 500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Golden Temple Package 1
 10102560:
@@ -48128,7 +49622,7 @@
   price: 8500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Golden Temple Package 5
 10102564:
@@ -48188,7 +49682,7 @@
 10102574:
   itemId: 5251000
   count: 1
-  price: 25000
+  price: 12500
   period: 90
   gender: 2
   onSale: false
@@ -48197,7 +49691,7 @@
 10102575:
   itemId: 5251001
   count: 1
-  price: 20000
+  price: 10000
   period: 90
   gender: 2
   onSale: false
@@ -48206,7 +49700,7 @@
 10102576:
   itemId: 5251002
   count: 1
-  price: 24000
+  price: 12000
   period: 90
   gender: 2
   onSale: false
@@ -48215,7 +49709,7 @@
 10102577:
   itemId: 5251003
   count: 1
-  price: 29000
+  price: 14500
   period: 90
   gender: 2
   onSale: false
@@ -48224,46 +49718,46 @@
 10102582:
   itemId: 9110000
   count: 1
-  price: 4600
-  period: 90
+  price: 6400
+  period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Add Equip Slots
 10102583:
   itemId: 9111000
   count: 1
-  price: 4600
-  period: 90
+  price: 6400
+  period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Add Use Slots
 10102584:
   itemId: 9112000
   count: 1
-  price: 4900
-  period: 90
+  price: 6800
+  period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Add ETC Slots
 10102585:
   itemId: 9114000
   count: 1
-  price: 4900
-  period: 90
+  price: 6800
+  period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Add Set-up Slots
 10102586:
   itemId: 9113000
   count: 1
-  price: 4600
-  period: 90
+  price: 6400
+  period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Vicious' Hammer
 10102592:
@@ -48310,7 +49804,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(10%)
+# Vega's Spell (10%)
 10102599:
   itemId: 5610000
   count: 1
@@ -48319,7 +49813,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(60%)
+# Vega's Spell (60%)
 10102600:
   itemId: 5610001
   count: 1
@@ -51494,7 +52988,7 @@
   price: 9750
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Ultimate Starter's Package
 10102953:
@@ -51503,13 +52997,13 @@
   price: 21750
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Green Visor
 10102954:
   itemId: 1002200
   count: 1
-  price: 1800
+  price: 1350
   period: 90
   gender: 2
   onSale: false
@@ -51518,7 +53012,7 @@
 10102955:
   itemId: 1002748
   count: 1
-  price: 2800
+  price: 2100
   period: 90
   gender: 2
   onSale: false
@@ -51527,7 +53021,7 @@
 10102956:
   itemId: 1002891
   count: 1
-  price: 2500
+  price: 1875
   period: 90
   gender: 2
   onSale: false
@@ -51536,7 +53030,7 @@
 10102957:
   itemId: 1022003
   count: 1
-  price: 3700
+  price: 2775
   period: 90
   gender: 2
   onSale: false
@@ -51545,7 +53039,7 @@
 10102958:
   itemId: 1022036
   count: 1
-  price: 3900
+  price: 2925
   period: 90
   gender: 2
   onSale: false
@@ -51554,7 +53048,7 @@
 10102959:
   itemId: 1052018
   count: 1
-  price: 3500
+  price: 2625
   period: 90
   gender: 2
   onSale: false
@@ -51563,7 +53057,7 @@
 10102960:
   itemId: 1042104
   count: 1
-  price: 3100
+  price: 2325
   period: 90
   gender: 2
   onSale: false
@@ -51572,7 +53066,7 @@
 10102961:
   itemId: 1042117
   count: 1
-  price: 3100
+  price: 2325
   period: 90
   gender: 2
   onSale: false
@@ -51581,7 +53075,7 @@
 10102962:
   itemId: 1042173
   count: 1
-  price: 2800
+  price: 2100
   period: 90
   gender: 2
   onSale: false
@@ -51590,7 +53084,7 @@
 10102963:
   itemId: 1062009
   count: 1
-  price: 1800
+  price: 1350
   period: 90
   gender: 2
   onSale: false
@@ -51599,7 +53093,7 @@
 10102964:
   itemId: 1062093
   count: 1
-  price: 2100
+  price: 1575
   period: 90
   gender: 2
   onSale: false
@@ -51608,7 +53102,7 @@
 10102965:
   itemId: 1072097
   count: 1
-  price: 1800
+  price: 1350
   period: 90
   gender: 2
   onSale: false
@@ -51617,7 +53111,7 @@
 10102966:
   itemId: 1072333
   count: 1
-  price: 2000
+  price: 1500
   period: 90
   gender: 2
   onSale: false
@@ -51626,7 +53120,7 @@
 10102967:
   itemId: 5152103
   count: 1
-  price: 4900
+  price: 3675
   period: 90
   gender: 2
   onSale: false
@@ -51635,7 +53129,7 @@
 10102968:
   itemId: 1040054
   count: 1
-  price: 1600
+  price: 1200
   period: 90
   gender: 2
   onSale: false
@@ -51644,7 +53138,7 @@
 10102969:
   itemId: 1102020
   count: 1
-  price: 3700
+  price: 2775
   period: 90
   gender: 2
   onSale: false
@@ -51653,7 +53147,7 @@
 10102970:
   itemId: 1102050
   count: 1
-  price: 4100
+  price: 3075
   period: 90
   gender: 2
   onSale: false
@@ -51662,7 +53156,7 @@
 10102971:
   itemId: 1032052
   count: 1
-  price: 2400
+  price: 1800
   period: 90
   gender: 2
   onSale: false
@@ -51671,7 +53165,7 @@
 10102972:
   itemId: 1032053
   count: 1
-  price: 2400
+  price: 1800
   period: 90
   gender: 2
   onSale: false
@@ -51680,7 +53174,7 @@
 10102973:
   itemId: 1092033
   count: 1
-  price: 4500
+  price: 3375
   period: 90
   gender: 2
   onSale: false
@@ -51689,10 +53183,10 @@
 10102974:
   itemId: 5640000
   count: 1
-  price: 19500
+  price: 14500
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Golden Temple Invitation
 10102975:
@@ -51701,7 +53195,7 @@
   price: 5000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Golden Temple Invitation
 10102976:
@@ -51709,6 +53203,3588 @@
   count: 35
   price: 15000
   period: 90
+  gender: 2
+  onSale: false
+
+# Transparent Hat
+10102977:
+  itemId: 1002186
+  count: 1
+  price: 3240
+  period: 365
+  gender: 2
+  onSale: false
+
+# Transparent Shoes
+10102978:
+  itemId: 1072153
+  count: 1
+  price: 2700
+  period: 365
+  gender: 2
+  onSale: false
+
+# Transparent Cape
+10102979:
+  itemId: 1102039
+  count: 1
+  price: 3240
+  period: 365
+  gender: 2
+  onSale: false
+
+# Transparent Gloves
+10102980:
+  itemId: 1082102
+  count: 1
+  price: 3240
+  period: 365
+  gender: 2
+  onSale: false
+
+# Transparent Earrings
+10102981:
+  itemId: 1032024
+  count: 1
+  price: 4860
+  period: 365
+  gender: 2
+  onSale: false
+
+# Black Slanted Visor
+10102982:
+  itemId: 1002220
+  count: 1
+  price: 2160
+  period: 365
+  gender: 2
+  onSale: false
+
+# Penguin Slippers
+10102983:
+  itemId: 1072260
+  count: 1
+  price: 1440
+  period: 365
+  gender: 2
+  onSale: false
+
+# Grey Visor Beanie
+10102984:
+  itemId: 1002485
+  count: 1
+  price: 3720
+  period: 365
+  gender: 2
+  onSale: false
+
+# White Beanie
+10102985:
+  itemId: 1002343
+  count: 1
+  price: 4920
+  period: 365
+  gender: 2
+  onSale: false
+
+# Frameless Glasses
+10102986:
+  itemId: 1022037
+  count: 1
+  price: 3360
+  period: 365
+  gender: 2
+  onSale: false
+
+# "Black Tie Affair" Dress Shirt
+10102987:
+  itemId: 1042129
+  count: 1
+  price: 3600
+  period: 365
+  gender: 2
+  onSale: false
+
+# Green Suspenders
+10102988:
+  itemId: 1042127
+  count: 1
+  price: 3120
+  period: 365
+  gender: 2
+  onSale: false
+
+# Ripped Jeans
+10102989:
+  itemId: 1062015
+  count: 1
+  price: 2520
+  period: 365
+  gender: 2
+  onSale: false
+
+# Tweed Headband
+10102990:
+  itemId: 1002568
+  count: 1
+  price: 2640
+  period: 365
+  gender: 2
+  onSale: false
+
+# Love Knuckler
+10102991:
+  itemId: 1092044
+  count: 1
+  price: 4560
+  period: 365
+  gender: 2
+  onSale: false
+
+# Lolli Pink Suit
+10102992:
+  itemId: 1052200
+  count: 1
+  price: 4080
+  period: 365
+  gender: 2
+  onSale: false
+
+# Heart
+10102993:
+  itemId: 5010019
+  count: 1
+  price: 2880
+  period: 365
+  gender: 2
+  onSale: false
+
+# Ace of Hearts
+10102994:
+  itemId: 5010061
+  count: 1
+  price: 2880
+  period: 365
+  gender: 2
+  onSale: false
+
+# Homely Coffeehouse
+10102995:
+  itemId: 5030008
+  count: 1
+  price: 9900
+  period: 15
+  gender: 2
+  onSale: false
+
+# Heart Megassenger
+10102996:
+  itemId: 5075005
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Heart Megassenger
+10102997:
+  itemId: 5075005
+  count: 11
+  price: 18000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Aura Ring
+10102998:
+  itemId: 1112909
+  count: 1
+  price: 19800
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+10102999:
+  itemId: 5050000
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+10103000:
+  itemId: 5050000
+  count: 5
+  price: 12500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Robot
+10103001:
+  itemId: 5000017
+  count: 1
+  price: 1500
+  period: 0
+  gender: 2
+  onSale: false
+
+# SF Ninja Hat
+10103002:
+  itemId: 1001006
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Horoscope Hat (Libra)
+10103003:
+  itemId: 1002464
+  count: 1
+  price: 800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Musashi Hat
+10103004:
+  itemId: 1002491
+  count: 1
+  price: 700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Samurai Hair-do
+10103005:
+  itemId: 1000006
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hanbok Jobawi
+10103006:
+  itemId: 1001001
+  count: 1
+  price: 950
+  period: 90
+  gender: 1
+  onSale: false
+
+# Helm of the Bronze Monk
+10103007:
+  itemId: 1002674
+  count: 1
+  price: 825
+  period: 90
+  gender: 2
+  onSale: false
+
+# Stack of Books
+10103008:
+  itemId: 1002653
+  count: 1
+  price: 650
+  period: 90
+  gender: 2
+  onSale: false
+
+# Picnic Hat
+10103009:
+  itemId: 1001023
+  count: 1
+  price: 615
+  period: 90
+  gender: 2
+  onSale: false
+
+# Skyblue Turban
+10103010:
+  itemId: 1002412
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Huge Lips Green
+10103011:
+  itemId: 1002701
+  count: 1
+  price: 825
+  period: 90
+  gender: 2
+  onSale: false
+
+# Lunar Celebration Ornament
+10103012:
+  itemId: 1001039
+  count: 1
+  price: 875
+  period: 90
+  gender: 1
+  onSale: false
+
+# Pink Frill Pajama Hat
+10103013:
+  itemId: 1002292
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Devilfish Headgear
+10103014:
+  itemId: 1002697
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Christmas Tree Hat
+10103015:
+  itemId: 1002714
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Noble Moca
+10103016:
+  itemId: 1002336
+  count: 1
+  price: 625
+  period: 90
+  gender: 2
+  onSale: false
+
+# Marbum Headgear
+10103017:
+  itemId: 1002979
+  count: 1
+  price: 700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Gray Mask
+10103018:
+  itemId: 1002961
+  count: 1
+  price: 725
+  period: 90
+  gender: 2
+  onSale: false
+
+# Race Ace Cap
+10103019:
+  itemId: 1000023
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Goggled Smiley Headgear
+10103020:
+  itemId: 1002594
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Globe Cap
+10103021:
+  itemId: 1002760
+  count: 1
+  price: 725
+  period: 90
+  gender: 2
+  onSale: false
+
+# Green Eskimo Hat
+10103022:
+  itemId: 1002387
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Scorpius Hairpin
+10103023:
+  itemId: 1002834
+  count: 1
+  price: 700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Yellow Beret
+10103024:
+  itemId: 1002375
+  count: 1
+  price: 725
+  period: 90
+  gender: 2
+  onSale: false
+
+# Devil Hat
+10103025:
+  itemId: 1002389
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mummy Hat
+10103026:
+  itemId: 1002525
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Lobster Hat
+10103027:
+  itemId: 1002322
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Jalur Gemilang Paint (Malaysia)
+10103028:
+  itemId: 1012128
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# Chakra Paint (Thailand)
+10103029:
+  itemId: 1012125
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# 5-Starred Red Paint (China)
+10103030:
+  itemId: 1012114
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# SF Ninja Mask
+10103031:
+  itemId: 1011001
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cold Sweat
+10103032:
+  itemId: 1012075
+  count: 1
+  price: 625
+  period: 90
+  gender: 2
+  onSale: false
+
+# Spinning Piglet
+10103033:
+  itemId: 1022029
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Toy Shades
+10103034:
+  itemId: 1021000
+  count: 1
+  price: 975
+  period: 90
+  gender: 2
+  onSale: false
+
+# Spinning Groucho
+10103035:
+  itemId: 1022028
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# I Like Money
+10103036:
+  itemId: 1022095
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Red Rider
+10103037:
+  itemId: 1040045
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Sky Blue Big-Belt Shirt
+10103038:
+  itemId: 1042070
+  count: 1
+  price: 725
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Vest Blouse
+10103039:
+  itemId: 1041136
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Bowling Shirt
+10103040:
+  itemId: 1042045
+  count: 1
+  price: 825
+  period: 90
+  gender: 2
+  onSale: false
+
+# Orange Puffy Jacket
+10103041:
+  itemId: 1040134
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Flowery Dress Shirt
+10103042:
+  itemId: 1042026
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Purple Star Shirt
+10103043:
+  itemId: 1042048
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blue Down Parka
+10103044:
+  itemId: 1042052
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Orange Snowflake Sweater
+10103045:
+  itemId: 1042094
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rainbow T
+10103046:
+  itemId: 1042077
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blue Line Tanktop
+10103047:
+  itemId: 1040128
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# SF Ninja Top
+10103048:
+  itemId: 1041108
+  count: 1
+  price: 800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rompers
+10103049:
+  itemId: 1052090
+  count: 1
+  price: 800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Fine Blue Hanbok
+10103050:
+  itemId: 1050044
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Maple Racing Suit
+10103051:
+  itemId: 1052214
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Witch Clothes
+10103052:
+  itemId: 1051048
+  count: 1
+  price: 1000
+  period: 90
+  gender: 1
+  onSale: false
+
+# Red Hip Hop
+10103053:
+  itemId: 1052050
+  count: 1
+  price: 1125
+  period: 90
+  gender: 2
+  onSale: false
+
+# Patissier Uniform
+10103054:
+  itemId: 1052037
+  count: 1
+  price: 780
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mummy Suit
+10103055:
+  itemId: 1052067
+  count: 1
+  price: 975
+  period: 90
+  gender: 2
+  onSale: false
+
+# Black Female Fur Coat
+10103056:
+  itemId: 1051156
+  count: 1
+  price: 1125
+  period: 90
+  gender: 2
+  onSale: false
+
+# White Coat
+10103057:
+  itemId: 1051132
+  count: 1
+  price: 850
+  period: 90
+  gender: 2
+  onSale: false
+
+# Big Kimono
+10103058:
+  itemId: 1052024
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Western Cowboy
+10103059:
+  itemId: 1050101
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Baby Chick Apron
+10103060:
+  itemId: 1052171
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Honeybee Costume
+10103061:
+  itemId: 1052193
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Black Mesoranger
+10103062:
+  itemId: 1050087
+  count: 1
+  price: 925
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blue Ninja Gloves
+10103063:
+  itemId: 1081001
+  count: 1
+  price: 575
+  period: 90
+  gender: 2
+  onSale: false
+
+# Puffy Ram Gloves
+10103064:
+  itemId: 1082247
+  count: 1
+  price: 650
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rocket Booster
+10103065:
+  itemId: 1102107
+  count: 1
+  price: 875
+  period: 90
+  gender: 2
+  onSale: false
+
+# Red Hood
+10103066:
+  itemId: 1102025
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Gingerman Quote Ring
+10103067:
+  itemId: 1112231
+  count: 1
+  price: 660
+  period: 90
+  gender: 2
+  onSale: false
+
+# The Golden Fly Ring
+10103068:
+  itemId: 1112203
+  count: 1
+  price: 690
+  period: 90
+  gender: 2
+  onSale: false
+
+# Beach Label Ring
+10103069:
+  itemId: 1112112
+  count: 1
+  price: 800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Chocolate Quote Ring
+10103070:
+  itemId: 1112224
+  count: 1
+  price: 1125
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Trainer Pants
+10103071:
+  itemId: 1061074
+  count: 1
+  price: 525
+  period: 90
+  gender: 1
+  onSale: false
+
+# Pink Snowboard Pants
+10103072:
+  itemId: 1062019
+  count: 1
+  price: 525
+  period: 90
+  gender: 2
+  onSale: false
+
+# Red Trainer Pants
+10103073:
+  itemId: 1061072
+  count: 1
+  price: 525
+  period: 90
+  gender: 1
+  onSale: false
+
+# Brown Pocket Shorts
+10103074:
+  itemId: 1062083
+  count: 1
+  price: 600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blue Diamond Bootcuts
+10103075:
+  itemId: 1061127
+  count: 1
+  price: 600
+  period: 90
+  gender: 1
+  onSale: false
+
+# Blue Disco Pants
+10103076:
+  itemId: 1060049
+  count: 1
+  price: 325
+  period: 90
+  gender: 2
+  onSale: false
+
+# Red Boxing Shoes
+10103077:
+  itemId: 1072232
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# SF Ninja Shoes
+10103078:
+  itemId: 1071006
+  count: 1
+  price: 525
+  period: 90
+  gender: 2
+  onSale: false
+
+# Yellow Flippers
+10103079:
+  itemId: 1072092
+  count: 1
+  price: 550
+  period: 90
+  gender: 2
+  onSale: false
+
+# Orange Sneakz
+10103080:
+  itemId: 1072341
+  count: 1
+  price: 500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Sun Quan Shoes
+10103081:
+  itemId: 1072243
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# Big Rabbit Feet
+10103082:
+  itemId: 1072240
+  count: 1
+  price: 575
+  period: 90
+  gender: 2
+  onSale: false
+
+# In-Hand FB Helmet(Home)
+10103083:
+  itemId: 1702052
+  count: 1
+  price: 630
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rudolph Stick
+10103084:
+  itemId: 1702209
+  count: 1
+  price: 735
+  period: 90
+  gender: 2
+  onSale: false
+
+# Spanish Ham
+10103085:
+  itemId: 1702138
+  count: 1
+  price: 675
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Toy Hammer
+10103086:
+  itemId: 1702011
+  count: 1
+  price: 975
+  period: 90
+  gender: 2
+  onSale: false
+
+# Picnic Basket
+10103087:
+  itemId: 1702016
+  count: 1
+  price: 820
+  period: 90
+  gender: 2
+  onSale: false
+
+# Handbag (Pink)
+10103088:
+  itemId: 1702284
+  count: 1
+  price: 800
+  period: 90
+  gender: 1
+  onSale: false
+
+# Horoscope Crossbow
+10103089:
+  itemId: 1702046
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hot Dog Fork
+10103090:
+  itemId: 1702163
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Bullseye Board
+10103091:
+  itemId: 1702198
+  count: 1
+  price: 1050
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cactus
+10103092:
+  itemId: 1702059
+  count: 1
+  price: 1050
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pizza Pan
+10103093:
+  itemId: 1702096
+  count: 1
+  price: 940
+  period: 90
+  gender: 2
+  onSale: false
+
+# Dogged Out
+10103094:
+  itemId: 1702161
+  count: 1
+  price: 940
+  period: 90
+  gender: 2
+  onSale: false
+
+# Melting Chocolate
+10103095:
+  itemId: 1702106
+  count: 1
+  price: 820
+  period: 90
+  gender: 2
+  onSale: false
+
+# Knockout Boxing Gloves
+10103096:
+  itemId: 1702219
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pillow
+10103097:
+  itemId: 1702019
+  count: 1
+  price: 1020
+  period: 90
+  gender: 2
+  onSale: false
+
+# Busy Bee
+10103098:
+  itemId: 5010042
+  count: 1
+  price: 750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Sheer Fear
+10103099:
+  itemId: 5010033
+  count: 1
+  price: 600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Underwater
+10103100:
+  itemId: 5010004
+  count: 1
+  price: 775
+  period: 90
+  gender: 2
+  onSale: false
+
+# Baby Tiger
+10103101:
+  itemId: 5000105
+  count: 1
+  price: 11600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Ruby
+10103102:
+  itemId: 5000106
+  count: 1
+  price: 9900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Pig
+10103103:
+  itemId: 5000107
+  count: 1
+  price: 9120
+  period: 0
+  gender: 2
+  onSale: false
+
+# White Tiger
+10103104:
+  itemId: 5000101
+  count: 1
+  price: 9990
+  period: 0
+  gender: 2
+  onSale: false
+
+# Kino
+10103105:
+  itemId: 5000100
+  count: 1
+  price: 9990
+  period: 0
+  gender: 2
+  onSale: false
+
+# Mini Yeti
+10103106:
+  itemId: 5000102
+  count: 1
+  price: 9990
+  period: 0
+  gender: 2
+  onSale: false
+
+# Meso Magnet
+10103107:
+  itemId: 1812000
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Ribbon
+10103108:
+  itemId: 1802000
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Item Pouch
+10103109:
+  itemId: 1812001
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Mini Kargo Wings
+10103110:
+  itemId: 1802014
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blue Top Hat
+10103111:
+  itemId: 1802006
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Top Hat
+10103112:
+  itemId: 1802007
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Yellow Hat
+10103113:
+  itemId: 1802001
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Hat
+10103114:
+  itemId: 1802002
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Hat
+10103115:
+  itemId: 1802003
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pink Laced Cap
+10103116:
+  itemId: 1802004
+  count: 1
+  price: 4200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Sky Blue Laced Cap
+10103117:
+  itemId: 1802005
+  count: 1
+  price: 4200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Scarf
+10103118:
+  itemId: 1802013
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Mushroom Suit
+10103119:
+  itemId: 1802010
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Husky Yellow Tights
+10103120:
+  itemId: 1802016
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Dino King & Queen
+10103121:
+  itemId: 1802015
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Bunny Suit
+10103122:
+  itemId: 1802025
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Monkey Sack
+10103123:
+  itemId: 1802017
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Bare Bones
+10103124:
+  itemId: 1802027
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Ghosty
+10103125:
+  itemId: 1802028
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pet-o-Lantern
+10103126:
+  itemId: 1802029
+  count: 1
+  price: 4200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Clown Dress
+10103127:
+  itemId: 1802018
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Penguin Earmuff Set
+10103128:
+  itemId: 1802030
+  count: 1
+  price: 4200
+  period: 0
+  gender: 2
+  onSale: false
+
+# White Tiger Suit
+10103129:
+  itemId: 1802020
+  count: 1
+  price: 5600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Oinker Suit
+10103130:
+  itemId: 1802037
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pelvis Hair
+10103131:
+  itemId: 1802023
+  count: 1
+  price: 5600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Prince Pepe
+10103132:
+  itemId: 1802026
+  count: 1
+  price: 6400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Auto HP Potion Pouch
+10103133:
+  itemId: 1812002
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Crimson Mask
+10103134:
+  itemId: 1802033
+  count: 1
+  price: 7000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Auto MP Potion Pouch
+10103135:
+  itemId: 1812003
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cowboy Kargo
+10103136:
+  itemId: 1802031
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Magic Scales
+10103137:
+  itemId: 1812006
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Wing Boots
+10103138:
+  itemId: 1812004
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Binocular
+10103139:
+  itemId: 1812005
+  count: 1
+  price: 3600
+  period: 0
+  gender: 2
+  onSale: false
+
+# White Angel
+10103140:
+  itemId: 1802034
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pet Label Ring
+10103141:
+  itemId: 1822000
+  count: 1
+  price: 7500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pet Quote Ring
+10103142:
+  itemId: 1832000
+  count: 1
+  price: 8750
+  period: 0
+  gender: 2
+  onSale: false
+
+# White Tiger the Wizard
+10103143:
+  itemId: 1802024
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Guitar 
+10103144:
+  itemId: 1802045
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cute Beggar Overall
+10103145:
+  itemId: 1802035
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Baby Turkey Carriage
+10103146:
+  itemId: 1802042
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Dragon Armor
+10103147:
+  itemId: 1802048
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Porcupine Sunglasses
+10103148:
+  itemId: 1802047
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Jr. Reaper Sign (I'm with stoopid)
+10103149:
+  itemId: 1802049
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Jr. Reaper Sign (cc plz)
+10103150:
+  itemId: 1802051
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Snowman Gear
+10103151:
+  itemId: 1802053
+  count: 1
+  price: 5200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Jr. Reaper Sign (<--Noob)
+10103152:
+  itemId: 1802050
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Jr. Reaper Sign (I love pie)
+10103153:
+  itemId: 1802052
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Chestnut Cap
+10103154:
+  itemId: 1802012
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Gas Mask
+10103155:
+  itemId: 1802055
+  count: 1
+  price: 6200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Item Ignore Pendant
+10103156:
+  itemId: 1812007
+  count: 1
+  price: 9000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Jail Bird Pet Costume
+10103157:
+  itemId: 1802059
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Scuba Mask
+10103158:
+  itemId: 1802061
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Mini Celestial Wand
+10103159:
+  itemId: 1802038
+  count: 1
+  price: 4600
+  period: 0
+  gender: 2
+  onSale: false
+
+# Kino's Green Mushroom Hat
+10103160:
+  itemId: 1802054
+  count: 1
+  price: 3800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Starry Stereo Headset
+10103161:
+  itemId: 1802062
+  count: 1
+  price: 5400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Baby Tiger Wings
+10103162:
+  itemId: 1802063
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Alien's Pet
+10103163:
+  itemId: 1802064
+  count: 1
+  price: 6400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Dragon Egg Shell
+10103164:
+  itemId: 1802066
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rabbit Ears
+10103165:
+  itemId: 1802046
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pink Oxygen Tank
+10103166:
+  itemId: 1802071
+  count: 1
+  price: 6000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pet Name Tag
+10103167:
+  itemId: 5170000
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Headphone Bandana
+10103168:
+  itemId: 1002250
+  count: 1
+  price: 1640
+  period: 30
+  gender: 2
+  onSale: false
+
+# Korean Flower Petal
+10103169:
+  itemId: 1002435
+  count: 1
+  price: 1480
+  period: 30
+  gender: 2
+  onSale: false
+
+# Red Loose-Fit Beanie
+10103170:
+  itemId: 1003013
+  count: 1
+  price: 1120
+  period: 30
+  gender: 2
+  onSale: false
+
+# Panda Hat
+10103171:
+  itemId: 1002849
+  count: 1
+  price: 1240
+  period: 30
+  gender: 2
+  onSale: false
+
+# Pink Bow
+10103172:
+  itemId: 1002885
+  count: 1
+  price: 1240
+  period: 30
+  gender: 2
+  onSale: false
+
+# Skull T-Shirt
+10103173:
+  itemId: 1040101
+  count: 1
+  price: 840
+  period: 30
+  gender: 2
+  onSale: false
+
+# Vintage Hooded Shirt
+10103174:
+  itemId: 1042095
+  count: 1
+  price: 1400
+  period: 30
+  gender: 2
+  onSale: false
+
+# Ragged Top
+10103175:
+  itemId: 1040119
+  count: 1
+  price: 720
+  period: 30
+  gender: 2
+  onSale: false
+
+# Black Hooded Vest
+10103176:
+  itemId: 1042001
+  count: 1
+  price: 1480
+  period: 30
+  gender: 2
+  onSale: false
+
+# Pink-Dotted Top
+10103177:
+  itemId: 1041137
+  count: 1
+  price: 1240
+  period: 30
+  gender: 2
+  onSale: false
+
+# Tiny Black Swimshorts
+10103178:
+  itemId: 1050118
+  count: 1
+  price: 1480
+  period: 30
+  gender: 2
+  onSale: false
+
+# White Body Tights
+10103179:
+  itemId: 1052020
+  count: 1
+  price: 1400
+  period: 30
+  gender: 2
+  onSale: false
+
+# Orange Scarf Tee
+10103180:
+  itemId: 1042203
+  count: 1
+  price: 1240
+  period: 30
+  gender: 2
+  onSale: false
+
+# Vintage Hoodie Jacket
+10103181:
+  itemId: 1042177
+  count: 1
+  price: 1200
+  period: 30
+  gender: 2
+  onSale: false
+
+# Preppy Knit Vest
+10103182:
+  itemId: 1042147
+  count: 1
+  price: 1200
+  period: 30
+  gender: 2
+  onSale: false
+
+# Torn-up Jeans
+10103183:
+  itemId: 1060108
+  count: 1
+  price: 720
+  period: 30
+  gender: 2
+  onSale: false
+
+# Red Hip-Hop Pants
+10103184:
+  itemId: 1062003
+  count: 1
+  price: 1080
+  period: 30
+  gender: 2
+  onSale: false
+
+# Bell-Bottomed Faded Jeans
+10103185:
+  itemId: 1062018
+  count: 1
+  price: 840
+  period: 30
+  gender: 2
+  onSale: false
+
+# Vintage Black Pants
+10103186:
+  itemId: 1062075
+  count: 1
+  price: 960
+  period: 30
+  gender: 2
+  onSale: false
+
+# Jeans w/ Chain
+10103187:
+  itemId: 1062042
+  count: 1
+  price: 1080
+  period: 30
+  gender: 2
+  onSale: false
+
+# Black Shoes of Death
+10103188:
+  itemId: 1070003
+  count: 1
+  price: 840
+  period: 30
+  gender: 2
+  onSale: false
+
+# Chick Slippers
+10103189:
+  itemId: 1072259
+  count: 1
+  price: 480
+  period: 30
+  gender: 2
+  onSale: false
+
+# Yellow Slime Slippers
+10103190:
+  itemId: 1072326
+  count: 1
+  price: 720
+  period: 30
+  gender: 2
+  onSale: false
+
+# Rainbow Boots
+10103191:
+  itemId: 1072448
+  count: 1
+  price: 800
+  period: 30
+  gender: 2
+  onSale: false
+
+# Puppy Slippers
+10103192:
+  itemId: 1072257
+  count: 1
+  price: 480
+  period: 30
+  gender: 2
+  onSale: false
+
+# Plasma Saber
+10103193:
+  itemId: 1702154
+  count: 1
+  price: 1800
+  period: 30
+  gender: 2
+  onSale: false
+
+# Aqua Seraphim
+10103194:
+  itemId: 1702184
+  count: 1
+  price: 2000
+  period: 30
+  gender: 2
+  onSale: false
+
+# Rainbow Brush
+10103195:
+  itemId: 1702233
+  count: 1
+  price: 1600
+  period: 30
+  gender: 2
+  onSale: false
+
+# Saw Machine Gun
+10103196:
+  itemId: 1702251
+  count: 1
+  price: 1680
+  period: 30
+  gender: 2
+  onSale: false
+
+# Hunting Hawk
+10103197:
+  itemId: 1702252
+  count: 1
+  price: 1920
+  period: 30
+  gender: 2
+  onSale: false
+
+# Dark Suit
+10103198:
+  itemId: 1050050
+  count: 1
+  price: 600
+  period: 20
+  gender: 2
+  onSale: false
+
+# Beau Tuxedo
+10103199:
+  itemId: 1050135
+  count: 1
+  price: 800
+  period: 20
+  gender: 2
+  onSale: false
+
+# Bunny Boy
+10103200:
+  itemId: 1050161
+  count: 1
+  price: 700
+  period: 20
+  gender: 2
+  onSale: false
+
+# Princess Dress
+10103201:
+  itemId: 1051149
+  count: 1
+  price: 750
+  period: 20
+  gender: 2
+  onSale: false
+
+# Princess Isis
+10103202:
+  itemId: 1051154
+  count: 1
+  price: 850
+  period: 20
+  gender: 2
+  onSale: false
+
+# Queen Mary
+10103203:
+  itemId: 1051155
+  count: 1
+  price: 850
+  period: 20
+  gender: 2
+  onSale: false
+
+# Elizabeth Dress
+10103204:
+  itemId: 1051211
+  count: 1
+  price: 800
+  period: 20
+  gender: 2
+  onSale: false
+
+# Royal Tiara
+10103205:
+  itemId: 1001043
+  count: 1
+  price: 750
+  period: 20
+  gender: 2
+  onSale: false
+
+# Veras Heels
+10103206:
+  itemId: 1071020
+  count: 1
+  price: 350
+  period: 20
+  gender: 2
+  onSale: false
+
+# Bouquet
+10103207:
+  itemId: 1702001
+  count: 1
+  price: 900
+  period: 20
+  gender: 2
+  onSale: false
+
+# Sapphire EXP Coupon
+10103208:
+  itemId: 5211067
+  count: 1
+  price: 450
+  period: 1
+  gender: 2
+  onSale: false
+
+# Ruby EXP Coupon
+10103209:
+  itemId: 5211068
+  count: 1
+  price: 650
+  period: 1
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+10103210:
+  itemId: 5220000
+  count: 100
+  price: 80000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+10103211:
+  itemId: 5072000
+  count: 35
+  price: 31500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+10103212:
+  itemId: 5520000
+  count: 5
+  price: 12750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+10103213:
+  itemId: 5520000
+  count: 1
+  price: 2700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Small B-Day Surprise
+10103214:
+  itemId: 5222015
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Medium B-Day Surprise
+10103215:
+  itemId: 5222016
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Large B-Day Surprise
+10103216:
+  itemId: 5222017
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Makeover Package (Reg)
+10103217:
+  itemId: 9102452
+  count: 1
+  price: 4400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Makeover Package (VIP)
+10103218:
+  itemId: 9102453
+  count: 1
+  price: 10700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Chaos Specialist Package
+10103219:
+  itemId: 9102454
+  count: 1
+  price: 49990
+  period: 90
+  gender: 2
+  onSale: false
+
+# Chaos Expert Package
+10103220:
+  itemId: 9102455
+  count: 1
+  price: 99990
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Guard Package 1
+10103221:
+  itemId: 9102459
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Guard Package 2
+10103222:
+  itemId: 9102460
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Booster Package
+10103223:
+  itemId: 9102461
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Magic Package
+10103224:
+  itemId: 9102462
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Booster Package 1
+10103225:
+  itemId: 9102463
+  count: 1
+  price: 2400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Booster Package 2
+10103226:
+  itemId: 9102464
+  count: 1
+  price: 2820
+  period: 90
+  gender: 2
+  onSale: false
+
+# Slash Storm Mastery
+10103227:
+  itemId: 9102465
+  count: 1
+  price: 1740
+  period: 90
+  gender: 2
+  onSale: false
+
+# Tornado Spin Mastery
+10103228:
+  itemId: 9102466
+  count: 1
+  price: 2340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mirror Image Mastery
+10103229:
+  itemId: 9102467
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Flying Assaulter Mastery
+10103230:
+  itemId: 9102468
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blade Fury Mastery
+10103231:
+  itemId: 9102469
+  count: 1
+  price: 5340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Thorns Mastery
+10103232:
+  itemId: 9102470
+  count: 1
+  price: 5340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Homely Coffeehouse
+10103233:
+  itemId: 5030008
+  count: 1
+  price: 17820
+  period: 30
+  gender: 2
+  onSale: false
+
+# Character Name Change
+10103234:
+  itemId: 5400000
+  count: 1
+  price: 7500
+  period: 30
+  gender: 2
+  onSale: false
+
+# Character Transfer
+10103235:
+  itemId: 5401000
+  count: 1
+  price: 18750
+  period: 30
+  gender: 2
+  onSale: false
+
+# The Owl of Minerva
+10103236:
+  itemId: 5230000
+  count: 6
+  price: 2250
+  period: 30
+  gender: 2
+  onSale: false
+
+# The Owl of Minerva
+10103237:
+  itemId: 5230000
+  count: 1
+  price: 525
+  period: 30
+  gender: 2
+  onSale: false
+
+# 6th B-Day Hat
+10103238:
+  itemId: 1003103
+  count: 1
+  price: 600
+  period: 365
+  gender: 2
+  onSale: false
+
+# Summer Royal Hair Coupon
+10103239:
+  itemId: 5150044
+  count: 1
+  price: 3300
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (REG)
+10103240:
+  itemId: 5150052
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Water Splash
+10103241:
+  itemId: 5121017
+  count: 11
+  price: 2100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Bunny
+10103242:
+  itemId: 5000002
+  count: 1
+  price: 2500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (REG)
+10103243:
+  itemId: 5151035
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mushroom House Elf
+10103244:
+  itemId: 5030000
+  count: 1
+  price: 4100
+  period: 7
+  gender: 2
+  onSale: false
+
+# Skin Coupon
+10103245:
+  itemId: 5153015
+  count: 1
+  price: 1900
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+10103246:
+  itemId: 5050000
+  count: 20
+  price: 43400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Item Megaphone
+10103247:
+  itemId: 5076000
+  count: 11
+  price: 7800
+  period: 7
+  gender: 2
+  onSale: false
+
+# Wheel of Destiny
+10103248:
+  itemId: 5510000
+  count: 1
+  price: 300
+  period: 90
+  gender: 2
+  onSale: false
+
+# Binocular
+10103249:
+  itemId: 1812005
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+10103250:
+  itemId: 5062000
+  count: 11
+  price: 8400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Colorful Rainbow
+10103251:
+  itemId: 5010002
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Face Coupon (REG)
+10103252:
+  itemId: 5152056
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mir
+10103253:
+  itemId: 5000070
+  count: 1
+  price: 3900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Fireball
+10103254:
+  itemId: 5240031
+  count: 11
+  price: 5000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Vega's Spell (60%)
+10103255:
+  itemId: 5610001
+  count: 1
+  price: 3200
+  period: 7
+  gender: 2
+  onSale: false
+
+# Vega's Spell (10%)
+10103256:
+  itemId: 5610000
+  count: 1
+  price: 2400
+  period: 7
+  gender: 2
+  onSale: false
+
+# SP Reset (2nd job)
+10103257:
+  itemId: 5050002
+  count: 1
+  price: 3400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+10103258:
+  itemId: 5520000
+  count: 1
+  price: 2100
+  period: 7
+  gender: 2
+  onSale: false
+
+# One-Time Cosmetic Lens (Black)
+10103259:
+  itemId: 5152100
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Homely Coffeehouse
+10103260:
+  itemId: 5030008
+  count: 1
+  price: 1200
+  period: 1
+  gender: 2
+  onSale: false
+
+# Wing Boots
+10103261:
+  itemId: 1812004
+  count: 1
+  price: 900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Sweetness
+10103262:
+  itemId: 5160002
+  count: 1
+  price: 500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Vicious' Hammer
+10103263:
+  itemId: 5570000
+  count: 2
+  price: 6000
+  period: 7
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (VIP)
+10103264:
+  itemId: 5150053
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: false
+
+# 4 hour 2 x Drop special coupon
+10103265:
+  itemId: 5360042
+  count: 1
+  price: 1100
+  period: 1
+  gender: 2
+  onSale: false
+
+# The Owl of Minerva
+10103266:
+  itemId: 5230000
+  count: 6
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Transparent Hat
+10103267:
+  itemId: 1002186
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Transparent Cape
+10103268:
+  itemId: 1102039
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: false
+
+# VIP Teleport Rock
+10103269:
+  itemId: 5041000
+  count: 6
+  price: 2700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (VIP)
+10103270:
+  itemId: 5151036
+  count: 1
+  price: 3400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Aura Ring
+10103271:
+  itemId: 1112908
+  count: 1
+  price: 2300
+  period: 90
+  gender: 2
+  onSale: false
+
+# Item Pouch
+10103272:
+  itemId: 1812001
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Silver Sack of Mesos
+10103273:
+  itemId: 5200001
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: false
+
+# 1day 2x Drop Special Coupon 
+10103274:
+  itemId: 5360000
+  count: 1
+  price: 3000
+  period: 1
+  gender: 2
+  onSale: false
+
+# Pam's Song
+10103275:
+  itemId: 5640000
+  count: 1
+  price: 10200
+  period: 7
+  gender: 2
+  onSale: false
+
+# AP Reset
+10103276:
+  itemId: 5050000
+  count: 10
+  price: 21700
+  period: 90
+  gender: 2
+  onSale: false
+
+# White Bunny
+10103277:
+  itemId: 5000005
+  count: 1
+  price: 2500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Transparent Face Accessory
+10103278:
+  itemId: 1012057
+  count: 1
+  price: 1300
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+10103279:
+  itemId: 5062000
+  count: 11
+  price: 8400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Face Coupon (VIP)
+10103280:
+  itemId: 5152057
+  count: 1
+  price: 3600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Skunk
+10103281:
+  itemId: 5000045
+  count: 1
+  price: 4300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Mushroom House Elf
+10103282:
+  itemId: 5030001
+  count: 1
+  price: 1200
+  period: 1
+  gender: 2
+  onSale: false
+
+# Kino
+10103283:
+  itemId: 5000042
+  count: 1
+  price: 3400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Premium Wedding Ticket (Cathedral)
+10103284:
+  itemId: 5251003
+  count: 1
+  price: 17400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Safety Charm
+10103285:
+  itemId: 5130000
+  count: 10
+  price: 3800
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Scales
+10103286:
+  itemId: 1812006
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+10103287:
+  itemId: 5072000
+  count: 5
+  price: 2600
+  period: 7
+  gender: 2
+  onSale: false
+
+# One-Time Cosmetic Lens (Green)
+10103288:
+  itemId: 5152103
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+10103289:
+  itemId: 5050000
+  count: 5
+  price: 12400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Vicious' Hammer
+10103290:
+  itemId: 5570000
+  count: 1
+  price: 4900
+  period: 7
+  gender: 2
+  onSale: true
+
+# Cloud 9 Messenger
+10103291:
+  itemId: 5390001
+  count: 1
+  price: 900
+  period: 7
+  gender: 2
+  onSale: false
+
+# The Teleport Rock
+10103292:
+  itemId: 5040000
+  count: 6
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Porcupine
+10103293:
+  itemId: 5000039
+  count: 1
+  price: 4300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cashier: Teddy Bear Clerk
+10103294:
+  itemId: 5030003
+  count: 1
+  price: 1200
+  period: 1
+  gender: 2
+  onSale: false
+
+# Safety Charm
+10103295:
+  itemId: 5130000
+  count: 5
+  price: 1600
+  period: 90
+  gender: 2
+  onSale: false
+
+# One-Time Cosmetic Lens (Red)
+10103296:
+  itemId: 5152102
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Allergic Reaction
+10103297:
+  itemId: 1012055
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Meso Magnet
+10103298:
+  itemId: 1812000
+  count: 1
+  price: 1700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Baby Tiger
+10103299:
+  itemId: 5000105
+  count: 1
+  price: 8100
+  period: 0
+  gender: 2
+  onSale: false
+
+# AP Reset
+10103300:
+  itemId: 5050000
+  count: 1
+  price: 2500
+  period: 7
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (REG)
+10103301:
+  itemId: 5150052
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+10103302:
+  itemId: 5072000
+  count: 35
+  price: 18900
+  period: 7
+  gender: 2
+  onSale: false
+
+# Mushroom House Elf
+10103303:
+  itemId: 5030006
+  count: 1
+  price: 35000
+  period: 30
+  gender: 2
+  onSale: false
+
+# Ruby
+10103304:
+  itemId: 5000106
+  count: 1
+  price: 6900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Wedding Ticket (Chapel)
+10103305:
+  itemId: 5251001
+  count: 1
+  price: 12000
+  period: 90
+  gender: 2
+  onSale: false
+
+# SP Reset (1st job)
+10103306:
+  itemId: 5050001
+  count: 1
+  price: 1700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+10103307:
+  itemId: 5520000
+  count: 1
+  price: 2100
+  period: 90
+  gender: 2
+  onSale: false
+
+# The Robot Stand
+10103308:
+  itemId: 5030005
+  count: 1
+  price: 4100
+  period: 7
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (REG)
+10103309:
+  itemId: 5151035
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Panda
+10103310:
+  itemId: 5000008
+  count: 1
+  price: 3500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Venus Fireworks
+10103311:
+  itemId: 1112005
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Auto HP Potion Pouch
+10103312:
+  itemId: 1812002
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Skin Coupon
+10103313:
+  itemId: 5153015
+  count: 1
+  price: 1900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Premium Miracle Cube
+10103314:
+  itemId: 5062001
+  count: 1
+  price: 2500
+  period: 7
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+10103315:
+  itemId: 5520000
+  count: 1
+  price: 2100
+  period: 7
+  gender: 2
+  onSale: false
+
+# Monkey
+10103316:
+  itemId: 5000011
+  count: 1
+  price: 2900
+  period: 0
+  gender: 2
+  onSale: false
+
+# Royal Hair Coupon
+10103317:
+  itemId: 5150040
+  count: 1
+  price: 2200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Roaring Tiger Messenger
+10103318:
+  itemId: 5390006
+  count: 1
+  price: 1400
+  period: 7
+  gender: 2
+  onSale: false
+
+# Store Remote Controller
+10103319:
+  itemId: 5470000
+  count: 1
+  price: 600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Return of Angel Wing
+10103320:
+  itemId: 5010068
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Quest Booster (2x EXP)
+10103321:
+  itemId: 5710000
+  count: 1
+  price: 2500
+  period: 10
+  gender: 2
+  onSale: false
+
+# Quest Booster (2x EXP)
+10103322:
+  itemId: 5710000
+  count: 1
+  price: 5500
+  period: 30
+  gender: 2
+  onSale: false
+
+# Shielding Ward
+10103323:
+  itemId: 5064000
+  count: 1
+  price: 11900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Shielding Ward
+10103324:
+  itemId: 5064000
+  count: 3
+  price: 31900
+  period: 90
+  gender: 2
+  onSale: true
+
+# Gachapon Ticket
+10103325:
+  itemId: 5220000
+  count: 35
+  price: 15000
+  period: 7
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+10103326:
+  itemId: 5220000
+  count: 11
+  price: 5000
+  period: 7
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+10103327:
+  itemId: 5220000
+  count: 1
+  price: 500
+  period: 7
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+10103328:
+  itemId: 5451000
+  count: 1
+  price: 525
+  period: 7
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+10103329:
+  itemId: 5451000
+  count: 11
+  price: 5250
+  period: 7
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+10103330:
+  itemId: 5451000
+  count: 35
+  price: 15750
+  period: 7
+  gender: 2
+  onSale: false
+
+# Microwave
+10103331:
+  itemId: 5060004
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Tim's Secret lab
+10103332:
+  itemId: 5534000
+  count: 1
+  price: 2200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (REG)
+10103333:
+  itemId: 5150052
+  count: 1
+  price: 1650
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (VIP)
+10103334:
+  itemId: 5150053
+  count: 1
+  price: 4550
+  period: 90
+  gender: 2
+  onSale: false
+
+# Tim's Secret lab
+10103335:
+  itemId: 5534000
+  count: 1
+  price: 4500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (REG)
+10103336:
+  itemId: 5150052
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Water Splash
+10103337:
+  itemId: 5121017
+  count: 11
+  price: 2100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pink Bunny
+10103338:
+  itemId: 5000002
+  count: 1
+  price: 2500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (REG)
+10103339:
+  itemId: 5151035
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mushroom House Elf
+10103340:
+  itemId: 5030000
+  count: 1
+  price: 4100
+  period: 7
+  gender: 2
+  onSale: false
+
+# Premium Cash Shop Surprise
+10103341:
+  itemId: 5222000
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Premium Cash Shop Surprise
+10103342:
+  itemId: 5222000
+  count: 11
+  price: 15000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Premium Cash Shop Surprise
+10103343:
+  itemId: 5222000
+  count: 35
+  price: 45000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Golden Temple Invitation
+10103344:
+  itemId: 5530013
+  count: 1
+  price: 990
+  period: 90
+  gender: 2
+  onSale: false
+
+# Golden Temple Invitation
+10103345:
+  itemId: 5530013
+  count: 11
+  price: 9900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Golden Temple Invitation
+10103346:
+  itemId: 5530013
+  count: 35
+  price: 29900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Transparent Hat
+10103347:
+  itemId: 1002186
+  count: 1
+  price: 3300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Kitty Slippers
+10103348:
+  itemId: 1072258
+  count: 1
+  price: 2200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red T-Shirt w/ Heart
+10103349:
+  itemId: 1042018
+  count: 1
+  price: 3300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Checkered Shorts
+10103350:
+  itemId: 1062091
+  count: 1
+  price: 4400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Checkered Shirt
+10103351:
+  itemId: 1042118
+  count: 1
+  price: 4500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Seal Pillow
+10103352:
+  itemId: 1702121
+  count: 1
+  price: 8300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Frameless Glasses
+10103353:
+  itemId: 1022037
+  count: 1
+  price: 5100
+  period: 0
+  gender: 2
+  onSale: false
+
+# Green Suspenders
+10103354:
+  itemId: 1042127
+  count: 1
+  price: 4700
+  period: 0
+  gender: 2
+  onSale: false
+
+# Fallen Angel Tail
+10103355:
+  itemId: 1102108
+  count: 1
+  price: 5800
+  period: 0
+  gender: 2
+  onSale: false
+
+# Playing Cards
+10103356:
+  itemId: 1702295
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rabbit Ear Dress
+10103357:
+  itemId: 1052298
+  count: 1
+  price: 7200
+  period: 0
+  gender: 2
+  onSale: false
+
+# Blade Overall
+10103358:
+  itemId: 1052199
+  count: 1
+  price: 6500
+  period: 0
+  gender: 2
+  onSale: false
+
+# Transparent Cape
+10103359:
+  itemId: 1102039
+  count: 1
+  price: 3300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Transparent Gloves
+10103360:
+  itemId: 1082102
+  count: 1
+  price: 3300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Black Slanted Visor
+10103361:
+  itemId: 1002220
+  count: 1
+  price: 3300
+  period: 0
+  gender: 2
+  onSale: false
+
+# Hyper Teleport Rock
+10103362:
+  itemId: 5040004
+  count: 1
+  price: 2900
+  period: 1
+  gender: 2
+  onSale: true
+
+# Hyper Teleport Rock
+10103363:
+  itemId: 5040004
+  count: 1
+  price: 9900
+  period: 7
+  gender: 2
+  onSale: true
+
+# Hyper Teleport Rock
+10103364:
+  itemId: 5040004
+  count: 1
+  price: 14900
+  period: 30
+  gender: 2
+  onSale: true
+
+# Prep Uniform
+10103365:
+  itemId: 1051099
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: true
+
+# Girls Uniform
+10103366:
+  itemId: 1051159
+  count: 1
+  price: 5900
+  period: 0
+  gender: 2
+  onSale: true
+
+# Boys Uniform
+10103367:
+  itemId: 1050139
+  count: 1
+  price: 5900
+  period: 0
+  gender: 2
+  onSale: true
+
+# Prep School Uniform
+10103368:
+  itemId: 1040123
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: true
+
+# Prep School Uniform Pants
+10103369:
+  itemId: 1060112
+  count: 1
+  price: 3900
+  period: 0
+  gender: 2
+  onSale: true
+
+# Red Pencil
+10103370:
+  itemId: 1702087
+  count: 1
+  price: 8100
+  period: 0
+  gender: 2
+  onSale: true
+
+# Paper Plane
+10103371:
+  itemId: 5021001
+  count: 1
+  price: 8800
+  period: 0
+  gender: 2
+  onSale: true
+
+# Blue Book Bag
+10103372:
+  itemId: 1102070
+  count: 1
+  price: 6300
+  period: 0
+  gender: 2
+  onSale: true
+
+# Orange Mushroom Scholar
+10103373:
+  itemId: 1002754
+  count: 1
+  price: 4800
+  period: 0
+  gender: 2
+  onSale: true
+
+# Plastic Slingshot
+10103374:
+  itemId: 1702003
+  count: 1
+  price: 6600
+  period: 0
   gender: 2
   onSale: true
 
@@ -52603,6 +57679,78 @@
   gender: 2
   onSale: false
 
+# Hair Style Coupon (VIP)
+10200099:
+  itemId: 5150053
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+10200100:
+  itemId: 5050000
+  count: 5
+  price: 10850
+  period: 90
+  gender: 2
+  onSale: false
+
+# Brown Kitty
+10200101:
+  itemId: 5000000
+  count: 1
+  price: 3400
+  period: 0
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+10200102:
+  itemId: 5062000
+  count: 6
+  price: 6000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Vicious' Hammer
+10200103:
+  itemId: 5570000
+  count: 2
+  price: 6000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (VIP)
+10200104:
+  itemId: 5151036
+  count: 1
+  price: 3150
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+10200105:
+  itemId: 5072000
+  count: 5
+  price: 3600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+10200106:
+  itemId: 5220000
+  count: 11
+  price: 8500
+  period: 90
+  gender: 2
+  onSale: false
+
 # Brown Flight Headgear
 20000000:
   itemId: 1002000
@@ -52817,7 +57965,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Red Frill Pajama Hat
 20000024:
@@ -53573,7 +58721,7 @@
   price: 3800
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Hanbok Jobawi
 20000108:
@@ -53627,7 +58775,7 @@
   price: 3500
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Lunar Celebration Ornament
 20000114:
@@ -53843,7 +58991,7 @@
   price: 4100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Bunny Hat
 20000138:
@@ -54302,7 +59450,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Top Hat
 20000189:
@@ -54716,7 +59864,7 @@
   price: 3200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Cao Cao Headpiece
 20000235:
@@ -54986,7 +60134,7 @@
   price: 3200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Horoscope Hat (Scorpius)
 20000265:
@@ -55085,7 +60233,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Men's Ninja Hat
 20000276:
@@ -55121,7 +60269,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # SF Ninja Hat
 20000280:
@@ -55166,7 +60314,7 @@
   price: 2800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Teddy Bear Headgear
 20000285:
@@ -55355,7 +60503,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Race Ace Cap
 20000306:
@@ -55724,7 +60872,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Old Hockey Mask
 20000347:
@@ -56255,7 +61403,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Sachiel Wig (M)
 20000406:
@@ -56687,7 +61835,7 @@
   price: 2900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # White Puppy Hat
 20000454:
@@ -56705,7 +61853,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Cat Hat
 20000456:
@@ -56750,7 +61898,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Maple Hood Hat
 20000461:
@@ -56768,7 +61916,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Yellow Crown
 20000463:
@@ -56876,7 +62024,7 @@
   price: 3300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Soul Teddy Hat
 20000475:
@@ -57245,7 +62393,7 @@
   price: 2500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Mrs. Octopus
 20000516:
@@ -57911,7 +63059,7 @@
   price: 2900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pancake Hat
 20000590:
@@ -57938,7 +63086,7 @@
   price: 2800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Eye Poppers
 20000593:
@@ -58145,7 +63293,7 @@
   price: 2800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Rainbow Bead Hairband
 20000616:
@@ -61817,7 +66965,7 @@
   price: 2900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Globe Cap
 20001024:
@@ -62015,7 +67163,7 @@
   price: 3300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Heart Hairband
 20001046:
@@ -62159,7 +67307,7 @@
   price: 2600
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Football Helmet
 20001062:
@@ -62285,7 +67433,7 @@
   price: 6600
   period: 0
   gender: 2
-  onSale: true
+  onSale: false
 
 # Blue Mushroom Hat
 20001076:
@@ -62465,7 +67613,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Mummy Hat
 20001096:
@@ -62528,7 +67676,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Rabbit Ear Hood
 20001103:
@@ -62537,7 +67685,7 @@
   price: 3400
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Leather Cap
 20001104:
@@ -62546,7 +67694,97 @@
   price: 3000
   period: 90
   gender: 2
+  onSale: true
+
+# Star Head Wrap
+20001105:
+  itemId: 1003170
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
   onSale: false
+
+# Brown Hunting Cap
+20001106:
+  itemId: 1003163
+  count: 1
+  price: 2100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Bow
+20001107:
+  itemId: 1003132
+  count: 1
+  price: 3100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Riding Hood
+20001108:
+  itemId: 1003203
+  count: 1
+  price: 2400
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Riding Hood
+20001109:
+  itemId: 1003203
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Black Bow
+20001110:
+  itemId: 1003131
+  count: 1
+  price: 3100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pink Polka Dot Bow
+20001111:
+  itemId: 1003221
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Polka Dot Bow
+20001112:
+  itemId: 1003222
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pirate Captain's Hat
+20001113:
+  itemId: 1003216
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Lion Head
+20001114:
+  itemId: 1003237
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
 
 # Jester Mask
 20100000:
@@ -62897,7 +68135,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # SF Ninja Mask
 20100039:
@@ -63041,7 +68279,7 @@
   price: 2500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Maple-Stein
 20100055:
@@ -63320,7 +68558,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Coat of Arms Paint (Spain)
 20100086:
@@ -63365,7 +68603,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Yellow Star Paint (Vietnam)
 20100091:
@@ -63392,7 +68630,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Star Spangled Paint (USA)
 20100094:
@@ -63545,7 +68783,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Neh neh neh boo boo
 20100111:
@@ -64501,6 +69739,15 @@
   gender: 2
   onSale: false
 
+# Aura Pendant
+20100217:
+  itemId: 1122121
+  count: 1
+  price: 3300
+  period: 30
+  gender: 2
+  onSale: true
+
 # Blue Shades
 20200000:
   itemId: 1022001
@@ -64553,7 +69800,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Yellow Shades
 20200006:
@@ -64688,7 +69935,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Skull Patch
 20200021:
@@ -64778,7 +70025,7 @@
   price: 3900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # White Toy Shades
 20200031:
@@ -65345,7 +70592,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # 3D Glasses
 20200094:
@@ -66281,7 +71528,7 @@
   price: 4000
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Red Swimming Suit
 20300016:
@@ -66713,7 +71960,7 @@
   price: 3700
   period: 90
   gender: 0
-  onSale: true
+  onSale: false
 
 # Fine Blue Hanbok
 20300064:
@@ -67055,7 +72302,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pink Mesoranger
 20300102:
@@ -67109,7 +72356,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Western Cowboy
 20300108:
@@ -67361,7 +72608,7 @@
   price: 3900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Patissier Uniform
 20300136:
@@ -67613,7 +72860,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # White Female Fur Coat
 20300164:
@@ -67696,7 +72943,7 @@
   gender: 2
   onSale: true
 
-# Horoscope Overall (Male)
+# Horoscope Overall
 20300173:
   itemId: 1050120
   count: 1
@@ -67705,7 +72952,7 @@
   gender: 2
   onSale: true
 
-# Horoscope Overall (Female)
+# Horoscope Overall
 20300174:
   itemId: 1051128
   count: 1
@@ -67838,7 +73085,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Big Kimono
 20300189:
@@ -67937,7 +73184,7 @@
   price: 3400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Ruffled Coat
 20300200:
@@ -68063,7 +73310,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Blue Hip Hop
 20300214:
@@ -68749,7 +73996,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (m)
+# Blue Kitty Hood
 20300290:
   itemId: 1050141
   count: 1
@@ -68758,7 +74005,7 @@
   gender: 2
   onSale: true
 
-# Kitty Hoodie (f)
+# Kitty Hoodie
 20300291:
   itemId: 1051164
   count: 1
@@ -68848,7 +74095,7 @@
   gender: 2
   onSale: true
 
-# Buddy Overall Jeans (M)
+# Buddy Overall Jeans
 20300301:
   itemId: 1050146
   count: 1
@@ -68857,7 +74104,7 @@
   gender: 2
   onSale: true
 
-# Buddy Overall Jeans (F)
+# Buddy Overall Jeans
 20300302:
   itemId: 1051170
   count: 1
@@ -68918,7 +74165,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Noob Overall
 20300309:
@@ -69125,7 +74372,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Coastal Winter Wear
 20300332:
@@ -69440,7 +74687,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Fire Shadow Suit
 20300367:
@@ -69476,7 +74723,7 @@
   price: 3700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Maid Dress
 20300371:
@@ -70450,7 +75697,7 @@
   gender: 2
   onSale: false
 
-# Horoscope Overall (Male)
+# Horoscope Overall
 20300480:
   itemId: 1050120
   count: 1
@@ -70459,7 +75706,7 @@
   gender: 2
   onSale: false
 
-# Horoscope Overall (Female)
+# Horoscope Overall
 20300481:
   itemId: 1051128
   count: 1
@@ -70783,7 +76030,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (m)
+# Blue Kitty Hood
 20300517:
   itemId: 1050141
   count: 1
@@ -70792,7 +76039,7 @@
   gender: 2
   onSale: false
 
-# Kitty Hoodie (f)
+# Kitty Hoodie
 20300518:
   itemId: 1051164
   count: 1
@@ -70864,7 +76111,7 @@
   gender: 2
   onSale: false
 
-# Buddy Overall Jeans (M)
+# Buddy Overall Jeans
 20300526:
   itemId: 1050146
   count: 1
@@ -70873,7 +76120,7 @@
   gender: 2
   onSale: false
 
-# Buddy Overall Jeans (F)
+# Buddy Overall Jeans
 20300527:
   itemId: 1051170
   count: 1
@@ -71456,7 +76703,7 @@
   price: 6600
   period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Boys Uniform
 20300593:
@@ -71465,7 +76712,7 @@
   price: 6600
   period: 0
   gender: 2
-  onSale: false
+  onSale: true
 
 # Fox Outfit
 20300594:
@@ -71690,7 +76937,7 @@
   price: 3900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Mummy Suit
 20300619:
@@ -71753,7 +77000,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Rabbit Ear Dress
 20300626:
@@ -71762,7 +77009,88 @@
   price: 4000
   period: 90
   gender: 1
+  onSale: true
+
+# Henesys Academy Uniform (Female)
+20300627:
+  itemId: 1052283
+  count: 1
+  price: 3000
+  period: 90
+  gender: 1
+  onSale: true
+
+# Henesys Academy Uniform (Male)
+20300628:
+  itemId: 1052284
+  count: 1
+  price: 3000
+  period: 90
+  gender: 0
+  onSale: true
+
+# Red's Dress
+20300629:
+  itemId: 1052338
+  count: 1
+  price: 3100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red's Dress
+20300630:
+  itemId: 1052338
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
   onSale: false
+
+# Lab Gear (F)
+20300631:
+  itemId: 1052339
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Lab Gear (M)
+20300632:
+  itemId: 1052340
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Mage Gear
+20300633:
+  itemId: 1052330
+  count: 1
+  price: 3500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red Mage Gear
+20300634:
+  itemId: 1052331
+  count: 1
+  price: 3500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pirate Captain's Coat
+20300635:
+  itemId: 1052348
+  count: 1
+  price: 4100
+  period: 90
+  gender: 2
+  onSale: true
 
 # Pink Frill Pajama Top
 20400000:
@@ -72653,7 +77981,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Blazer
 20400099:
@@ -72689,7 +78017,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Cross Sleeveless
 20400103:
@@ -72833,7 +78161,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Navy Blue Dress Shirt
 20400119:
@@ -72977,7 +78305,7 @@
   price: 3600
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Hooded Vest
 20400135:
@@ -73022,7 +78350,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pink Down Parka
 20400140:
@@ -73049,7 +78377,7 @@
   price: 3200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # SF Ninja Top
 20400143:
@@ -73112,7 +78440,7 @@
   price: 2900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Red T-Shirt w/ Heart
 20400150:
@@ -73382,7 +78710,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Crown Hooded T
 20400180:
@@ -73454,7 +78782,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Camo Hooded Jacket
 20400188:
@@ -76163,7 +81491,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Penguin Tee
 20400489:
@@ -76199,7 +81527,7 @@
   price: 3300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Rainbow Tee
 20400493:
@@ -76280,7 +81608,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Red Rider
 20400502:
@@ -76451,7 +81779,61 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
+
+# Star Trainer Jacket
+20400521:
+  itemId: 1042207
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Black Rider Jacket
+20400522:
+  itemId: 1042206
+  count: 1
+  price: 2600
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Spring Jacket
+20400523:
+  itemId: 1042212
+  count: 1
+  price: 3500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pink Spring Jacket
+20400524:
+  itemId: 1042213
+  count: 1
+  price: 3500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Spring Sweater Set
+20400525:
+  itemId: 1042214
+  count: 1
+  price: 3500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Stars Tee
+20400526:
+  itemId: 1042219
+  count: 1
+  price: 3200
+  period: 90
+  gender: 2
+  onSale: true
 
 # Green Trainer Pants
 20500000:
@@ -76597,7 +81979,7 @@
   gender: 0
   onSale: false
 
-# Preschool Pants
+# Pre-School Pants
 20500016:
   itemId: 1060067
   count: 1
@@ -76811,7 +82193,7 @@
   price: 2100
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Sky Blue Trainer Pants
 20500040:
@@ -76829,7 +82211,7 @@
   price: 2100
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Black Trainer Pants
 20500042:
@@ -76865,7 +82247,7 @@
   price: 2100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Sky Blue Snowboard Pants
 20500046:
@@ -77036,7 +82418,7 @@
   price: 2400
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Pink Diamond Bootcuts
 20500065:
@@ -77180,7 +82562,7 @@
   price: 1300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Green Disco Pants
 20500081:
@@ -78035,7 +83417,7 @@
   price: 2400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Checkered Shorts
 20500176:
@@ -80035,6 +85417,24 @@
   gender: 2
   onSale: true
 
+# Star Trainer Pants
+20500398:
+  itemId: 1062133
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Layered Denim Pants
+20500399:
+  itemId: 1062136
+  count: 1
+  price: 2200
+  period: 90
+  gender: 2
+  onSale: true
+
 # Cowboy Boots
 20600000:
   itemId: 1072088
@@ -80582,7 +85982,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Big Rabbit Feet
 20600061:
@@ -80591,7 +85991,7 @@
   price: 2300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Bunny Boots
 20600062:
@@ -80924,7 +86324,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Sun Quan Shoes
 20600099:
@@ -81104,7 +86504,7 @@
   price: 2100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Ninja Shoes
 20600119:
@@ -82463,7 +87863,7 @@
   price: 2200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Blue Flippers
 20600270:
@@ -83633,7 +89033,7 @@
   price: 2000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Green Sneakz
 20600400:
@@ -83714,7 +89114,7 @@
   price: 2000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Black Cat Slippers
 20600409:
@@ -83723,7 +89123,97 @@
   price: 1200
   period: 90
   gender: 2
+  onSale: true
+
+# Henesys Academy Shoes (Female)
+20600410:
+  itemId: 1072466
+  count: 1
+  price: 1600
+  period: 90
+  gender: 1
+  onSale: true
+
+# White Boots
+20600411:
+  itemId: 1072483
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Brown Ankle Boots
+20600412:
+  itemId: 1072478
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Combat Boots
+20600413:
+  itemId: 1072464
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red's Shoes
+20600414:
+  itemId: 1072509
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Red's Shoes
+20600415:
+  itemId: 1072509
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
   onSale: false
+
+# Pink Winged Shoes
+20600416:
+  itemId: 1072514
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pearl Anklet
+20600417:
+  itemId: 1072507
+  count: 1
+  price: 4000
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pearl Anklet
+20600418:
+  itemId: 1072507
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Lion Slippers
+20600419:
+  itemId: 1072515
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: true
 
 # Blue Boxing Gloves
 20700000:
@@ -83930,7 +89420,7 @@
   price: 2300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Teddy Bear Gloves
 20700023:
@@ -84191,7 +89681,7 @@
   price: 2600
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Neon Amulet
 20700052:
@@ -84616,6 +90106,15 @@
   gender: 2
   onSale: true
 
+# Rainbow Bracelet
+20700099:
+  itemId: 1082312
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: true
+
 # Angel Wand
 20800000:
   itemId: 1702004
@@ -84668,7 +90167,7 @@
   price: 4200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # In-Hand FB Helmet(Home)
 20800008:
@@ -84821,7 +90320,7 @@
   price: 3900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Toy Rifle
 20800025:
@@ -84839,7 +90338,7 @@
   price: 4100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Tiger Paw
 20800027:
@@ -84974,7 +90473,7 @@
   price: 5100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Water Balloon
 20800042:
@@ -85334,7 +90833,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Shiner
 20800082:
@@ -85433,7 +90932,7 @@
   price: 4100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Chocolate 
 20800093:
@@ -85487,7 +90986,7 @@
   price: 4200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Guitar
 20800099:
@@ -85964,7 +91463,7 @@
   price: 4700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Red Pencil
 20800152:
@@ -86207,7 +91706,7 @@
   price: 4700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Koala Doll
 20800179:
@@ -86342,7 +91841,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Party Popper
 20800194:
@@ -86846,7 +92345,7 @@
   price: 4900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Glow Fingers
 20800250:
@@ -86927,7 +92426,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Snowflake Shield
 20800259:
@@ -86954,7 +92453,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Throwing Eggs Weapon
 20800262:
@@ -87557,7 +93056,7 @@
   price: 4200
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Angel Wand
 20800329:
@@ -89825,7 +95324,7 @@
   price: 4000
   period: 90
   gender: 1
-  onSale: true
+  onSale: false
 
 # Rainbow Bow
 20800581:
@@ -89996,7 +95495,7 @@
   price: 4200
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Rabbit Weapon
 20800600:
@@ -90005,7 +95504,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
 
 # Chocolate Dipped Stick
 20800601:
@@ -90014,7 +95513,43 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: false
+  onSale: true
+
+# Alien Mug
+20800602:
+  itemId: 1702302
+  count: 1
+  price: 4200
+  period: 90
+  gender: 2
+  onSale: true
+
+# Carrot
+20800603:
+  itemId: 1702305
+  count: 1
+  price: 3800
+  period: 90
+  gender: 2
+  onSale: true
+
+# Baby Bottle
+20800604:
+  itemId: 1702303
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Suitcase
+20800605:
+  itemId: 1702293
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: true
 
 # Pink Lady Quote Ring
 20900000:
@@ -90401,7 +95936,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Rainbow Label Ring
 20900043:
@@ -90437,7 +95972,7 @@
   price: 4600
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Cupid Ring
 20900047:
@@ -90509,7 +96044,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Chocolate Quote Ring
 20900055:
@@ -90788,7 +96323,7 @@
   price: 4400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Scoreboard Quote Ring
 20900086:
@@ -91571,7 +97106,7 @@
   price: 3500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Sachiel Wings
 21100055:
@@ -91823,7 +97358,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Super Rocket Booster
 21100083:
@@ -92928,6 +98463,42 @@
   itemId: 1102255
   count: 1
   price: 3600
+  period: 90
+  gender: 2
+  onSale: true
+
+# Purple Wings
+21100206:
+  itemId: 1102253
+  count: 1
+  price: 4100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Pink Teru Cape
+21100207:
+  itemId: 1102285
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Teru Cape
+21100208:
+  itemId: 1102286
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Yellow Teru Cape
+21100209:
+  itemId: 1102287
+  count: 1
+  price: 3000
   period: 90
   gender: 2
   onSale: true
@@ -94100,7 +99671,7 @@
   price: 400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Skull Megaphone
 30100057:
@@ -94109,7 +99680,7 @@
   price: 4000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Super Megaphone
 30100058:
@@ -94129,11 +99700,65 @@
   gender: 2
   onSale: false
 
+# Cake Megaphone
+30100060:
+  itemId: 5079001
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cake Megaphone
+30100061:
+  itemId: 5079001
+  count: 10
+  price: 11000
+  period: 90
+  gender: 2
+  onSale: false
+
 # Raining Cats & Dogs
 30100062:
   itemId: 5120028
   count: 1
   price: 100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Cake Megaphone
+30100063:
+  itemId: 5079001
+  count: 15
+  price: 15000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+30100064:
+  itemId: 5079002
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+30100065:
+  itemId: 5079002
+  count: 10
+  price: 11000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pie Megaphone
+30100066:
+  itemId: 5079002
+  count: 15
+  price: 15000
   period: 90
   gender: 2
   onSale: false
@@ -94813,7 +100438,7 @@
   gender: 2
   onSale: false
 
-# Sudden Raid 30 Mastery
+# Blade Fury 30 Mastery
 40000010:
   itemId: 5620004
   count: 1
@@ -94876,7 +100501,7 @@
   gender: 2
   onSale: true
 
-# Sudden Raid Mastery
+# Blade Fury Mastery
 40000017:
   itemId: 9102263
   count: 1
@@ -95160,6 +100785,168 @@
   itemId: 5620003
   count: 1
   price: 5900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Guard Package 1
+40000049:
+  itemId: 9102459
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Guard Package 2
+40000050:
+  itemId: 9102460
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Booster Package
+40000051:
+  itemId: 9102461
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Magic Package
+40000052:
+  itemId: 9102462
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Booster Package 1
+40000053:
+  itemId: 9102463
+  count: 1
+  price: 2400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Booster Package 2
+40000054:
+  itemId: 9102464
+  count: 1
+  price: 2820
+  period: 90
+  gender: 2
+  onSale: false
+
+# Slash Storm Mastery
+40000055:
+  itemId: 9102465
+  count: 1
+  price: 1740
+  period: 90
+  gender: 2
+  onSale: false
+
+# Tornado Spin Mastery
+40000056:
+  itemId: 9102466
+  count: 1
+  price: 2340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mirror Image Mastery
+40000057:
+  itemId: 9102467
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Flying Assaulter Mastery
+40000058:
+  itemId: 9102468
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blade Fury Mastery
+40000059:
+  itemId: 9102469
+  count: 1
+  price: 5340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Thorns Mastery
+40000060:
+  itemId: 9102470
+  count: 1
+  price: 5340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Slash Storm 20 Mastery
+40000061:
+  itemId: 5620000
+  count: 1
+  price: 1740
+  period: 90
+  gender: 2
+  onSale: false
+
+# Tornado Spin 20 Mastery
+40000062:
+  itemId: 5620001
+  count: 1
+  price: 2340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Mirror Image 30 Mastery
+40000063:
+  itemId: 5620002
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Flying Assaulter 20 Mastery
+40000064:
+  itemId: 5620003
+  count: 1
+  price: 3540
+  period: 90
+  gender: 2
+  onSale: false
+
+# Blade Fury 30 Mastery
+40000065:
+  itemId: 5620004
+  count: 1
+  price: 5340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Thorns 30 Mastery
+40000066:
+  itemId: 5620005
+  count: 1
+  price: 5340
   period: 90
   gender: 2
   onSale: false
@@ -97727,7 +103514,7 @@
   price: 3300
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Royal Hair Coupon
 50000285:
@@ -98332,6 +104119,69 @@
   gender: 2
   onSale: true
 
+# Hair Color Coupon (REG)
+50000352:
+  itemId: 5151035
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (REG)
+50000353:
+  itemId: 5150052
+  count: 1
+  price: 1500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Face Coupon (REG)
+50000354:
+  itemId: 5152056
+  count: 1
+  price: 1400
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Color Coupon (VIP)
+50000355:
+  itemId: 5151036
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (VIP)
+50000356:
+  itemId: 5150053
+  count: 1
+  price: 4000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Face Coupon (VIP)
+50000357:
+  itemId: 5152057
+  count: 1
+  price: 3700
+  period: 90
+  gender: 2
+  onSale: false
+
+# Summer Royal Hair Coupon
+50000358:
+  itemId: 5150044
+  count: 1
+  price: 3300
+  period: 90
+  gender: 2
+  onSale: false
+
 # Regular Store Permit
 50100000:
   itemId: 5140000
@@ -98822,28 +104672,28 @@
 50200003:
   itemId: 5220000
   count: 35
-  price: 30000
-  period: 90
+  price: 15000
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Gachapon Ticket
 50200004:
   itemId: 5220000
   count: 11
-  price: 10000
-  period: 90
+  price: 5000
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Gachapon Ticket
 50200005:
   itemId: 5220000
   count: 1
-  price: 1000
-  period: 90
+  price: 500
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Gachapon Ticket
 50200006:
@@ -99554,7 +105404,7 @@
   price: 500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Silver Sack of Mesos
 50200085:
@@ -99563,7 +105413,7 @@
   price: 2400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Gold Sack of Mesos
 50200086:
@@ -99572,7 +105422,7 @@
   price: 4500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Ticket to Treasure Dungeon
 50200087:
@@ -99659,28 +105509,28 @@
 50200096:
   itemId: 5451000
   count: 1
-  price: 1050
-  period: 90
+  price: 525
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Remote Gachapon Ticket
 50200097:
   itemId: 5451000
   count: 11
-  price: 10500
-  period: 90
+  price: 5250
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Remote Gachapon Ticket
 50200098:
   itemId: 5451000
   count: 35
-  price: 31500
-  period: 90
+  price: 15750
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Safety Charm
 50200099:
@@ -99923,7 +105773,7 @@
   price: 4900
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Vicious' Hammer
 50200126:
@@ -99932,7 +105782,7 @@
   price: 8500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Safety Charm
 50200127:
@@ -100022,7 +105872,7 @@
   price: 1800
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Premium Silver Master Key
 50200137:
@@ -100031,7 +105881,7 @@
   price: 1500
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Pink Scooter
 50200138:
@@ -100123,7 +105973,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(10%)
+# Vega's Spell (10%)
 50200148:
   itemId: 5610000
   count: 1
@@ -100132,7 +105982,7 @@
   gender: 2
   onSale: false
 
-# Vega's Spell(60%)
+# Vega's Spell (60%)
 50200149:
   itemId: 5610001
   count: 1
@@ -100695,9 +106545,9 @@
   itemId: 5062000
   count: 1
   price: 1200
-  period: 90
+  period: 7
   gender: 2
-  onSale: true
+  onSale: false
 
 # Peanut Machine
 50200212:
@@ -100884,6 +106734,465 @@
   itemId: 5660001
   count: 20
   price: 7500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Miracle Cube
+50200233:
+  itemId: 5062000
+  count: 6
+  price: 7200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+50200234:
+  itemId: 5062000
+  count: 11
+  price: 12000
+  period: 7
+  gender: 2
+  onSale: false
+
+# Scissors of Karma
+50200235:
+  itemId: 5520000
+  count: 5
+  price: 12750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Guard Mastery Book
+50200236:
+  itemId: 5620006
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Booster Mastery Book
+50200237:
+  itemId: 5620007
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Magic Mastery Book
+50200238:
+  itemId: 5620008
+  count: 1
+  price: 1380
+  period: 90
+  gender: 2
+  onSale: false
+
+# [Lv. 30] Circle-Winded Staff Trade Coupon
+50200239:
+  itemId: 5530027
+  count: 1
+  price: 300
+  period: 90
+  gender: 2
+  onSale: false
+
+# [Lv. 45] Arc Staff Coupon
+50200240:
+  itemId: 5530028
+  count: 1
+  price: 620
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Booster Mastery Book
+50200241:
+  itemId: 5620007
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Magic Mastery Book
+50200242:
+  itemId: 5620008
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: false
+
+# Magic Booster Mastery Book
+50200243:
+  itemId: 5620007
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Critical Magic Mastery Book
+50200244:
+  itemId: 5620008
+  count: 1
+  price: 1100
+  period: 90
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+50200245:
+  itemId: 5451000
+  count: 15
+  price: 15750
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+50200246:
+  itemId: 5062000
+  count: 15
+  price: 18000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pam's Song
+50200247:
+  itemId: 5640000
+  count: 1
+  price: 14500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Ruby EXP Coupon
+50200248:
+  itemId: 5211068
+  count: 1
+  price: 650
+  period: 90
+  gender: 2
+  onSale: false
+
+# Royal Hair Coupon
+50200249:
+  itemId: 5150040
+  count: 1
+  price: 3300
+  period: 90
+  gender: 2
+  onSale: false
+
+# The Owl of Minerva
+50200250:
+  itemId: 5230000
+  count: 15
+  price: 10500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Large B-Day Surprise
+50200251:
+  itemId: 5222017
+  count: 3
+  price: 9000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+50200252:
+  itemId: 5451000
+  count: 15
+  price: 11000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+50200253:
+  itemId: 5062000
+  count: 15
+  price: 12600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pam's Song
+50200254:
+  itemId: 5640000
+  count: 1
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Ruby EXP Coupon
+50200255:
+  itemId: 5211068
+  count: 1
+  price: 450
+  period: 90
+  gender: 2
+  onSale: false
+
+# Royal Hair Coupon
+50200256:
+  itemId: 5150040
+  count: 1
+  price: 2300
+  period: 90
+  gender: 2
+  onSale: false
+
+# The Owl of Minerva
+50200257:
+  itemId: 5230000
+  count: 15
+  price: 7340
+  period: 90
+  gender: 2
+  onSale: false
+
+# Large B-Day Surprise
+50200258:
+  itemId: 5222017
+  count: 3
+  price: 6300
+  period: 90
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+50200259:
+  itemId: 5451000
+  count: 30
+  price: 18900
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+50200260:
+  itemId: 5062000
+  count: 30
+  price: 21600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Super Megaphone
+50200261:
+  itemId: 5072000
+  count: 13
+  price: 8000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rabbit Mount
+50200262:
+  itemId: 1902061
+  count: 1
+  price: 0
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rabbit Mount Cover
+50200263:
+  itemId: 1912054
+  count: 1
+  price: 0
+  period: 90
+  gender: 2
+  onSale: false
+
+# Rabbit Hat
+50200264:
+  itemId: 1003207
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Carrot Chair Coupon
+50200265:
+  itemId: 5530103
+  count: 1
+  price: 0
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pam's Song
+50200266:
+  itemId: 5640000
+  count: 3
+  price: 32500
+  period: 90
+  gender: 2
+  onSale: false
+
+# AP Reset
+50200267:
+  itemId: 5050000
+  count: 10
+  price: 18600
+  period: 90
+  gender: 2
+  onSale: false
+
+# Ruby EXP Coupon
+50200268:
+  itemId: 5211068
+  count: 1
+  price: 390
+  period: 90
+  gender: 2
+  onSale: false
+
+# Remote Gachapon Ticket
+50200269:
+  itemId: 5451000
+  count: 30
+  price: 31500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+50200270:
+  itemId: 5062000
+  count: 30
+  price: 36000
+  period: 90
+  gender: 2
+  onSale: false
+
+# Pam's Song
+50200271:
+  itemId: 5640000
+  count: 3
+  price: 53500
+  period: 90
+  gender: 2
+  onSale: false
+
+# Premium Miracle Cube
+50200272:
+  itemId: 5062001
+  count: 1
+  price: 3100
+  period: 90
+  gender: 2
+  onSale: true
+
+# Fatigue Reset Drink
+50200273:
+  itemId: 5680015
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Aura Pendant
+50200274:
+  itemId: 1122121
+  count: 1
+  price: 3300
+  period: 30
+  gender: 2
+  onSale: false
+
+# Pam's Song
+50200275:
+  itemId: 5640000
+  count: 1
+  price: 14500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Miracle Cube
+50200276:
+  itemId: 5062000
+  count: 11
+  price: 12000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Miracle Cube
+50200277:
+  itemId: 5062000
+  count: 1
+  price: 1200
+  period: 90
+  gender: 2
+  onSale: true
+
+# Remote Gachapon Ticket
+50200278:
+  itemId: 5451000
+  count: 1
+  price: 1050
+  period: 90
+  gender: 2
+  onSale: true
+
+# Remote Gachapon Ticket
+50200279:
+  itemId: 5451000
+  count: 11
+  price: 10500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Remote Gachapon Ticket
+50200280:
+  itemId: 5451000
+  count: 35
+  price: 31500
+  period: 90
+  gender: 2
+  onSale: true
+
+# Gachapon Ticket
+50200281:
+  itemId: 5220000
+  count: 35
+  price: 30000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Gachapon Ticket
+50200282:
+  itemId: 5220000
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Gachapon Ticket
+50200283:
+  itemId: 5220000
+  count: 1
+  price: 1000
   period: 90
   gender: 2
   onSale: true
@@ -101291,7 +107600,7 @@
   price: 3100
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Baby Angel
 50500005:
@@ -101426,7 +107735,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Smile
 50500020:
@@ -101462,7 +107771,7 @@
   price: 2400
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Super Symphony
 50500024:
@@ -102418,6 +108727,24 @@
   gender: 2
   onSale: false
 
+# Cygnus Effect
+50500130:
+  itemId: 5010079
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Peacock Effect
+50500131:
+  itemId: 5010081
+  count: 1
+  price: 2500
+  period: 90
+  gender: 2
+  onSale: true
+
 # Character Name Change
 50600000:
   itemId: 5400000
@@ -102749,7 +109076,7 @@
   price: 6000
   period: 0
   gender: 2
-  onSale: true
+  onSale: false
 
 # Robot
 60000032:
@@ -103534,6 +109861,60 @@
   gender: 2
   onSale: false
 
+# Pie
+60000119:
+  itemId: 5000086
+  count: 1
+  price: 10
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pie
+60000120:
+  itemId: 5000109
+  count: 1
+  price: 20
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cake
+60000121:
+  itemId: 5000085
+  count: 1
+  price: 10
+  period: 0
+  gender: 2
+  onSale: false
+
+# Cake
+60000122:
+  itemId: 5000108
+  count: 1
+  price: 20
+  period: 0
+  gender: 2
+  onSale: false
+
+# Persian Cat
+60000123:
+  itemId: 5000083
+  count: 1
+  price: 5000
+  period: 0
+  gender: 2
+  onSale: true
+
+# Corgi Pup
+60000124:
+  itemId: 5000076
+  count: 1
+  price: 9900
+  period: 0
+  gender: 2
+  onSale: true
+
 # Meso Magnet
 60100000:
   itemId: 1812000
@@ -103649,7 +110030,7 @@
   price: 2000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Black Hat
 60100013:
@@ -103955,7 +110336,7 @@
   price: 2700
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Guitar 
 60100047:
@@ -104117,7 +110498,7 @@
   price: 3000
   period: 90
   gender: 2
-  onSale: true
+  onSale: false
 
 # Jail Bird Pet Costume
 60100065:
@@ -104865,6 +111246,33 @@
   period: 0
   gender: 2
   onSale: false
+
+# B-Day Candle
+60100148:
+  itemId: 1802079
+  count: 1
+  price: 3000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Fish
+60100149:
+  itemId: 1802072
+  count: 1
+  price: 2000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Blue Birdy
+60100150:
+  itemId: 1802073
+  count: 1
+  price: 1800
+  period: 90
+  gender: 2
+  onSale: true
 
 # Pet Name Tag
 60200000:
@@ -105693,6 +112101,60 @@
   period: 90
   gender: 2
   onSale: false
+
+# Flour Sack
+60200092:
+  itemId: 5240040
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Flour Sack
+60200093:
+  itemId: 5240040
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Canned Food
+60200094:
+  itemId: 5240035
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Canned Food
+60200095:
+  itemId: 5240035
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Doggy Bone
+60200096:
+  itemId: 5240034
+  count: 1
+  price: 1000
+  period: 90
+  gender: 2
+  onSale: true
+
+# Doggy Bone
+60200097:
+  itemId: 5240034
+  count: 11
+  price: 10000
+  period: 90
+  gender: 2
+  onSale: true
 
 # Santa Package
 70000000:
@@ -109303,6 +115765,15 @@
   gender: 2
   onSale: false
 
+# Red Riding Hood Package
+70000401:
+  itemId: 9102456
+  count: 1
+  price: 5000
+  period: 90
+  gender: 2
+  onSale: true
+
 # Torr's Horn
 80000000:
   itemId: 4031063
@@ -110005,6 +116476,42 @@
   gender: 2
   onSale: false
 
+# Jr. Developer 2011
+80000078:
+  itemId: 1142330
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Creative Expressionist 2011
+80000079:
+  itemId: 1142331
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Socialite 2011
+80000080:
+  itemId: 1142332
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Humanitarian 2011
+80000081:
+  itemId: 1142333
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
 # Snail
 92000000:
   itemId: 5000054
@@ -110464,7 +116971,7 @@
   gender: 2
   onSale: false
 
-# Sudden Raid 30 Mastery
+# Blade Fury 30 Mastery
 92000051:
   itemId: 5620004
   count: 1
@@ -110857,6 +117364,330 @@
   count: 1
   price: 0
   period: 30
+  gender: 2
+  onSale: false
+
+# Hair Style Coupon (VIP)
+92000095:
+  itemId: 5150053
+  count: 1
+  price: 0
+  period: 30
+  gender: 2
+  onSale: false
+
+# Blue Pre-school Uniform Hat
+92000096:
+  itemId: 1003192
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pre-School Top
+92000097:
+  itemId: 1040154
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pre-School Pants
+92000098:
+  itemId: 1060145
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Defense Charm
+92000099:
+  itemId: 5130003
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Miu Miu the Rookie Traveling Merchant
+92000100:
+  itemId: 5450003
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Red Pre-school Uniform Hat
+92000101:
+  itemId: 1003193
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pre-School Top
+92000102:
+  itemId: 1041156
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Pre-School Skirt
+92000103:
+  itemId: 1061166
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Hair Style Coupon
+92000104:
+  itemId: 5150056
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Face Coupon
+92000105:
+  itemId: 5152059
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Floral Fest
+92000106:
+  itemId: 5121026
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Bobble Heart Band
+92000107:
+  itemId: 1003194
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Maple Boy School Uniform
+92000108:
+  itemId: 1050186
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Teleport Rock
+92000109:
+  itemId: 5040003
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Owl of Minerva
+92000110:
+  itemId: 5230001
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Rookie Maple Girl School Uniform
+92000111:
+  itemId: 1051227
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Queasy
+92000112:
+  itemId: 5160019
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Panicky
+92000113:
+  itemId: 5160020
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Sweetness
+92000114:
+  itemId: 5160021
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Smoochies
+92000115:
+  itemId: 5160022
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Wink
+92000116:
+  itemId: 5160023
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Ouch
+92000117:
+  itemId: 5160024
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Sparkling Eyes
+92000118:
+  itemId: 5160025
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Flaming
+92000119:
+  itemId: 5160026
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Ray
+92000120:
+  itemId: 5160027
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Goo Goo
+92000121:
+  itemId: 5160028
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Whoa Whoa
+92000122:
+  itemId: 5160029
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Constant Sigh
+92000123:
+  itemId: 5160030
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Drool
+92000124:
+  itemId: 5160031
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Dragon Breath
+92000125:
+  itemId: 5160032
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Bleh
+92000126:
+  itemId: 5160033
+  count: 1
+  price: 0
+  period: 0
+  gender: 2
+  onSale: false
+
+# Hyper Teleport Rock
+92000127:
+  itemId: 5040004
+  count: 1
+  price: 0
+  period: 7
+  gender: 2
+  onSale: false
+
+# Miracle Cube
+92000128:
+  itemId: 5062000
+  count: 1
+  price: 0
+  period: 7
+  gender: 2
+  onSale: false
+
+# Gachapon Ticket
+92000129:
+  itemId: 5220000
+  count: 1
+  price: 0
+  period: 7
+  gender: 2
+  onSale: false
+
+# EXP Booster (4 hrs)
+92000130:
+  itemId: 5680016
+  count: 1
+  price: 0
+  period: 0
   gender: 2
   onSale: false
 

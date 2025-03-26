@@ -26,7 +26,7 @@ public enum CommodityFlag {
     UNK1(0x80000),
     UNK2(0x100000),
     UNK3(0x200000),
-    ALL(0x7FFFF);
+    ALL(0x3FFFFF);
 
     private final int value;
 

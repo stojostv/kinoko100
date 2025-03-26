@@ -4,6 +4,7 @@ import kinoko.server.header.OutHeader;
 import kinoko.server.packet.OutPacket;
 import kinoko.world.item.Item;
 import kinoko.world.quest.QuestRecord;
+import kinoko.world.user.stat.Stat;
 
 public final class MessagePacket {
     // CWvsContext::OnMessage ------------------------------------------------------------------------------------------
@@ -130,6 +131,56 @@ public final class MessagePacket {
         outPacket.encodeByte(MessageType.SkillExpire.getValue());
         outPacket.encodeByte(1); // count
         outPacket.encodeInt(skillId); // nSkillID
+        return outPacket;
+    }
+
+    public static OutPacket incTrait(Stat trait, int amount) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.IncTrait.getValue());
+        outPacket.encodeLong(trait.getValue());
+        outPacket.encodeInt(amount);
+        return outPacket;
+    }
+
+    public static OutPacket maxTrait(Stat trait) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.MaxTrait.getValue());
+        outPacket.encodeLong(trait.getValue());
+        return outPacket;
+    }
+
+    public static OutPacket recipeExpire(int recipeId) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.RecipeExpire.getValue());
+        outPacket.encodeInt(recipeId);
+        return outPacket;
+    }
+
+    public static OutPacket noAndroidHeart(int recipeId) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.NoAndroidHeart.getValue());
+        outPacket.encodeInt(recipeId);
+        return outPacket;
+    }
+
+    public static OutPacket recFatigue() {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.RestFatigue.getValue()); // "You recovered some fatigue by resting."
+        return outPacket;
+    }
+
+    public static OutPacket battlePoint(int amount) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.IncBattlePoint.getValue()); // "You received/lost Battle Points (+/-%d)"
+        outPacket.encodeInt(amount);
+        return outPacket;
+    }
+
+    public static OutPacket pvpItem(String text1, String text2) {
+        final OutPacket outPacket = OutPacket.of(OutHeader.Message);
+        outPacket.encodeByte(MessageType.PvpItem.getValue());
+        outPacket.encodeString(text1);
+        outPacket.encodeString(text2);
         return outPacket;
     }
 

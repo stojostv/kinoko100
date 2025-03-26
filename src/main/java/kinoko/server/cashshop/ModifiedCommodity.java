@@ -115,10 +115,10 @@ public final class ModifiedCommodity implements Encodable {
             }
         }
         if (flags.contains(CommodityFlag.UNK1)) { //TODO: Unsure what those are
-            //
+            outPacket.encodeInt(0);
         }
         if (flags.contains(CommodityFlag.UNK2)) {
-            //
+            outPacket.encodeInt(0);
         }
         if (flags.contains(CommodityFlag.UNK3)) {
             outPacket.encodeByte(0);

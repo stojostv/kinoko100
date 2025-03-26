@@ -46,7 +46,7 @@ public final class HitHandler {
     private static final Logger log = LogManager.getLogger(HitHandler.class);
 
     @Handler(InHeader.UserHit)
-    public static void handleUserHit(User user, InPacket inPacket) { //TODO: Fix damage, dealing 25k on migrate, 1 when changing maps
+    public static void handleUserHit(User user, InPacket inPacket) {
         // CUserLocal::SetDamaged, CUserLocal::Update
         final HitInfo hitInfo = new HitInfo();
         inPacket.decodeInt(); // get_update_time()
@@ -54,6 +54,8 @@ public final class HitHandler {
         if (hitInfo.attackIndex > -2) {
             hitInfo.magicElemAttr = inPacket.decodeByte(); // nMagicElemAttr
             hitInfo.damage = inPacket.decodeInt(); // nDamage
+            inPacket.decodeByte();
+            inPacket.decodeByte();
             hitInfo.templateId = inPacket.decodeInt(); // dwTemplateID
             hitInfo.mobId = inPacket.decodeInt(); // MobID
             hitInfo.dir = inPacket.decodeByte(); // nDir
@@ -73,6 +75,8 @@ public final class HitHandler {
         } else if (hitInfo.attackIndex == AttackIndex.Counter.getValue() || hitInfo.attackIndex == AttackIndex.Obstacle.getValue()) {
             inPacket.decodeByte(); // 0
             hitInfo.damage = inPacket.decodeInt(); // nDamage
+            inPacket.decodeByte(); // 0
+            inPacket.decodeByte();
             hitInfo.obstacleData = inPacket.decodeShort(); // dwObstacleData
             inPacket.decodeByte(); // 0
         } else if (hitInfo.attackIndex == AttackIndex.Stat.getValue()) {

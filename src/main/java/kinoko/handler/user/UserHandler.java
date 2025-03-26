@@ -535,7 +535,7 @@ public final class UserHandler {
         final int size = inPacket.decodeInt();
         final Map<Stat, Integer> stats = new EnumMap<>(Stat.class);
         for (int i = 0; i < size; i++) {
-            final int flag = inPacket.decodeInt(); // dwStatFlag
+            final long flag = inPacket.decodeLong(); // dwStatFlag
             final int value = inPacket.decodeInt(); // nValue
             final Stat stat = Stat.getByValue(flag);
             if (stat == null || !StatConstants.isAbilityUpStat(stat)) {
@@ -583,7 +583,7 @@ public final class UserHandler {
     @Handler({ InHeader.UserChangeStatRequest, InHeader.UserChangeStatRequestByItemOption })
     public static void handleUserChangeStatRequest(User user, InPacket inPacket) {
         inPacket.decodeInt(); // update_time
-        final int mask = inPacket.decodeInt(); // 0x1400
+        final long mask = inPacket.decodeLong(); // 0x1400
         if (mask != 0x1400) {
             log.error("Unhandled mask received for UserChangeStatRequest : {}", mask);
             return;
@@ -687,6 +687,19 @@ public final class UserHandler {
         }
     }
 
+    @Handler(InHeader.UserGivePopularityRequest)
+    public static void handleUserGivePopularityRequest(User user, InPacket inPacket) {
+        inPacket.decodeInt(); // update_time
+        final int characterId = inPacket.decodeInt(); // dwCharacterId
+        inPacket.decodeBoolean(); // bPetInfo
+        final Optional<User> userResult = user.getField().getUserPool().getById(characterId);
+        if (userResult.isEmpty()) {
+            user.dispose();
+            return;
+        }
+        user.write(WvsContext.characterInfo(userResult.get()));
+    }
+
     @Handler(InHeader.UserCharacterInfoRequest)
     public static void handleUserCharacterInfoRequest(User user, InPacket inPacket) {
         inPacket.decodeInt(); // update_time
@@ -698,6 +711,19 @@ public final class UserHandler {
             return;
         }
         user.write(WvsContext.characterInfo(userResult.get()));
+    }
+
+    @Handler(InHeader.UserViewCrusaderCodexRequest)
+    public static void handleUserViewCrusaderCodexRequest(User user, InPacket inPacket) {
+        inPacket.decodeInt(); // update_time
+        final int characterId = inPacket.decodeInt(); // dwCharacterId
+
+        final Optional<User> userResult = user.getField().getUserPool().getById(characterId);
+        if (userResult.isEmpty()) {
+            user.dispose();
+            return;
+        }
+        //TODO: Write unknown packet
     }
 
     @Handler(InHeader.UserPortalScriptRequest)

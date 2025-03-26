@@ -38,6 +38,7 @@ public enum FieldType {
     CHAOSZAKUM(33),
     KILLCOUNT(34),
     CUBE(35),
+    PVP(36),
 
     WEDDING(60),
     WEDDINGPHOTO(61),

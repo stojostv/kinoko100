@@ -15,6 +15,7 @@ import kinoko.packet.world.MemoPacket;
 import kinoko.packet.world.WvsContext;
 import kinoko.provider.MapProvider;
 import kinoko.provider.map.PortalInfo;
+import kinoko.script.common.ScriptError;
 import kinoko.server.cashshop.Gift;
 import kinoko.server.guild.GuildRequest;
 import kinoko.server.header.InHeader;
@@ -349,6 +350,13 @@ public final class MigrationHandler {
                 user.write(CashShopPacket.queryCashResult(account));
             }
         }
+    }
+
+    @Handler(InHeader.UserMigrateToPveRequest)
+    public static void handleUserMigrateToPveRequest(User user, InPacket inPacket) {
+        inPacket.decodeInt(); // update_time
+
+        handleTransferField(user, 960000000, "sp", false, true);
     }
 
     private static boolean isWhitelistedTransferField(int currentFieldId, int targetFieldId) {

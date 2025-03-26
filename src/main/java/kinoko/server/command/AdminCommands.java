@@ -70,7 +70,6 @@ public final class AdminCommands {
     @Arguments("UI type")
     public static void ui(User user, String[] args) {
         int type = Integer.parseInt(args[1]);
-
         user.write(UserLocal.openUI(UIType.getByValue(type)));
     }
 

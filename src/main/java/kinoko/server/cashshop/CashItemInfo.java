@@ -42,7 +42,7 @@ public final class CashItemInfo implements Encodable {
 
     @Override
     public void encode(OutPacket outPacket) {
-        // GW_CashItemInfo struct (55)
+        // GW_CashItemInfo struct (65)
         outPacket.encodeLong(item.getItemSn()); // liSN
         outPacket.encodeInt(accountId); // dwAccountID
         outPacket.encodeInt(characterId); // dwCharacterID
@@ -53,6 +53,7 @@ public final class CashItemInfo implements Encodable {
         outPacket.encodeFT(item.getDateExpire()); // dateExpire
         outPacket.encodeInt(0); // nPaybackRate
         outPacket.encodeInt(0); // nDiscountRate
+        outPacket.encodeArray(new byte[10]); //unk
     }
 
     public static CashItemInfo from(Item item, User user) {

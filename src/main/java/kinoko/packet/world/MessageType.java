@@ -17,7 +17,15 @@ public enum MessageType {
     QuestRecordEx(12),
     ItemProtectExpire(13),
     ItemExpireReplace(14),
-    SkillExpire(15);
+    SkillExpire(15),
+    IncTrait(16),
+    MaxTrait(17),
+    RecipeExpire(18),
+    NoAndroidHeart(19),
+    RestFatigue(20),
+    IncBattlePoint(21),
+    PvpItem(22), //Gray text, up to 2 lines
+    ReturnStones(23);
 
     private final byte value;
 

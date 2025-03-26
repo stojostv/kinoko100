@@ -678,7 +678,9 @@ public final class SkillConstants {
     }
 
     public static boolean isSkillNeedMasterLevel(int skillId) {
-        if (isIgnoreMasterLevelForCommon(skillId)) {
+        if (isIgnoreMasterLevelForCommon(skillId)
+                || (skillId / 1000000 == 92 && (skillId % 10000 == 0))
+                || isMakingSkillRecipe(skillId)) {
             return false;
         }
         final int jobId = skillId / 10000;
@@ -698,4 +700,15 @@ public final class SkillConstants {
         }
         return jobId % 10 == 2;
     }
+
+    public static boolean isMakingSkillRecipe(int recipeId) {
+        boolean result = false;
+        if (recipeId / 1000000 != 92 || recipeId % 10000 == 1) {
+            int v1 = 10000 * (recipeId / 10000);
+            if (v1 / 1000000 == 92 && (v1 % 10000 == 0))
+                result = true;
+        }
+        return result;
+    }
+
 }

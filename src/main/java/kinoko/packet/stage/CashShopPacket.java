@@ -73,6 +73,7 @@ public final class CashShopPacket {
         for (CashItemInfo cii : cashItemInfos) {
             cii.encode(outPacket); // GW_CashItemInfo (55)
         }
+        outPacket.encodeInt(0);
         outPacket.encodeShort(account.getTrunk().getSize()); // nTrunkCount
         outPacket.encodeShort(account.getSlotCount()); // nCharacterSlotCount
         outPacket.encodeShort(-1); // nBuyCharacterCount

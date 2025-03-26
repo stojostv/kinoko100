@@ -137,7 +137,7 @@ public enum InHeader {
     UserPartyRequest,
     UserCharacterInfoRequest,
     UserActivatePetRequest,
-    Unk_131,
+    UserViewCrusaderCodexRequest, // 0xB0EB20
     Unk_132,
     UserTemporaryStatUpdateRequest,
     UserPortalScriptRequest,
@@ -176,7 +176,7 @@ public enum InHeader {
     UserRequestInstanceTable,
     UserRequestCreateItemPot,
     UserRequestRemoveItemPot,
-    UserRequestIncItemPotLifeSatiety,
+    UserRequestIncItemPotLifeSatiety, //TODO: 0xB32470 (int int int int)
     UserRequestCureItemPotLifeSick,
     UserRequestComplateToItemPot,
     UserRequestRespawn,
