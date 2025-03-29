@@ -17,7 +17,6 @@ import kinoko.provider.MapProvider;
 import kinoko.provider.map.PortalInfo;
 import kinoko.script.common.ScriptError;
 import kinoko.server.cashshop.Gift;
-import kinoko.server.field.Instance;
 import kinoko.server.field.InstanceFieldStorage;
 import kinoko.server.guild.GuildRequest;
 import kinoko.server.header.InHeader;
