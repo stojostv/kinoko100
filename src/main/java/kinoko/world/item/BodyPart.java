@@ -64,6 +64,9 @@ public enum BodyPart {
     MEDAL(49),
     BELT(50),
     SHOULDER(51),
+    ANDROID(53),
+    ANDROID_HEART(54),
+    CRUSADER_CODEX(55),
     EXT_PENDANT1(59),
     EQUIPPED_END(60),
 
@@ -220,6 +223,9 @@ public enum BodyPart {
             case 115 -> {
                 return Set.of(SHOULDER);
             }
+            case 117 -> {
+                return Set.of(CRUSADER_CODEX);
+            }
             case 161 -> {
                 return Set.of(MECHANIC_ENGINE);
             }
@@ -234,6 +240,12 @@ public enum BodyPart {
             }
             case 165 -> {
                 return Set.of(MECHANIC_TRANSISTOR);
+            }
+            case 166 -> {
+                return Set.of(ANDROID);
+            }
+            case 167 -> {
+                return Set.of(ANDROID_HEART);
             }
             case 180 -> {
                 if (itemId == 1802100) {

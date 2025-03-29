@@ -185,6 +185,8 @@ public final class WvsContext {
         outPacket.encodeString(user.getGuildInfo().getAllianceName()); // sAlliance
         outPacket.encodeByte(false); // bMedalInfo
 
+        outPacket.encodeByte(false); // unk
+
         // CUIUserInfo::SetMultiPetInfo
         final Inventory equipped = user.getInventoryManager().getEquipped();
         for (Pet pet : user.getPets()) {
