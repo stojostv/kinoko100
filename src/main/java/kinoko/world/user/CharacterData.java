@@ -355,6 +355,7 @@ public final class CharacterData implements Encodable {
             outPacket.encodeShort(questRecords.size());
             for (QuestRecord qr : questRecords) {
                 outPacket.encodeShort(qr.getQuestId());
+                outPacket.encodeShort(0); //TODO: unk
                 outPacket.encodeFT(qr.getCompletedTime());
             }
         }
@@ -377,7 +378,7 @@ public final class CharacterData implements Encodable {
         }
         if (flag.hasFlag(DBChar.MONSTERBOOKCARD)) {
             outPacket.encodeByte(0);
-            outPacket.encodeShort(0);
+            outPacket.encodeShort(0); // short * (short, byte)
         }
         if (flag.hasFlag(DBChar.UNK_0x40000000)) {
             outPacket.encodeInt(0);
