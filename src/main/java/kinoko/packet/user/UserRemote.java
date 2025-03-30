@@ -64,7 +64,7 @@ public final class UserRemote {
                     }
                 }
             }
-            if (attack.isShootAttack()) { // nType == 212
+            if (attack.isShootAttack()) { // nType == 245
                 outPacket.encodeShort(attack.ballStartX); // ptBallStart.x
                 outPacket.encodeShort(attack.ballStartY); // ptBallStart.y
             }
@@ -113,6 +113,7 @@ public final class UserRemote {
 
         outPacket.encodeByte(hitInfo.attackIndex); // nAttackIdx
         outPacket.encodeInt(hitInfo.damage); // nDamage
+        outPacket.encodeByte(0); // bIsCrit?
         if (hitInfo.attackIndex > -2) {
             outPacket.encodeInt(hitInfo.templateId); // dwTemplateID
             outPacket.encodeByte(hitInfo.dir); // bLeft

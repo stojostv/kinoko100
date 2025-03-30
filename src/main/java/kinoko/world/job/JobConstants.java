@@ -5,7 +5,7 @@ import java.util.List;
 
 public final class JobConstants {
     public static int getJobLevel(int jobId) {
-        if (jobId % 100 == 0 || jobId == 2001) {
+        if (jobId % 1000 == 0 || jobId == 2001 || jobId == 2002 || jobId == 3001 || jobId % 100 == 0 || jobId == 501) {
             return 1;
         }
         int jobLevel;

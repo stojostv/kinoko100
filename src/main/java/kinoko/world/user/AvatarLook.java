@@ -17,16 +17,18 @@ public final class AvatarLook implements Encodable {
     private final byte skin;
     private final int hair;
     private final int face;
+    private final int job;
     private final Map<Integer, Integer> hairEquip;
     private final Map<Integer, Integer> unseenEquip;
     private final int weaponStickerId;
     private final int[] petIds;
 
-    public AvatarLook(byte gender, byte skin, int hair, int face, Map<Integer, Integer> hairEquip, Map<Integer, Integer> unseenEquip, int weaponStickerId, int[] petIds) {
+    public AvatarLook(byte gender, byte skin, int hair, int face, int job, Map<Integer, Integer> hairEquip, Map<Integer, Integer> unseenEquip, int weaponStickerId, int[] petIds) {
         this.gender = gender;
         this.skin = skin;
         this.hair = hair;
         this.face = face;
+        this.job = job;
         this.hairEquip = hairEquip;
         this.unseenEquip = unseenEquip;
         this.weaponStickerId = weaponStickerId;
@@ -38,7 +40,7 @@ public final class AvatarLook implements Encodable {
         outPacket.encodeByte(gender); // nGender
         outPacket.encodeByte(skin); // nSkin
         outPacket.encodeInt(face); // nFace
-        outPacket.encodeInt(0); // nJob
+        outPacket.encodeInt(job); // nJob
         // anHairEquip
         outPacket.encodeByte(0);
         outPacket.encodeInt(hair); // nHair
@@ -88,7 +90,7 @@ public final class AvatarLook implements Encodable {
                 inPacket.decodeInt(),
                 inPacket.decodeInt()
         }; // anPetID
-        return new AvatarLook(gender, skin, hair, face, hairEquip, unseenEquip, weaponStickerId, petIds);
+        return new AvatarLook(gender, skin, hair, face, job, hairEquip, unseenEquip, weaponStickerId, petIds);
     }
 
     public static AvatarLook from(CharacterStat characterStat, Inventory equipped, Inventory cashInventory) {
@@ -109,6 +111,7 @@ public final class AvatarLook implements Encodable {
                 characterStat.getSkin(),
                 characterStat.getHair(),
                 characterStat.getFace(),
+                characterStat.getJob(),
                 hairEquip,
                 unseenEquip,
                 weaponStickerId,

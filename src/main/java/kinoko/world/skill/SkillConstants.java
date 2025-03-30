@@ -669,6 +669,7 @@ public final class SkillConstants {
             case 4220009:
             case 5120011:
             case 5220012:
+            case 22181004:
             case 32120009:
             case 33120010:
                 return true;

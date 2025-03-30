@@ -33,7 +33,7 @@ public enum MobSkillType {
     AREA_FIRE(130),
     AREA_POISON(131),
     REVERSE_INPUT(132),
-    UNDEAD(133),
+    UNDEAD(133), //TODO: Crashes!
     STOPPORTION(134), // [sic]
     STOPMOTION(135),
     FEAR(136),

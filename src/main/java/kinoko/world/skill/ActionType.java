@@ -201,84 +201,115 @@ public enum ActionType {
     SLASH_STORM3(0x0C1),
     FLASH_BANG(0x0C2),
     UPPER_STAB(0x0C3),
-    OWL_DEAD(0x0C4),
+    BLADE_FURY(0x0C4),
     CHAIN_PULL(0x0C5),
     CHAIN_ATTACK(0x0C6),
-    SUDDEN_DEATH(0x0C7),
-    MONSTER_BOMB_PREPARE(0x0C8),
-    MONSTER_BOMB_THROW(0x0C9),
-    FINAL_CUT(0x0CA),
-    FINAL_CUT_PREPARE(0x0CB),
-    CYCLONE_PRE(0x0CC),
-    CYCLONE(0x0CD),
-    CYCLONE_AFTER(0x0CE),
-    DOUBLEJUMP(0x0CF),
-    KNOCKBACK(0x0D0),
-    ROCKET_BOOSTER_START(0x0D1),
-    ROCKET_BOOSTER(0x0D2),
-    ROCKET_BOOSTER_END(0x0D3),
-    CROSS_ROAD(0x0D4),
-    NEMESIS(0x0D5),
-    WILDBEAST(0x0D6),
-    SIEGE1_START(0x0D7),
-    SIEGE1(0x0D8),
-    SIEGE1_STAND(0x0D9),
-    SIEGE1_END(0x0DA),
-    SIEGE2_START(0x0DB),
-    SIEGE2(0x0DC),
-    SIEGE2_STAND(0x0DD),
-    SIEGE2_END(0x0DE),
-    SIEGE2_WALK(0x0DF),
-    SIEGE2_LASER(0x0E0),
-    SIEGE_START(0x0E1),
-    SIEGE(0x0E2),
-    SIEGE_STAND(0x0E3),
-    SIEGE_END(0x0E4),
-    SONICBOOM(0x0E5),
-    REVIVE(0x0E6),
-    DARK_SPEAR(0x0E7),
-    DARK_CHAIN(0x0E8),
-    FLAMETHROWER_START(0x0E9),
-    FLAMETHROWER(0x0EA),
-    FLAMETHROWER_END(0x0EB),
-    FLAMETHROWER2_START(0x0EC),
-    FLAMETHROWER2(0x0ED),
-    FLAMETHROWER2_END(0x0EE),
-    MECHANIC_BOOSTER(0x0EF),
-    MSUMMON(0x0F0),
-    MSUMMON2(0x0F1),
-    GATLINGSHOT(0x0F2),
-    GATLINGSHOT2(0x0F3),
-    DRILLRUSH(0x0F4),
-    EARTHSLUG(0x0F5),
-    ROCKET_PUNCH(0x0F6),
-    CLAW_CUT(0x0F7),
-    SWALLOW(0x0F8),
-    SWALLOW_LOOP(0x0F9),
-    SWALLOW_ATTACK(0x0FA),
-    SWALLOW_PRE(0x0FB),
-    FLASH_RAIN(0x0FC),
-    MINE(0x0FD),
-    CAPTURE(0x0FE),
-    RIDE(0x0FF),
-    GETOFF(0x100),
-    RIDE2(0x101),
-    GETOFF2(0x102),
-    MECHANIC_RUSH(0x103),
-    TANK_MSUMMON(0x104),
-    TANK_MSUMMON2(0x105),
-    TANK_MRUSH(0x106),
-    TANK_RBOOSTER_PRE(0x107),
-    TANK_RBOOSTER_AFTER(0x108),
-    SHOCKWAVE(0x109),
-    DEMOLITION(0x10A),
-    SNATCH(0x10B),
-    WIND_SPEAR(0x10C),
-    WIND_SHOT(0x10D),
-    FLY2(0x10E),
-    FLY2_MOVE(0x10F),
-    FLY2_SKILL(0x110),
-    NO(0x111);
+    OWL_DEAD(0x0C7),
+    SUDDEN_DEATH(0x0C8),
+    MONSTER_BOMB_PREPARE(0x0C9),
+    MONSTER_BOMB_THROW(0x0CA),
+    FINAL_CUT(0x0CB),
+    FINAL_CUT_PREPARE(0x0CC),
+    CYCLONE_PRE(0x0CD),
+    CYCLONE(0x0CE),
+    CYCLONE_AFTER(0x0CF),
+    DOUBLEJUMP(0x0D0),
+    KNOCKBACK(0x0D1),
+    ROCKET_BOOSTER_START(0x0D2),
+    ROCKET_BOOSTER(0x0D3),
+    ROCKET_BOOSTER_END(0x0D4),
+    CROSS_ROAD(0x0D5),
+    NEMESIS(0x0D6),
+    WILDBEAST(0x0D7),
+    SIEGE1_START(0x0D8),
+    SIEGE1(0x0D9),
+    SIEGE1_STAND(0x0DA),
+    SIEGE1_END(0x0DB),
+    SIEGE2_START(0x0DC),
+    SIEGE2(0x0DD),
+    SIEGE2_STAND(0x0DE),
+    SIEGE2_END(0x0DF),
+    SIEGE2_WALK(0x0E0),
+    SIEGE2_LASER(0x0E1),
+    SIEGE_START(0x0E2),
+    SIEGE(0x0E3),
+    SIEGE_STAND(0x0E4),
+    SIEGE_END(0x0E5),
+    SONICBOOM(0x0E6),
+    REVIVE(0x0E7),
+    DARK_SPEAR(0x0E8),
+    DARK_CHAIN(0x0E9),
+    FLAMETHROWER_START(0x0EA),
+    FLAMETHROWER(0x0EB),
+    FLAMETHROWER_END(0x0EC),
+    FLAMETHROWER2_START(0x0ED),
+    FLAMETHROWER2(0x0EE),
+    FLAMETHROWER2_END(0x0EF),
+    MECHANIC_BOOSTER(0x0F0),
+    MSUMMON(0x0F1),
+    MSUMMON2(0x0F2),
+    GATLINGSHOT(0x0F3),
+    GATLINGSHOT2(0x0F4),
+    DRILLRUSH(0x0F5),
+    EARTHSLUG(0x0F6),
+    ROCKET_PUNCH(0x0F7),
+    CLAW_CUT(0x0F8),
+    SWALLOW(0x0F9),
+    SWALLOW_LOOP(0x0FA),
+    SWALLOW_ATTACK(0x0FB),
+    SWALLOW_PRE(0x0FC),
+    FLASH_RAIN(0x0FD),
+    MINE(0x0FE),
+    CAPTURE(0x0FF),
+    RIDE(0x100),
+    GETOFF(0x101),
+    RIDE2(0x102),
+    GETOFF2(0x103),
+    MECHANIC_RUSH(0x104),
+    TANK_MSUMMON(0x105),
+    TANK_MSUMMON2(0x106),
+    TANK_MRUSH(0x107),
+    TANK_RBOOSTER_PRE(0x108),
+    TANK_RBOOSTER_AFTER(0x109),
+    GATHER0(0x10A),
+    GATHER1(0x10B),
+    ONIX_PROTECTION(0x11C),
+    ONIX_WILL(0x11D),
+    PHANTOM_BLOW(0x11F),
+    COMBO_JUDGEMENT(0x110),
+    ARROW_RAIN(0x111),
+    ARROW_ERUPTION(0x112),
+    ICE_STRIKE(0x113),
+    EXPLOSION(0x114),
+    PVPKO(0x115),
+    SWING_T2_GIANT(0x116),
+    ICE_ATTACK1(0x117),
+    ICE_ATTACK2(0x118),
+    ICE_SMASH(0x119),
+    ICE_DOUBLE_JUMP(0x11A),
+    ICE_TEMPEST(0x11B),
+    ICE_CHOP(0x11C),
+    ICE_PANIC(0x11D),
+    CREATE0(0x11E),
+    CREATE1(0x11F),
+    CREATE2(0x120),
+    CREATE2S(0x121),
+    CREATE2F(0x122),
+    CREATE3(0x123),
+    CREATE3S(0x124),
+    CREATE3F(0x125),
+    CREATE4(0x126),
+    CREATE4S(0x127),
+    CREATE4F(0x128),
+    SHOCKWAVE(0x129),
+    DEMOLITION(0x12A),
+    SNATCH(0x12B),
+    WIND_SPEAR(0x12C),
+    WIND_SHOT(0x12D),
+    FLY2(0x12E),
+    FLY2_MOVE(0x12F),
+    FLY2_SKILL(0x130),
+    NO(0x131);
 
     private static final List<ActionType> actionList;
 
@@ -529,83 +560,114 @@ public enum ActionType {
             case "bloodyStorm" -> getByValue(0xC1);
             case "flashBang" -> getByValue(0xC2);
             case "upperStab" -> getByValue(0xC3);
-            case "suddenRaid" -> getByValue(0xC4);
+            case "bladeFury" -> getByValue(0xC4);
             case "chainPull" -> getByValue(0xC5);
             case "chainAttack" -> getByValue(0xC6);
             case "owlDead" -> getByValue(0xC7);
-            case "monsterBombPrepare" -> getByValue(0xC8);
-            case "monsterBombThrow" -> getByValue(0xC9);
-            case "finalCut" -> getByValue(0xCA);
-            case "finalCutPrepare" -> getByValue(0xCB);
-            case "cyclone_pre" -> getByValue(0xCC);
-            case "cyclone" -> getByValue(0xCD);
-            case "cyclone_after" -> getByValue(0xCE);
-            case "doubleJump" -> getByValue(0xCF);
-            case "knockback" -> getByValue(0xD0);
-            case "rbooster_pre" -> getByValue(0xD1);
-            case "rbooster" -> getByValue(0xD2);
-            case "rbooster_after" -> getByValue(0xD3);
-            case "crossRoad" -> getByValue(0xD4);
-            case "nemesis" -> getByValue(0xD5);
-            case "wildbeast" -> getByValue(0xD6);
-            case "siege_pre" -> getByValue(0xD7);
-            case "siege" -> getByValue(0xD8);
-            case "siege_stand" -> getByValue(0xD9);
-            case "siege_after" -> getByValue(0xDA);
-            case "tank_pre" -> getByValue(0xDB);
-            case "tank" -> getByValue(0xDC);
-            case "tank_stand" -> getByValue(0xDD);
-            case "tank_after" -> getByValue(0xDE);
-            case "tank_walk" -> getByValue(0xDF);
-            case "tank_laser" -> getByValue(0xE0);
-            case "tank_siegepre" -> getByValue(0xE1);
-            case "tank_siegeattack" -> getByValue(0xE2);
-            case "tank_siegestand" -> getByValue(0xE3);
-            case "tank_siegeafter" -> getByValue(0xE4);
-            case "sonicBoom" -> getByValue(0xE5);
-            case "revive" -> getByValue(0xE6);
-            case "darkSpear" -> getByValue(0xE7);
-            case "darkChain" -> getByValue(0xE8);
-            case "flamethrower_pre" -> getByValue(0xE9);
-            case "flamethrower" -> getByValue(0xEA);
-            case "flamethrower_after" -> getByValue(0xEB);
-            case "flamethrower_pre2" -> getByValue(0xEC);
-            case "flamethrower2" -> getByValue(0xED);
-            case "flamethrower_after2" -> getByValue(0xEE);
-            case "mbooster" -> getByValue(0xEF);
-            case "msummon" -> getByValue(0xF0);
-            case "msummon2" -> getByValue(0xF1);
-            case "gatlingshot" -> getByValue(0xF2);
-            case "gatlingshot2" -> getByValue(0xF3);
-            case "drillrush" -> getByValue(0xF4);
-            case "earthslug" -> getByValue(0xF5);
-            case "rpunch" -> getByValue(0xF6);
-            case "clawCut" -> getByValue(0xF7);
-            case "swallow" -> getByValue(0xF8);
-            case "swallow_loop" -> getByValue(0xF9);
-            case "swallow_attack" -> getByValue(0xFA);
-            case "swallow_pre" -> getByValue(0xFB);
-            case "flashRain" -> getByValue(0xFC);
-            case "mine" -> getByValue(0xFD);
-            case "capture" -> getByValue(0xFE);
-            case "ride" -> getByValue(0xFF);
-            case "getoff" -> getByValue(0x100);
-            case "ride2" -> getByValue(0x101);
-            case "getoff2" -> getByValue(0x102);
-            case "mRush" -> getByValue(0x103);
-            case "tank_msummon" -> getByValue(0x104);
-            case "tank_msummon2" -> getByValue(0x105);
-            case "tank_mRush" -> getByValue(0x106);
-            case "tank_rbooster_pre" -> getByValue(0x107);
-            case "tank_rbooster_after" -> getByValue(0x108);
-            case "shockwave" -> getByValue(0x109);
-            case "demolition" -> getByValue(0x10A);
-            case "snatch" -> getByValue(0x10B);
-            case "windspear" -> getByValue(0x10C);
-            case "windshot" -> getByValue(0x10D);
-            case "fly2" -> getByValue(0x10E);
-            case "fly2Move" -> getByValue(0x10F);
-            case "fly2Skill" -> getByValue(0x110);
+            case "suddenRaid" -> getByValue(0xC8);
+            case "monsterBombPrepare" -> getByValue(0xC9);
+            case "monsterBombThrow" -> getByValue(0xCA);
+            case "finalCut" -> getByValue(0xCB);
+            case "finalCutPrepare" -> getByValue(0xCC);
+            case "cyclone_pre" -> getByValue(0xCD);
+            case "cyclone" -> getByValue(0xCE);
+            case "cyclone_after" -> getByValue(0xCF);
+            case "doubleJump" -> getByValue(0xD0);
+            case "knockback" -> getByValue(0xD1);
+            case "rbooster_pre" -> getByValue(0xD2);
+            case "rbooster" -> getByValue(0xD3);
+            case "rbooster_after" -> getByValue(0xD4);
+            case "crossRoad" -> getByValue(0xD5);
+            case "nemesis" -> getByValue(0xD6);
+            case "wildbeast" -> getByValue(0xD7);
+            case "siege_pre" -> getByValue(0xD8);
+            case "siege" -> getByValue(0xD9);
+            case "siege_stand" -> getByValue(0xDA);
+            case "siege_after" -> getByValue(0xDB);
+            case "tank_pre" -> getByValue(0xDC);
+            case "tank" -> getByValue(0xDD);
+            case "tank_stand" -> getByValue(0xDE);
+            case "tank_after" -> getByValue(0xDF);
+            case "tank_walk" -> getByValue(0xE0);
+            case "tank_laser" -> getByValue(0xE1);
+            case "tank_siegepre" -> getByValue(0xE2);
+            case "tank_siegeattack" -> getByValue(0xE3);
+            case "tank_siegestand" -> getByValue(0xE4);
+            case "tank_siegeafter" -> getByValue(0xE5);
+            case "sonicBoom" -> getByValue(0xE6);
+            case "revive" -> getByValue(0xE7);
+            case "darkSpear" -> getByValue(0xE8);
+            case "darkChain" -> getByValue(0xE9);
+            case "flamethrower_pre" -> getByValue(0xEA);
+            case "flamethrower" -> getByValue(0xEB);
+            case "flamethrower_after" -> getByValue(0xEC);
+            case "flamethrower_pre2" -> getByValue(0xED);
+            case "flamethrower2" -> getByValue(0xEE);
+            case "flamethrower_after2" -> getByValue(0xEF);
+            case "mbooster" -> getByValue(0xF0);
+            case "msummon" -> getByValue(0xF1);
+            case "msummon2" -> getByValue(0xF2);
+            case "gatlingshot" -> getByValue(0xF3);
+            case "gatlingshot2" -> getByValue(0xF4);
+            case "drillrush" -> getByValue(0xF5);
+            case "earthslug" -> getByValue(0xF6);
+            case "rpunch" -> getByValue(0xF7);
+            case "clawCut" -> getByValue(0xF8);
+            case "swallow" -> getByValue(0xF9);
+            case "swallow_loop" -> getByValue(0xFA);
+            case "swallow_attack" -> getByValue(0xFB);
+            case "swallow_pre" -> getByValue(0xFC);
+            case "flashRain" -> getByValue(0xFD);
+            case "mine" -> getByValue(0xFE);
+            case "capture" -> getByValue(0xFF);
+            case "ride" -> getByValue(0x100);
+            case "getoff" -> getByValue(0x101);
+            case "ride2" -> getByValue(0x102);
+            case "getoff2" -> getByValue(0x103);
+            case "mRush" -> getByValue(0x104);
+            case "tank_msummon" -> getByValue(0x105);
+            case "tank_msummon2" -> getByValue(0x106);
+            case "tank_mRush" -> getByValue(0x107);
+            case "tank_rbooster_pre" -> getByValue(0x108);
+            case "tank_rbooster_after" -> getByValue(0x109);
+            case "gather0" -> getByValue(0x10A);
+            case "gather1" -> getByValue(0x10B);
+            case "onix_protection" -> getByValue(0x11C);
+            case "onix_will" -> getByValue(0x11D);
+            case "phantom_blow" -> getByValue(0x11F);
+            case "combo_judgement" -> getByValue(0x110);
+            case "arrow_rain" -> getByValue(0x111);
+            case "arrow_eruption" -> getByValue(0x112);
+            case "ice_strike" -> getByValue(0x113);
+            case "explosion" -> getByValue(0x114);
+            case "pvpko" -> getByValue(0x115);
+            case "swing_t2_giant" -> getByValue(0x116);
+            case "ice_attack1" -> getByValue(0x117);
+            case "ice_attack2" -> getByValue(0x118);
+            case "ice_smash" -> getByValue(0x119);
+            case "ice_double_jump" -> getByValue(0x11A);
+            case "ice_tempest" -> getByValue(0x11B);
+            case "ice_chop" -> getByValue(0x11C);
+            case "ice_panic" -> getByValue(0x11D);
+            case "create0" -> getByValue(0x11E);
+            case "create1" -> getByValue(0x11F);
+            case "create2" -> getByValue(0x120);
+            case "create2s" -> getByValue(0x121);
+            case "create2f" -> getByValue(0x122);
+            case "create3" -> getByValue(0x123);
+            case "create3s" -> getByValue(0x124);
+            case "create3f" -> getByValue(0x125);
+            case "create4" -> getByValue(0x126);
+            case "create4s" -> getByValue(0x127);
+            case "create4f" -> getByValue(0x128);
+            case "shockwave" -> getByValue(0x129);
+            case "demolition" -> getByValue(0x12A);
+            case "snatch" -> getByValue(0x12B);
+            case "windspear" -> getByValue(0x12C);
+            case "windshot" -> getByValue(0x12D);
+            case "fly2" -> getByValue(0x12E);
+            case "fly2Move" -> getByValue(0x12F);
+            case "fly2Skill" -> getByValue(0x130);
             default -> NO;
         };
     }

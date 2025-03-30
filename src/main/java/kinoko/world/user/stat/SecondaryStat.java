@@ -204,12 +204,13 @@ public final class SecondaryStat {
 
         for (CharacterTemporaryStat cts : CharacterTemporaryStat.REMOTE_ENCODE_ORDER) {
             if (flag.hasFlag(cts)) {
-                switch (cts) {
+                switch (cts) { //TODO: Unsure if all of these are correct, add missing
                     case Speed, ComboCounter, Cyclone -> {
                         outPacket.encodeByte(getOption(cts).nOption);
                     }
                     case Morph, Ghost -> {
                         outPacket.encodeShort(getOption(cts).nOption);
+                        outPacket.encodeInt(getOption(cts).rOption);
                     }
                     case SpiritJavelin, RespectPImmune, RespectMImmune, DefenseAtt, DefenseState, MagicShield -> {
                         outPacket.encodeInt(getOption(cts).nOption);
@@ -217,6 +218,7 @@ public final class SecondaryStat {
                     case WeaponCharge, Stun, Darkness, Seal, Weakness, ShadowPartner, Attract, BanMap, DojangShield,
                             ReverseInput, RepeatEffect, StopPortion, StopMotion, Fear, Frozen, SuddenDeath, FinalCut,
                             Mechanic, DarkAura, BlueAura, YellowAura -> {
+                        outPacket.encodeShort(getOption(cts).nOption); // overwritten with 1
                         outPacket.encodeInt(getOption(cts).rOption);
                     }
                     case Poison -> {

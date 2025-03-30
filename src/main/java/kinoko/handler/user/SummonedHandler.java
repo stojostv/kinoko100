@@ -63,11 +63,7 @@ public final class SummonedHandler {
         final Attack attack = new Attack(OutHeader.SummonedAttack);
         attack.skillId = summoned.getSkillId();
 
-        inPacket.decodeInt(); // ~drInfo.dr0
-        inPacket.decodeInt(); // ~drInfo.dr1
         inPacket.decodeInt(); // update_time
-        inPacket.decodeInt(); // ~drInfo.dr2
-        inPacket.decodeInt(); // ~drInfo.dr3
 
         attack.actionAndDir = inPacket.decodeByte(); // nAction & 0x7F | (bLeft << 7)
 
@@ -76,9 +72,6 @@ public final class SummonedHandler {
             log.error("Unknown summoned action type : {}", attack.actionAndDir & 0x7F);
             return;
         }
-
-        inPacket.decodeInt(); // dwKey
-        inPacket.decodeInt(); // Crc32
 
         final int mobCount = inPacket.decodeByte();
         attack.mask = (byte) (1 | (mobCount << 4)); // because we're reusing the Attack object
