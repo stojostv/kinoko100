@@ -13,6 +13,7 @@ public final class ItemConstants {
     public static final int EQUIP_ENHANCEMENT_SCROLL = 2049301;
     public static final int ADVANCED_POTENTIAL_SCROLL = 2049400;
     public static final int POTENTIAL_SCROLL = 2049401;
+    public static final int SPECIAL_POTENTIAL_SCROLL = 2049402;
     public static final int WHITE_SCROLL = 2340000;
     public static final int MIRACLE_CUBE_FRAGMENT = 2430112;
     public static final int MAGNIFYING_GLASS_BASIC = 2460000;
@@ -259,7 +260,9 @@ public final class ItemConstants {
     }
 
     public static int getItemOptionUpgradeSuccessProp(int itemId) {
-        if (itemId == ADVANCED_POTENTIAL_SCROLL) {
+        if (itemId == SPECIAL_POTENTIAL_SCROLL) {
+            return 100;
+        } else if (itemId == ADVANCED_POTENTIAL_SCROLL) {
             return 90;
         } else if (itemId == POTENTIAL_SCROLL) {
             return 70;
