@@ -215,9 +215,9 @@ public final class SecondaryStat {
                     case SpiritJavelin, RespectPImmune, RespectMImmune, DefenseAtt, DefenseState, MagicShield -> {
                         outPacket.encodeInt(getOption(cts).nOption);
                     }
-                    case WeaponCharge, Stun, Darkness, Seal, Weakness, ShadowPartner, Attract, BanMap, DojangShield,
-                            ReverseInput, RepeatEffect, StopPortion, StopMotion, Fear, Frozen, SuddenDeath, FinalCut,
-                            Mechanic, DarkAura, BlueAura, YellowAura -> {
+                    case WeaponCharge, Stun, Darkness, Seal, Weakness, Curse, ShadowPartner, Attract, BanMap, Barrier,
+                            DojangShield, ReverseInput, RepeatEffect, StopPortion, StopMotion, Fear, Frozen,
+                            SuddenDeath, FinalCut, Mechanic, DarkAura, BlueAura, YellowAura -> {
                         outPacket.encodeShort(getOption(cts).nOption); // overwritten with 1
                         outPacket.encodeInt(getOption(cts).rOption);
                     }
@@ -231,7 +231,6 @@ public final class SecondaryStat {
 
         outPacket.encodeByte(getOption(CharacterTemporaryStat.DefenseAtt_Elem).nOption);
         outPacket.encodeByte(getOption(CharacterTemporaryStat.DefenseState_Stat).nOption);
-        outPacket.encodeByte(0); // PvPDamage
 
         for (CharacterTemporaryStat cts : CharacterTemporaryStat.TWO_STATE_ORDER) {
             if (flag.hasFlag(cts)) {
