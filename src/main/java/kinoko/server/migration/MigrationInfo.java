@@ -241,6 +241,7 @@ public final class MigrationInfo implements Encodable {
                 case GUIDED_BULLET -> {
                     final GuidedBullet guidedBullet = (GuidedBullet) option;
                     outPacket.encodeInt(guidedBullet.getMobId());
+                    outPacket.encodeInt(0);
                 }
             }
         }
@@ -270,6 +271,7 @@ public final class MigrationInfo implements Encodable {
                 }
                 case GUIDED_BULLET -> {
                     final int mobId = inPacket.decodeInt();
+                    final int characterId = inPacket.decodeInt();
                     temporaryStats.put(cts, new GuidedBullet(nOption, rOption, tOption, mobId)); // NO_EXPIRE
                 }
                 case null -> {

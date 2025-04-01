@@ -17,6 +17,9 @@ public final class GuidedBullet extends TwoStateTemporaryStat {
     @Override
     public void encode(OutPacket outPacket) {
         super.encode(outPacket);
+
         outPacket.encodeInt(getMobId()); // dwMobID
+        outPacket.encodeInt(0); //TODO: Character ID for PVP?
+
     }
 }
