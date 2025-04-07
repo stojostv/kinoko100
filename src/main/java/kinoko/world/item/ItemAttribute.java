@@ -7,6 +7,11 @@ public enum ItemAttribute {
     EQUIP_SUPPORT_WARM(0x4),
     EQUIP_BINDED(0x8),
     EQUIP_POSSIBLE_TRADING(0x10),
+    EQUIP_TRAIT_GAINED(0x20),
+
+    EQUIP_CRAFTED(0x80),
+    EQUIP_SHIELD(0x100),
+    EQUIP_LUCKY_DAY(0x200),
 
     // GW_ItemSlotBundle
     BUNDLE_PROTECTED(0x1),

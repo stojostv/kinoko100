@@ -119,7 +119,9 @@ public enum ItemInfoType {
     recoveryMP,
     incAllStat,
     incPVPDamage,
-    Option;
+    Option,
+
+    charmExp;
 
     private static final Map<String, ItemInfoType> nameMap;
 

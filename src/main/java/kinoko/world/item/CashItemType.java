@@ -80,7 +80,13 @@ public enum CashItemType {
     SKILLRESET(75),
     DRAGONBALL(76),
     RECOVERUPGRADECOUNT(77),
-    QUESTDELIVERY(78);
+    QUESTDELIVERY(78),
+    UNK79(79),
+    UNK80(80),
+    UNK81(81),
+    UNK82(82),
+    SHIELDING_WARD(83),
+    LUCKS_KEY(84);
 
     private final int value;
 
@@ -122,6 +128,10 @@ public enum CashItemType {
                     return EXPIREDPROTECTING;
                 } else if (itemId / 1000 == 5062) {
                     return ITEM_UNRELEASE;
+                } else if (itemId / 1000 == 5063) {
+                    return LUCKS_KEY;
+                } else if (itemId / 1000 == 5064) {
+                    return SHIELDING_WARD;
                 } else {
                     switch (itemId % 10) {
                         case 0 -> {
@@ -130,7 +140,7 @@ public enum CashItemType {
                         case 1 -> {
                             return PROTECTING;
                         }
-                        case 2, 3 -> {
+                        case 2, 3, 4-> {
                             return INCUBATOR;
                         }
                     }

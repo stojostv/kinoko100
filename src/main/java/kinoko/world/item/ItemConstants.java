@@ -180,7 +180,7 @@ public final class ItemConstants {
     }
 
     public static boolean isCorrectUpgradeEquip(int upgradeItemId, int equipItemId) {
-        if (upgradeItemId / 10000 == 249 || upgradeItemId / 10000 == 247) {
+        if (upgradeItemId / 10000 == 249 || upgradeItemId / 10000 == 247 || upgradeItemId / 10000 == 253) {
             return true;
         }
         if (upgradeItemId / 10000 != 204 || !isEquip(equipItemId)) {
@@ -226,8 +226,8 @@ public final class ItemConstants {
     }
 
     public static boolean isUpgradeScrollNoConsumeWhiteScroll(int itemId) {
-        // scroll for spikes on shoes, scroll for cape for cold protection, clean slate scrolls
-        return itemId == 2040727 || itemId == 2041058 || isRecoverSlotItem(itemId);
+        // scroll for spikes on shoes, scroll for cape for cold protection, clean slate scrolls, lucky day scroll, protection scroll
+        return itemId == 2040727 || itemId == 2041058 || isRecoverSlotItem(itemId) || itemId == 2530000 || itemId == 2531000;
     }
 
     public static int getHyperUpgradeSuccessProp(int itemId, int chuc) {
@@ -341,6 +341,34 @@ public final class ItemConstants {
             return result;
         }
         return getExclusiveClothesBodyPart(equipped, itemId, isCash);
+    }
+
+    public static int getCashEquipCharmEXP(int itemId) {
+        // 0x00789EB0
+
+        int itemType = itemId / 10000;
+        if (itemType == 100) {
+            return 50;
+        }
+        switch (itemType) {
+            case 100:
+                return 50;
+            case 101:
+            case 102:
+            case 103:
+            case 107:
+            case 108:
+                return 40;
+            case 104:
+            case 106:
+            case 110:
+                return 30;
+            case 105:
+                return 60;
+            case 109:
+                return 10;
+        }
+        return itemId / 100000 == 17 ? 60 : 0;
     }
 
     private static BodyPart getExclusiveWeaponShieldBodyPart(Inventory equipped, int itemId, boolean isCash) {

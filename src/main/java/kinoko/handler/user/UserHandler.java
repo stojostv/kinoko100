@@ -97,7 +97,8 @@ public final class UserHandler {
         // CUserLocal::HandleXKeyDown, CWvsContext::SendGetUpFromChairRequest
         final short fieldSeatId = inPacket.decodeShort();
         user.setPortableChairId(0);
-        user.write(UserLocal.sitResult(fieldSeatId != -1, fieldSeatId)); // broadcast not required
+        user.write(UserLocal.sitResult(fieldSeatId != -1, fieldSeatId));
+        user.getField().broadcastPacket(UserRemote.setActivePortableChair(user, 0), user);
     }
 
     @Handler(InHeader.UserPortableChairSitRequest)
@@ -471,6 +472,21 @@ public final class UserHandler {
                         }
                         im.getEquipInventory().putItem(availablePosition, exclusiveEquipItem);
                         user.write(WvsContext.inventoryOperation(InventoryOperation.position(InventoryType.EQUIP, -exclusiveBodyPart.getValue(), availablePosition), false)); // client uses negative index for equipped
+                    }
+                    // Handle trait EXP on equip
+                    if (!item.hasAttribute(ItemAttribute.EQUIP_TRAIT_GAINED)) {
+
+                        CharacterStat cs = user.getCharacterStat();
+
+                        int charmExp = isCash ? ItemConstants.getCashEquipCharmEXP(item.getItemId()) : itemInfo.getInfo(ItemInfoType.charmExp, 0);
+                        int prevCharm = cs.getCharmExp();
+
+                        cs.setCharmExp(prevCharm + charmExp);
+                        user.validateStat();
+                        user.write(WvsContext.statChanged(Stat.CHARMEXP, cs.getCharmExp(), false));
+
+                        item.addAttribute(ItemAttribute.EQUIP_TRAIT_GAINED);
+                        user.write(WvsContext.inventoryOperation(InventoryOperation.newItem(InventoryType.EQUIP, oldPos, item), false));
                     }
                     // Handle items binded on equip
                     if (itemInfo.isEquipTradeBlock() && !item.hasAttribute(ItemAttribute.EQUIP_BINDED)) {
