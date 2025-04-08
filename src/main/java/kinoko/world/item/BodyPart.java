@@ -64,6 +64,7 @@ public enum BodyPart {
     MEDAL(49),
     BELT(50),
     SHOULDER(51),
+    POCKET(52),
     ANDROID(53),
     ANDROID_HEART(54),
     CRUSADER_CODEX(55),

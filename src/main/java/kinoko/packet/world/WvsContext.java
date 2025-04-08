@@ -4,6 +4,7 @@ import kinoko.provider.npc.NpcImitateData;
 import kinoko.server.cashshop.CashItemResultType;
 import kinoko.server.header.OutHeader;
 import kinoko.server.packet.OutPacket;
+import kinoko.server.rank.RankManager;
 import kinoko.util.BitFlag;
 import kinoko.util.FileTime;
 import kinoko.world.GameConstants;
@@ -78,7 +79,10 @@ public final class WvsContext {
     public static OutPacket temporaryStatReset(BitFlag<CharacterTemporaryStat> flag) {
         final OutPacket outPacket = OutPacket.of(OutHeader.TemporaryStatReset);
         flag.encode(outPacket);
-        outPacket.encodeByte(0); // SecondaryStat::IsMovementAffectingStat -> bSN
+        outPacket.encodeByte(flag.hasFlag(CharacterTemporaryStat.RideVehicle)); // SecondaryStat::IsMovementAffectingStat -> bSN
+        if(flag.hasFlag(CharacterTemporaryStat.RideVehicle)) {
+            outPacket.encodeByte(1); // SecondaryStat::IsMovementAffectingStat -> bSN
+        }
         return outPacket;
     }
 
@@ -166,7 +170,7 @@ public final class WvsContext {
         outPacket.encodeInt(user.getCharacterId()); // dwCharacterId
         outPacket.encodeByte(user.getLevel()); // nLevel
         outPacket.encodeShort(user.getJob()); // nJob
-        outPacket.encodeByte(0); // Rank  //TODO: ranking
+        outPacket.encodeByte(RankManager.getCharacterRank(user.getCharacterId()).get().getWorldRank()); // Rank
         outPacket.encodeInt(user.getPop()); // nPOP
         outPacket.encodeByte(false); // bIsMarried
 

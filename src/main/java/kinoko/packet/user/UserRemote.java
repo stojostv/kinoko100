@@ -199,6 +199,9 @@ public final class UserRemote {
         final OutPacket outPacket = OutPacket.of(OutHeader.UserTemporaryStatReset);
         outPacket.encodeInt(user.getCharacterId());
         flag.encode(outPacket);
+        if(flag.hasFlag(CharacterTemporaryStat.RideVehicle)) {
+            outPacket.encodeByte(1); // SecondaryStat::IsMovementAffectingStat -> bSN
+        }
         return outPacket;
     }
 

@@ -27,6 +27,8 @@ import kinoko.world.job.resistance.Mechanic;
 import kinoko.world.job.resistance.WildHunter;
 import kinoko.world.skill.SkillConstants;
 import kinoko.world.skill.SkillManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 import java.util.function.BiPredicate;
@@ -50,6 +52,8 @@ public final class SecondaryStat {
     private int craft;
     private int speed;
     private int jump;
+
+    private static final Logger log = LogManager.getLogger(SecondaryStat.class);
 
     public Map<CharacterTemporaryStat, TemporaryStatOption> getTemporaryStats() {
         return temporaryStats;
@@ -208,20 +212,17 @@ public final class SecondaryStat {
                     case Speed, ComboCounter, Cyclone -> {
                         outPacket.encodeByte(getOption(cts).nOption);
                     }
-                    case Morph, Ghost -> {
-                        outPacket.encodeShort(getOption(cts).nOption);
-                        outPacket.encodeInt(getOption(cts).rOption);
-                    }
                     case SpiritJavelin, RespectPImmune, RespectMImmune, DefenseAtt, DefenseState, MagicShield -> {
                         outPacket.encodeInt(getOption(cts).nOption);
                     }
-                    case WeaponCharge, Stun, Darkness, Seal, Weakness, Curse, ShadowPartner, Attract, BanMap, Barrier,
-                            DojangShield, ReverseInput, RepeatEffect, StopPortion, StopMotion, Fear, Frozen,
-                            SuddenDeath, FinalCut, Mechanic, DarkAura, BlueAura, YellowAura -> {
+                    case Morph, Ghost, WeaponCharge, Stun, Darkness, Seal, Weakness, ShadowPartner, Attract, BanMap,
+                         DojangShield, ReverseInput, RepeatEffect, StopPortion, StopMotion, Fear, Frozen,
+                         SuddenDeath, FinalCut, Mechanic, DarkAura, BlueAura, YellowAura -> {
                         outPacket.encodeShort(getOption(cts).nOption); // overwritten with 1
                         outPacket.encodeInt(getOption(cts).rOption);
                     }
                     case Poison -> {
+                        outPacket.encodeShort(getOption(cts).nOption);
                         outPacket.encodeShort(getOption(cts).nOption); // overwritten with 1
                         outPacket.encodeInt(getOption(cts).rOption);
                     }
@@ -231,6 +232,7 @@ public final class SecondaryStat {
 
         outPacket.encodeByte(getOption(CharacterTemporaryStat.DefenseAtt_Elem).nOption);
         outPacket.encodeByte(getOption(CharacterTemporaryStat.DefenseState_Stat).nOption);
+        outPacket.encodeByte(0); // PvPDamage
 
         for (CharacterTemporaryStat cts : CharacterTemporaryStat.TWO_STATE_ORDER) {
             if (flag.hasFlag(cts)) {
