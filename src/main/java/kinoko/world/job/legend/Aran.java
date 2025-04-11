@@ -1,5 +1,6 @@
 package kinoko.world.job.legend;
 
+import kinoko.packet.user.UserLocal;
 import kinoko.provider.SkillProvider;
 import kinoko.provider.skill.SkillInfo;
 import kinoko.provider.skill.SkillStat;
@@ -32,25 +33,28 @@ public final class Aran extends SkillProcessor {
     // ARAN_1
     public static final int COMBO_ABILITY = 21000000;
     public static final int DOUBLE_SWING = 21000002;
+    public static final int COMBO_SMASH = 21000004;
     public static final int COMBAT_STEP = 21001001;
     public static final int POLEARM_BOOSTER = 21001003;
     // ARAN_2
     public static final int POLEARM_MASTERY = 21100000;
     public static final int TRIPLE_SWING = 21100001;
     public static final int FINAL_CHARGE = 21100002;
-    public static final int COMBO_SMASH = 21100004;
     public static final int COMBO_DRAIN = 21100005;
     public static final int BODY_PRESSURE = 21101003;
+    public static final int SNOW_CHARGE = 21101006;
+    public static final int COMBO_FENRIR = 21110007;
     // ARAN_3
     public static final int COMBO_CRITICAL = 21110000;
     public static final int FULL_SWING = 21110002;
     public static final int FINAL_TOSS = 21110003;
-    public static final int COMBO_FENRIR = 21110004;
     public static final int ROLLING_SPIN = 21110006;
     public static final int FULL_SWING_DOUBLE_SWING = 21110007;
     public static final int FULL_SWING_TRIPLE_SWING = 21110008;
+    public static final int CLEAVING_BLOWS = 21110010;
+    public static final int COMBO_JUDGMENT = 21110011;
     public static final int SMART_KNOCKBACK = 21111001;
-    public static final int SNOW_CHARGE = 21111005;
+    public static final int COMBO_RECHARGE = 21111009;
     // ARAN_4
     public static final int HIGH_MASTERY = 21120001;
     public static final int OVER_SWING = 21120002;
@@ -60,6 +64,7 @@ public final class Aran extends SkillProcessor {
     public static final int COMBO_BARRIER = 21120007;
     public static final int OVER_SWING_DOUBLE_SWING = 21120009;
     public static final int OVER_SWING_TRIPLE_SWING = 21120010;
+    public static final int SUDDEN_STRIKE = 21120011;
     public static final int MAPLE_WARRIOR_ARAN = 21121000;
     public static final int FREEZE_STANDING = 21121003;
     public static final int HEROS_WILL_ARAN = 21121008;
@@ -105,11 +110,17 @@ public final class Aran extends SkillProcessor {
             case BODY_PRESSURE:
                 user.setTemporaryStat(CharacterTemporaryStat.BodyPressure, TemporaryStatOption.of(1, skillId, si.getDuration(slv)));
                 return;
+            case SNOW_CHARGE:
+                user.setTemporaryStat(CharacterTemporaryStat.WeaponCharge, TemporaryStatOption.of(1, skillId, si.getDuration(slv)));
+                return;
             case SMART_KNOCKBACK:
                 user.setTemporaryStat(CharacterTemporaryStat.SmartKnockback, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
                 return;
-            case SNOW_CHARGE:
-                user.setTemporaryStat(CharacterTemporaryStat.WeaponCharge, TemporaryStatOption.of(1, skillId, si.getDuration(slv)));
+            case COMBO_RECHARGE:
+                final TemporaryStatOption option = user.getSecondaryStat().getOption(CharacterTemporaryStat.ComboAbilityBuff);
+                final int newCombo = option.nOption + si.getValue(SkillStat.y, slv);
+                user.setTemporaryStat(CharacterTemporaryStat.ComboAbilityBuff, TemporaryStatOption.of(newCombo, Aran.COMBO_ABILITY, skillId));
+                user.write(UserLocal.incCombo(newCombo));
                 return;
             case COMBO_BARRIER:
                 user.setTemporaryStat(CharacterTemporaryStat.ComboBarrier, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
