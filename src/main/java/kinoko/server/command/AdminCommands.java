@@ -643,43 +643,41 @@ public final class AdminCommands {
     public static void trait(User user, String[] args) {
         final String trait = args[1].toLowerCase();
         final int value = Integer.parseInt(args[2]);
-        try (var locked = user.acquire()) {
-            final CharacterStat cs = locked.get().getCharacterStat();
-            final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
-            switch (trait) {
-                case "ambition", "a", "charisma" -> {
-                    cs.setCharismaExp(value);
-                    statMap.put(Stat.CHARISMAEXP, cs.getCharismaExp());
-                }
-                case "insight", "i" -> {
-                    cs.setInsightExp(value);
-                    statMap.put(Stat.INSIGHTEXP, cs.getInsightExp());
-                }
-                case "willpower", "w" -> {
-                    cs.setWillpowerExp(value);
-                    statMap.put(Stat.WILLEXP, cs.getWillpowerExp());
-                }
-                case "diligence", "d", "craft" -> {
-                    cs.setCraftExp(value);
-                    statMap.put(Stat.CRAFTEXP, cs.getCraftExp());
-                }
-                case "empathy", "e", "sense" -> {
-                    cs.setSenseExp(value);
-                    statMap.put(Stat.SENSEEXP, cs.getSenseExp());
-                }
-                case "charm", "c" -> {
-                    cs.setCharmExp(value);
-                    statMap.put(Stat.CHARMEXP, cs.getCharmExp());
-                }
-                default -> {
-                    user.write(MessagePacket.system("Syntax : %strait ambition/empathy/insight/willpower/diligence/charm <new level>", ServerConfig.COMMAND_PREFIX));
-                    return;
-                }
+        final CharacterStat cs = user.getCharacterStat();
+        final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
+        switch (trait) {
+            case "ambition", "a", "charisma" -> {
+                cs.setCharismaExp(value);
+                statMap.put(Stat.CHARISMAEXP, cs.getCharismaExp());
             }
-            user.validateStat();
-            user.write(WvsContext.statChanged(statMap, true));
-            user.write(MessagePacket.system("Set %s to %d", trait, value));
+            case "insight", "i" -> {
+                cs.setInsightExp(value);
+                statMap.put(Stat.INSIGHTEXP, cs.getInsightExp());
+            }
+            case "willpower", "w" -> {
+                cs.setWillpowerExp(value);
+                statMap.put(Stat.WILLEXP, cs.getWillpowerExp());
+            }
+            case "diligence", "d", "craft" -> {
+                cs.setCraftExp(value);
+                statMap.put(Stat.CRAFTEXP, cs.getCraftExp());
+            }
+            case "empathy", "e", "sense" -> {
+                cs.setSenseExp(value);
+                statMap.put(Stat.SENSEEXP, cs.getSenseExp());
+            }
+            case "charm", "c" -> {
+                cs.setCharmExp(value);
+                statMap.put(Stat.CHARMEXP, cs.getCharmExp());
+            }
+            default -> {
+                user.write(MessagePacket.system("Syntax : %strait ambition/empathy/insight/willpower/diligence/charm <new level>", ServerConfig.COMMAND_PREFIX));
+                return;
+            }
         }
+        user.validateStat();
+        user.write(WvsContext.statChanged(statMap, true));
+        user.write(MessagePacket.system("Set %s to %d", trait, value));
     }
 
     @Command("traits")
@@ -697,15 +695,13 @@ public final class AdminCommands {
     @Arguments("new fatigue")
     public static void fatigue(User user, String[] args) {
         final byte value = (byte) Integer.parseInt(args[1]);
-        try (var locked = user.acquire()) {
-            final CharacterStat cs = locked.get().getCharacterStat();
-            final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
-            cs.setFatigue(value);
-            statMap.put(Stat.FATIGUE, cs.getFatigue());
-            user.validateStat();
-            user.write(WvsContext.statChanged(statMap, true));
-            user.write(MessagePacket.system("Set fatigue to %d", value));
-        }
+        final CharacterStat cs = user.getCharacterStat();
+        final Map<Stat, Object> statMap = new EnumMap<>(Stat.class);
+        cs.setFatigue(value);
+        statMap.put(Stat.FATIGUE, cs.getFatigue());
+        user.validateStat();
+        user.write(WvsContext.statChanged(statMap, true));
+        user.write(MessagePacket.system("Set fatigue to %d", value));
     }
 
     @Command("avatar")

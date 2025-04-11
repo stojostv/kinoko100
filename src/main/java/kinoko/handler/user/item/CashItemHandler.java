@@ -524,9 +524,9 @@ public final class CashItemHandler extends ItemHandler {
                     });
                 } else {
                     final int targetField = inPacket.decodeInt(); // dwTargetField
-                    if(!worldMap) {
+                    if (!worldMap) {
                         List<Integer> availableFields;
-                        switch(itemId) {
+                        switch (itemId) {
                             case 5040004 -> availableFields = user.getMapTransferInfo().getMapTransferHyper();
                             case 5041000 -> availableFields = user.getMapTransferInfo().getMapTransferEx();
                             case 5041001 -> availableFields = user.getMapTransferInfo().getMapTransferPremium();
