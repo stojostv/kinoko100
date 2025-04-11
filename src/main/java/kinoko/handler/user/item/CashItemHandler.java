@@ -59,15 +59,14 @@ public final class CashItemHandler extends ItemHandler {
         }
         final ItemInfo itemInfo = itemInfoResult.get();
 
-        try (var locked = user.acquire()) {
-            // Check item
-            final InventoryManager im = locked.get().getInventoryManager();
-            final Item item = im.getInventoryByType(InventoryType.CASH).getItem(position);
-            if (item == null || item.getItemId() != itemId) {
-                log.error("Tried to use an item in position {} as item ID : {}", position, itemId);
-                user.dispose();
-                return;
-            }
+        // Check item
+        final InventoryManager im = user.getInventoryManager();
+        final Item item = im.getInventoryByType(InventoryType.CASH).getItem(position);
+        if (item == null || item.getItemId() != itemId) {
+            log.error("Tried to use an item in position {} as item ID : {}", position, itemId);
+            user.dispose();
+            return;
+        }
 
             final CashItemType cashItemType = CashItemType.getByItemId(item.getItemId());
             switch (cashItemType) {
@@ -151,9 +150,7 @@ public final class CashItemHandler extends ItemHandler {
                             user.write(WvsContext.mapleTvUseRes("Unable to find the character."));
                             return;
                         }
-                        try (var lockedReceiver = receiverResult.get().acquire()) {
-                            receiver = lockedReceiver.get().getCharacterData().getAvatarLook();
-                        }
+                        receiver = receiverResult.get().getCharacterData().getAvatarLook();
                     }
                     final String s1 = inPacket.decodeString();
                     final String s2 = inPacket.decodeString();
@@ -421,12 +418,10 @@ public final class CashItemHandler extends ItemHandler {
                         return;
                     }
                     final ItemInfo stateChangeItemInfo = stateChangeItemInfoResult.get();
-                    changeStat(locked, stateChangeItemInfo);
+                    changeStat(user, stateChangeItemInfo);
                     user.getField().getUserPool().forEach((other) -> {
                         if (other.getCharacterId() != user.getCharacterId()) {
-                            try (var lockedOther = other.acquire()) {
-                                changeStat(lockedOther, stateChangeItemInfo);
-                            }
+                            changeStat(other, stateChangeItemInfo);
                         }
                     });
                 }
@@ -486,10 +481,7 @@ public final class CashItemHandler extends ItemHandler {
                     if (npcTemplate.isTrunk()) {
                         final TrunkDialog trunkDialog = TrunkDialog.from(npcTemplate);
                         user.setDialog(trunkDialog);
-                        // Lock account to access trunk
-                        try (var lockedAccount = user.getAccount().acquire()) {
-                            user.write(TrunkPacket.openTrunkDlg(npcId, lockedAccount.get().getTrunk()));
-                        }
+                        user.write(TrunkPacket.openTrunkDlg(npcId, user.getAccount().getTrunk()));
                     } else {
                         final ShopDialog shopDialog = ShopDialog.from(npcTemplate);
                         user.setDialog(shopDialog);
@@ -503,7 +495,7 @@ public final class CashItemHandler extends ItemHandler {
                         throw new IllegalStateException(String.format("Could not remove morph item %d in position %d", item.getItemId(), position));
                     }
                     user.write(WvsContext.inventoryOperation(removeItemResult.get(), false));
-                    changeStat(locked, itemInfo);
+                    changeStat(user, itemInfo);
                 }
                 case MAPTRANSFER -> {
                     boolean isHyper = itemId == 5040004;
@@ -617,7 +609,7 @@ public final class CashItemHandler extends ItemHandler {
                     }
                     final ItemRewardInfo itemRewardInfo = itemRewardInfoResult.get();
                     // Resolve reward
-                    if (!itemRewardInfo.canAddReward(locked)) {
+                    if (!itemRewardInfo.canAddReward(user)) {
                         user.write(MessagePacket.system("You do not have enough inventory space."));
                         user.dispose();
                         return;

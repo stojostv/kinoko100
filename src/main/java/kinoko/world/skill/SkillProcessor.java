@@ -5,7 +5,6 @@ import kinoko.packet.user.UserRemote;
 import kinoko.provider.SkillProvider;
 import kinoko.provider.skill.SkillInfo;
 import kinoko.provider.skill.SkillStat;
-import kinoko.util.Locked;
 import kinoko.util.Rect;
 import kinoko.util.Util;
 import kinoko.world.field.Field;
@@ -46,9 +45,7 @@ public abstract class SkillProcessor {
 
     // PROCESS ATTACK --------------------------------------------------------------------------------------------------
 
-    public static void processAttack(Locked<User> locked, Locked<Mob> lockedMob, Attack attack, int delay) {
-        final User user = locked.get();
-        final Mob mob = lockedMob.get();
+    public static void processAttack(User user, Mob mob, Attack attack, int delay) {
         final SkillInfo si = SkillProvider.getSkillInfoById(attack.skillId).orElseThrow();
         final int skillId = attack.skillId;
         final int slv = attack.slv;
@@ -147,8 +144,7 @@ public abstract class SkillProcessor {
 
     // PROCESS SKILL ---------------------------------------------------------------------------------------------------
 
-    public static void processSkill(Locked<User> locked, Skill skill) {
-        final User user = locked.get();
+    public static void processSkill(User user, Skill skill) {
         final SkillInfo si = SkillProvider.getSkillInfoById(skill.skillId).orElseThrow();
         final int skillId = skill.skillId;
         final int slv = skill.slv;
@@ -161,7 +157,7 @@ public abstract class SkillProcessor {
             case Aran.RECOVERY:
             case Evan.RECOVER:
                 user.setTemporaryStat(CharacterTemporaryStat.Regen, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
-                user.getSkillManager().setSkillSchedule(skillId, Instant.now().plus(5, ChronoUnit.SECONDS));
+                user.setSchedule(skillId, Instant.now().plus(5, ChronoUnit.SECONDS));
                 return;
             case Beginner.NIMBLE_FEET:
             case Noblesse.NIMBLE_FEET:
@@ -198,11 +194,9 @@ public abstract class SkillProcessor {
             case Citizen.HEROS_ECHO:
                 user.setTemporaryStat(CharacterTemporaryStat.MaxLevelBuff, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
                 skill.forEachAffectedUser(field, (other) -> {
-                    try (var lockedOther = other.acquire()) {
-                        other.setTemporaryStat(CharacterTemporaryStat.MaxLevelBuff, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
-                        other.write(UserLocal.effect(Effect.skillAffected(skill.skillId, skill.slv)));
-                        field.broadcastPacket(UserRemote.effect(other, Effect.skillAffected(skill.skillId, skill.slv)), other);
-                    }
+                    other.setTemporaryStat(CharacterTemporaryStat.MaxLevelBuff, TemporaryStatOption.of(si.getValue(SkillStat.x, slv), skillId, si.getDuration(slv)));
+                    other.write(UserLocal.effect(Effect.skillAffected(skill.skillId, skill.slv)));
+                    field.broadcastPacket(UserRemote.effect(other, Effect.skillAffected(skill.skillId, skill.slv)), other);
                 });
                 return;
 
@@ -530,8 +524,7 @@ public abstract class SkillProcessor {
 
     // PROCESS UPDATE --------------------------------------------------------------------------------------------------
 
-    public static void processUpdate(Locked<User> locked, Instant now) {
-        final User user = locked.get();
+    public static void processUpdate(User user, Instant now) {
         if (user.getHp() <= 0) {
             return;
         }
@@ -548,12 +541,12 @@ public abstract class SkillProcessor {
         }
         final TemporaryStatOption option = user.getSecondaryStat().getOption(CharacterTemporaryStat.Regen);
         final int skillId = option.rOption;
-        if (now.isAfter(user.getSkillManager().getSkillSchedule(skillId))) {
+        if (now.isAfter(user.getSchedule(skillId))) {
             final int hpRecovery = option.nOption;
             user.addHp(hpRecovery);
             user.write(UserLocal.effect(Effect.incDecHpEffect(hpRecovery)));
             user.getField().broadcastPacket(UserRemote.effect(user, Effect.incDecHpEffect(hpRecovery)), user);
-            user.getSkillManager().setSkillSchedule(skillId, now.plus(5, ChronoUnit.SECONDS));
+            user.setSchedule(skillId, now.plus(5, ChronoUnit.SECONDS));
         }
     }
 
@@ -563,7 +556,7 @@ public abstract class SkillProcessor {
         }
         final TemporaryStatOption option = user.getSecondaryStat().getOption(CharacterTemporaryStat.DragonBlood);
         final int skillId = option.rOption;
-        if (now.isAfter(user.getSkillManager().getSkillSchedule(skillId))) {
+        if (now.isAfter(user.getSchedule(skillId))) {
             final int hpConsume = option.nOption;
             if (user.getHp() < hpConsume * 4) {
                 // Skill is canceled when you don't have enough HP to be consumed in the next 4 seconds
@@ -571,7 +564,7 @@ public abstract class SkillProcessor {
                 return;
             }
             user.addHp(-hpConsume);
-            user.getSkillManager().setSkillSchedule(skillId, now.plus(1, ChronoUnit.SECONDS));
+            user.setSchedule(skillId, now.plus(1, ChronoUnit.SECONDS));
         }
     }
 
@@ -581,7 +574,7 @@ public abstract class SkillProcessor {
         }
         final TemporaryStatOption option = user.getSecondaryStat().getOption(CharacterTemporaryStat.Infinity);
         final int skillId = option.rOption;
-        if (now.isAfter(user.getSkillManager().getSkillSchedule(skillId))) {
+        if (now.isAfter(user.getSchedule(skillId))) {
             final Optional<SkillInfo> skillInfoResult = SkillProvider.getSkillInfoById(skillId);
             if (skillInfoResult.isEmpty()) {
                 log.error("Could not resolve skill info for infinity skill ID : {}", skillId);
@@ -596,7 +589,7 @@ public abstract class SkillProcessor {
             // Increase magic att %
             final int damage = si.getValue(SkillStat.damage, slv);
             user.setTemporaryStat(CharacterTemporaryStat.Infinity, option.update(option.nOption + damage));
-            user.getSkillManager().setSkillSchedule(skillId, now.plus(4, ChronoUnit.SECONDS));
+            user.setSchedule(skillId, now.plus(4, ChronoUnit.SECONDS));
         }
     }
 
@@ -607,7 +600,7 @@ public abstract class SkillProcessor {
         final TemporaryStatOption option = user.getSecondaryStat().getOption(CharacterTemporaryStat.Aura);
         final int skillId = BattleMage.getAdvancedAuraSkill(user, option.rOption);
         final int slv = user.getSkillLevel(skillId);
-        if (now.isAfter(user.getSkillManager().getSkillSchedule(option.rOption))) {
+        if (now.isAfter(user.getSchedule(option.rOption))) {
             final CharacterTemporaryStat cts = SkillConstants.getStatByAuraSkill(skillId);
             if (cts == null) {
                 log.error("Could not resolve CTS for aura skill ID : {}", skillId);
@@ -627,20 +620,18 @@ public abstract class SkillProcessor {
             }
             // Apply aura buff to party members
             user.getField().getUserPool().forEachPartyMember(user, (member) -> {
-                try (var lockedMember = member.acquire()) {
-                    if (rect.isInsideRect(member.getX(), member.getY())) {
-                        if (!member.getSecondaryStat().hasOption(cts)) {
-                            member.setTemporaryStat(cts, TemporaryStatOption.of(x, skillId, 0));
-                        }
-                    } else {
-                        if (member.getSecondaryStat().hasOption(cts)) {
-                            member.resetTemporaryStat(Set.of(cts));
-                        }
+                if (rect.isInsideRect(member.getX(), member.getY())) {
+                    if (!member.getSecondaryStat().hasOption(cts)) {
+                        member.setTemporaryStat(cts, TemporaryStatOption.of(x, skillId, 0));
+                    }
+                } else {
+                    if (member.getSecondaryStat().hasOption(cts)) {
+                        member.resetTemporaryStat(Set.of(cts));
                     }
                 }
             });
             // Set next schedule
-            user.getSkillManager().setSkillSchedule(option.rOption, now.plus(1, ChronoUnit.SECONDS));
+            user.setSchedule(option.rOption, now.plus(1, ChronoUnit.SECONDS));
         }
     }
 
@@ -652,10 +643,10 @@ public abstract class SkillProcessor {
         if (skillId != Mechanic.MECH_MISSILE_TANK) {
             return;
         }
-        if (now.isAfter(user.getSkillManager().getSkillSchedule(skillId))) {
+        if (now.isAfter(user.getSchedule(skillId))) {
             user.addMp(-user.getSkillStatValue(skillId, SkillStat.u));
             // Set next schedule
-            user.getSkillManager().setSkillSchedule(skillId, now.plus(5, ChronoUnit.SECONDS));
+            user.setSchedule(skillId, now.plus(5, ChronoUnit.SECONDS));
         }
     }
 }

@@ -86,7 +86,7 @@ public final class Field {
         this.townPortalPool = new TownPortalPool(this);
         this.affectedAreaPool = new AffectedAreaPool(this);
         // Initialize field updates
-        this.fieldEventFuture = ServerExecutor.scheduleWithFixedDelay(this, this::update, ServerConfig.FIELD_TICK_INTERVAL, ServerConfig.FIELD_TICK_INTERVAL, TimeUnit.MILLISECONDS);
+        this.fieldEventFuture = ServerExecutor.scheduleAtFixedRate(this, this::update, ServerConfig.FIELD_TICK_INTERVAL, ServerConfig.FIELD_TICK_INTERVAL, TimeUnit.MILLISECONDS);
     }
 
     public int getExecutorIndex() {
@@ -272,10 +272,8 @@ public final class Field {
                 });
                 final PortalInfo defaultPortal = returnField.getPortalById(0).orElse(PortalInfo.EMPTY);
                 userPool.forEach((user) -> {
-                    try (var locked = user.acquire()) {
-                        final PortalInfo portalInfo = returnField.getRandomStartPoint().orElse(defaultPortal);
-                        locked.get().warp(returnField, portalInfo, false, false);
-                    }
+                    final PortalInfo portalInfo = returnField.getRandomStartPoint().orElse(defaultPortal);
+                    user.warp(returnField, portalInfo, false, false);
                 });
                 instance.getChannelServerNode().removeInstance(instance);
             }

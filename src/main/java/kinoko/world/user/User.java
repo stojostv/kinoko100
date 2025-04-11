@@ -20,10 +20,10 @@ import kinoko.server.dialog.miniroom.MiniRoom;
 import kinoko.server.guild.GuildRank;
 import kinoko.server.node.ChannelServerNode;
 import kinoko.server.node.Client;
+import kinoko.server.node.ServerExecutor;
 import kinoko.server.packet.OutPacket;
 import kinoko.server.party.PartyRequest;
 import kinoko.util.BitFlag;
-import kinoko.util.Lockable;
 import kinoko.world.GameConstants;
 import kinoko.world.field.Field;
 import kinoko.world.field.OpenGate;
@@ -50,12 +50,10 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-public final class User extends Life implements Lockable<User> {
-    private final ReentrantLock lock = new ReentrantLock();
+public final class User extends Life {
     private final Client client;
     private final CharacterData characterData;
 
@@ -67,6 +65,7 @@ public final class User extends Life implements Lockable<User> {
 
     private final List<Pet> pets = new ArrayList<>();
     private final Map<Integer, List<Summoned>> summoned = new HashMap<>(); // skill id -> list of summons
+    private final Map<Integer, Instant> schedules = new HashMap<>();
     private final AtomicInteger fieldKey = new AtomicInteger(0);
 
     private int messengerId;
@@ -185,6 +184,18 @@ public final class User extends Life implements Lockable<User> {
         return summoned;
     }
 
+    public Map<Integer, Instant> getSchedules() {
+        return schedules;
+    }
+
+    public Instant getSchedule(int skillId) {
+        return schedules.getOrDefault(skillId, Instant.MAX);
+    }
+
+    public void setSchedule(int skillId, Instant nextSchedule) {
+        schedules.put(skillId, nextSchedule);
+    }
+
     public byte getFieldKey() {
         return (byte) (fieldKey.get() % 0xFF);
     }
@@ -271,9 +282,7 @@ public final class User extends Life implements Lockable<User> {
         if (getDialog() instanceof ScriptDialog scriptDialog) {
             scriptDialog.close();
         } else if (getDialog() instanceof MiniRoom miniRoom) {
-            try (var lockedRoom = miniRoom.acquire()) {
-                lockedRoom.get().leaveUnsafe(this);
-            }
+            miniRoom.leave(this);
         } else {
             setDialog(null);
         }
@@ -517,6 +526,28 @@ public final class User extends Life implements Lockable<User> {
         write(UserLocal.skillCooltimeSet(skillId, cooltime));
     }
 
+    public List<Integer> expireSkillCooltime(Instant now) {
+        final List<Integer> resetCooltimes = new ArrayList<>();
+        final var iter = getSkillManager().getSkillCooltimes().entrySet().iterator();
+        while (iter.hasNext()) {
+            final Map.Entry<Integer, Instant> entry = iter.next();
+            final int skillId = entry.getKey();
+            // Battleship durability is stored as cooltime
+            if (skillId == SkillConstants.BATTLESHIP_DURABILITY) {
+                continue;
+            }
+            // Check skill cooltime and remove
+            final Instant nextAvailable = entry.getValue();
+            if (now.isBefore(nextAvailable)) {
+                continue;
+            }
+            iter.remove();
+            resetCooltimes.add(skillId);
+        }
+        return resetCooltimes;
+    }
+
+
     public void setConsumeItemEffect(ItemInfo itemInfo) {
         // Apply recovery and resolve stat ups
         int statUpDuration = 0;
@@ -749,6 +780,16 @@ public final class User extends Life implements Lockable<User> {
         setFoothold(destination.getFootholdBelow(x, y).map(Foothold::getSn).orElse(0));
         getCharacterStat().setPosMap(destination.getFieldId());
         getCharacterStat().setPortal((byte) portalId);
+        if (isMigrate) {
+            completeWarp(destination, true, isRevive);
+        } else {
+            ServerExecutor.submit(destination, () -> {
+                completeWarp(destination, false, isRevive);
+            });
+        }
+    }
+
+    private void completeWarp(Field destination, boolean isMigrate, boolean isRevive) {
         write(StagePacket.setField(this, getChannelId(), isMigrate, isRevive));
         destination.addUser(this);
         getConnectedServer().notifyUserUpdate(this);
@@ -805,18 +846,6 @@ public final class User extends Life implements Lockable<User> {
         }
     }
 
-    /**
-     * This should be used in unfortunate cases where a method cannot accept a {@link kinoko.util.Locked<User>} to
-     * ensure that the method is called after acquiring the lock. It is preferable to submit a runnable to the
-     * {@link kinoko.server.node.ServerExecutor} to acquire the lock in a separate thread, but sometimes we want our
-     * code to run first - e.g. before saving to database.
-     *
-     * @return true if the current thread has acquired the {@link kinoko.util.Lockable<User>} object.
-     */
-    public boolean isLocked() {
-        return lock.isHeldByCurrentThread();
-    }
-
 
     // OVERRIDES -------------------------------------------------------------------------------------------------------
 
@@ -828,15 +857,5 @@ public final class User extends Life implements Lockable<User> {
     @Override
     public void setId(int id) {
         throw new IllegalStateException("Tried to modify character ID");
-    }
-
-    @Override
-    public void lock() {
-        lock.lock();
-    }
-
-    @Override
-    public void unlock() {
-        lock.unlock();
     }
 }
