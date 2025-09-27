@@ -7,15 +7,13 @@ import kinoko.packet.field.*;
 import kinoko.packet.stage.CashShopPacket;
 import kinoko.packet.user.*;
 import kinoko.packet.world.*;
-import kinoko.provider.EtcProvider;
-import kinoko.provider.ItemProvider;
-import kinoko.provider.QuestProvider;
-import kinoko.provider.ShopProvider;
+import kinoko.provider.*;
 import kinoko.provider.item.ItemInfo;
 import kinoko.provider.item.ItemInfoType;
 import kinoko.provider.item.ItemMakeInfo;
 import kinoko.provider.map.PortalInfo;
 import kinoko.provider.quest.QuestInfo;
+import kinoko.provider.skill.SkillInfo;
 import kinoko.script.common.ScriptAnswer;
 import kinoko.script.common.ScriptDispatcher;
 import kinoko.script.common.ScriptMessageType;
@@ -103,7 +101,8 @@ public final class UserHandler {
         // CUserLocal::HandleXKeyDown, CWvsContext::SendGetUpFromChairRequest
         final short fieldSeatId = inPacket.decodeShort();
         user.setPortableChairId(0);
-        user.write(UserLocal.sitResult(fieldSeatId != -1, fieldSeatId)); // broadcast not required
+        user.write(UserLocal.sitResult(fieldSeatId != -1, fieldSeatId));
+        user.getField().broadcastPacket(UserRemote.setActivePortableChair(user, 0), user);
     }
 
     @Handler(InHeader.UserPortableChairSitRequest)
@@ -188,7 +187,7 @@ public final class UserHandler {
             user.write(GuildPacket.showGuildRanking(RankManager.getGuildRankings()));
             return;
         }
-        // Handle trunk / npc shop dialog, lock user
+        // Handle trunk / npc shop dialog
         if (user.hasDialog()) {
             log.error("Tried to select npc ID {}, while already in a dialog", npc.getTemplateId());
             return;
@@ -401,11 +400,10 @@ public final class UserHandler {
             return;
         }
         final ItemInfo itemInfo = itemInfoResult.get();
+
         if (newPos == 0) {
-            // CDraggableItem::ThrowItem - item is deleted if (binded || quest || tradeBlock) && POSSIBLE_TRADING attribute not set
-            final DropEnterType dropEnterType = ((item.hasAttribute(ItemAttribute.EQUIP_BINDED) || itemInfo.isQuest() || itemInfo.isTradeBlock()) && !item.isPossibleTrading()) ?
-                    DropEnterType.FADING_OUT :
-                    DropEnterType.CREATE;
+            // CDraggableItem::ThrowItem
+            final DropEnterType dropEnterType = (itemInfo.isTradeBlock(item) || itemInfo.isAccountSharable()) ? DropEnterType.FADING_OUT : DropEnterType.CREATE;
             if (item.getItemType() == ItemType.BUNDLE && !ItemConstants.isRechargeableItem(item.getItemId()) &&
                     item.getQuantity() > count) {
                 // Update item count
@@ -486,11 +484,38 @@ public final class UserHandler {
                 user.dispose();
                 return;
             }
-            // Swap item position and update client
+
             final Item secondItem = secondInventory.getItem(newPos);
-            inventory.putItem(oldPos, secondItem);
-            secondInventory.putItem(newPos, item);
-            user.write(WvsContext.inventoryOperation(InventoryOperation.position(inventoryType, oldPos, newPos), true));
+            if (secondItem != null && secondItem.getItemId() == item.getItemId() &&
+                    item.getItemType() == ItemType.BUNDLE && !ItemConstants.isRechargeableItem(item.getItemId()) &&
+                    item.getQuantity() < itemInfo.getSlotMax() && secondItem.getQuantity() < itemInfo.getSlotMax()) {
+                // Merge bundles : item -> secondItem
+                final int combinedQuantity = item.getQuantity() + secondItem.getQuantity();
+                if (combinedQuantity <= itemInfo.getSlotMax()) {
+                    if (!inventory.removeItem(oldPos, item)) {
+                        throw new IllegalStateException("Could not remove old item");
+                    }
+                    secondItem.setQuantity((short) combinedQuantity);
+                    user.write(WvsContext.inventoryOperation(List.of(
+                            InventoryOperation.position(inventoryType, oldPos, newPos), // move nLatestGetItemPos frame
+                            InventoryOperation.delItem(inventoryType, oldPos),
+                            InventoryOperation.itemNumber(secondInventoryType, newPos, secondItem.getQuantity())
+                    ), true));
+                } else {
+                    item.setQuantity((short) (combinedQuantity - itemInfo.getSlotMax()));
+                    secondItem.setQuantity((short) itemInfo.getSlotMax());
+                    user.write(WvsContext.inventoryOperation(List.of(
+                            InventoryOperation.position(inventoryType, oldPos, newPos), // move nLatestGetItemPos frame
+                            InventoryOperation.itemNumber(inventoryType, oldPos, item.getQuantity()),
+                            InventoryOperation.itemNumber(secondInventoryType, newPos, secondItem.getQuantity())
+                    ), true));
+                }
+            } else {
+                // Swap item position and update client
+                inventory.putItem(oldPos, secondItem);
+                secondInventory.putItem(newPos, item);
+                user.write(WvsContext.inventoryOperation(InventoryOperation.position(inventoryType, oldPos, newPos), true));
+            }
         }
         // Update user
         if (inventoryType == InventoryType.EQUIP) {
@@ -606,6 +631,17 @@ public final class UserHandler {
     public static void handleUserSkillUpRequest(User user, InPacket inPacket) {
         inPacket.decodeInt(); // update_time
         final int skillId = inPacket.decodeInt(); // nSkillID
+
+        // Resolve skill info
+        final Optional<SkillInfo> skillInfoResult = SkillProvider.getSkillInfoById(skillId);
+        if (skillInfoResult.isEmpty()) {
+            log.error("Could not resolve skill info for skill ID : {}", skillId);
+            user.dispose();
+            return;
+        }
+        final SkillInfo skillInfo = skillInfoResult.get();
+
+        // Resolve skill record
         final SkillManager sm = user.getSkillManager();
         final Optional<SkillRecord> skillRecordResult = sm.getSkill(skillId);
         if (skillRecordResult.isEmpty()) {
@@ -614,11 +650,22 @@ public final class UserHandler {
             return;
         }
         final SkillRecord skillRecord = skillRecordResult.get();
-        if (skillRecord.getSkillLevel() >= skillRecord.getMasterLevel()) {
-            log.error("Tried to add a skill {} at master level {}/{}", skillId, skillRecord.getSkillLevel(), skillRecord.getMasterLevel());
-            user.dispose();
-            return;
+
+        // Check skill level
+        if (SkillConstants.isSkillNeedMasterLevel(skillId)) {
+            if (skillRecord.getSkillLevel() >= skillRecord.getMasterLevel()) {
+                log.error("Tried to add a skill {} at master level {}/{}", skillId, skillRecord.getSkillLevel(), skillRecord.getMasterLevel());
+                user.dispose();
+                return;
+            }
+        } else {
+            if (skillRecord.getSkillLevel() >= skillInfo.getMaxLevel()) {
+                log.error("Tried to add a skill {} at max level {}/{}", skillId, skillRecord.getSkillLevel(), skillInfo.getMaxLevel());
+                user.dispose();
+                return;
+            }
         }
+
         final int skillRoot = SkillConstants.getSkillRoot(skillId);
         if (JobConstants.isBeginnerJob(skillRoot)) {
             // Check if valid beginner skill
@@ -659,6 +706,7 @@ public final class UserHandler {
                 return;
             }
         }
+
         // Add skill point and update client
         skillRecord.setSkillLevel(skillRecord.getSkillLevel() + 1);
         user.write(WvsContext.statChanged(Stat.SP, JobConstants.isExtendSpJob(user.getJob()) ? user.getCharacterStat().getSp() : (short) user.getCharacterStat().getSp().getNonExtendSp(), false));
@@ -682,6 +730,38 @@ public final class UserHandler {
         final Drop drop = Drop.money(DropOwnType.NOOWN, user, money, user.getCharacterId());
         user.getField().getDropPool().addDrop(drop, DropEnterType.CREATE, user.getX(), user.getY() - GameConstants.DROP_HEIGHT, 0);
         user.write(WvsContext.statChanged(Stat.MONEY, im.getMoney(), true));
+    }
+
+    @Handler(InHeader.UserGivePopularityRequest)
+    public static void handleUserGivePopularityRequest(User user, InPacket inPacket) {
+        final int targetId = inPacket.decodeInt();
+        boolean inc = inPacket.decodeBoolean();
+
+        if (user.getLevel() < 15) {
+            user.write(WvsContext.givePopularityResult(PopularityResultType.LevelLow)); // Users under level 15 are unable to toggle with fame.
+            return;
+        }
+        final PopularityRecord pr = user.getCharacterData().getPopularityRecord();
+        if (pr.hasGivenPopularityToday()) {
+            user.write(WvsContext.givePopularityResult(PopularityResultType.AlreadyDoneToday)); // You can't raise or drop a level of fame anymore for today.
+            return;
+        }
+        if (pr.hasGivenPopularityTarget(targetId)) {
+            user.write(WvsContext.givePopularityResult(PopularityResultType.AlreadyDoneTarget)); // You can't raise or drop a level of fame of that character anymore for this month.
+            return;
+        }
+
+        final Optional<User> targetResult = user.getField().getUserPool().getById(targetId);
+        if (targetResult.isEmpty()) {
+            user.write(MessagePacket.system("Unable to find the character."));
+            return;
+        }
+        final User target = targetResult.get();
+        target.addPop(inc ? 1 : -1);
+        pr.addRecord(targetId, Instant.now());
+
+        target.write(WvsContext.givePopularityResultNotify(user.getCharacterName(), inc)); // '%s' have raised/dropped '%s''s level of fame.
+        user.write(WvsContext.givePopularityResultSuccess(target.getCharacterName(), inc, target.getPop())); // You have raised/dropped '%s''s level of fame.
     }
 
     @Handler(InHeader.UserCharacterInfoRequest)
@@ -1718,7 +1798,8 @@ public final class UserHandler {
         if (townPortal.getTownField() == user.getField()) {
             user.warp(townPortal.getField(), townPortal.getX(), townPortal.getY(), townPortalId, false, false);
         } else {
-            user.warp(townPortal.getTownField(), townPortal.getTownPortalPoint().orElse(PortalInfo.EMPTY), false, false);
+            final PortalInfo portalInfo = townPortal.getTownPortalPoint().orElse(PortalInfo.EMPTY);
+            user.warp(townPortal.getTownField(), portalInfo.getX(), portalInfo.getY(), townPortalId, false, false);
         }
     }
 

@@ -41,7 +41,6 @@ import kinoko.world.item.*;
 import kinoko.world.job.Job;
 import kinoko.world.job.JobConstants;
 import kinoko.world.quest.QuestRecord;
-import kinoko.world.quest.QuestRecordType;
 import kinoko.world.skill.SkillManager;
 import kinoko.world.skill.SkillRecord;
 import kinoko.world.user.Dragon;
@@ -53,6 +52,7 @@ import kinoko.world.user.stat.StatConstants;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public final class ScriptManagerImpl implements ScriptManager {
@@ -162,6 +162,11 @@ public final class ScriptManagerImpl implements ScriptManager {
     @Override
     public int getLevel() {
         return user.getLevel();
+    }
+
+    @Override
+    public int getJob() {
+        return user.getJob();
     }
 
     @Override
@@ -478,6 +483,32 @@ public final class ScriptManagerImpl implements ScriptManager {
     }
 
     @Override
+    public boolean addItemWithExpiration(int itemId, int expirationInSeconds) {
+        if (!canAddItem(itemId, 1)) {
+            return false;
+        }
+        // Create item
+        final Optional<ItemInfo> itemInfoResult = ItemProvider.getItemInfo(itemId);
+        if (itemInfoResult.isEmpty()) {
+            throw new ScriptError("Could not resolve item info for item ID : %d", itemId);
+        }
+        final ItemInfo itemInfo = itemInfoResult.get();
+        final Item item = itemInfo.createItem(user.getNextItemSn());
+        // Create pet data
+        final PetData petData = PetData.from(itemInfo);
+        petData.setRemainLife(expirationInSeconds);
+        item.setPetData(petData);
+        // Add item to inventory
+        final Optional<List<InventoryOperation>> addItemResult = user.getInventoryManager().addItem(item);
+        if (addItemResult.isEmpty()) {
+            throw new IllegalStateException("Failed to add item to inventory");
+        }
+        user.write(WvsContext.inventoryOperation(addItemResult.get(), false));
+        user.write(UserLocal.effect(Effect.gainItem(item)));
+        return true;
+    }
+
+    @Override
     public boolean canAddItems(List<Tuple<Integer, Integer>> items) {
         return user.getInventoryManager().canAddItems(items);
     }
@@ -553,30 +584,30 @@ public final class ScriptManagerImpl implements ScriptManager {
     }
 
     @Override
-    public String getQRValue(QuestRecordType questRecordType) {
-        final Optional<QuestRecord> questRecordResult = user.getQuestManager().getQuestRecord(questRecordType.getQuestId());
+    public String getQRValue(int questId) {
+        final Optional<QuestRecord> questRecordResult = user.getQuestManager().getQuestRecord(questId);
         return questRecordResult.map(QuestRecord::getValue).orElse("");
     }
 
     @Override
-    public boolean hasQRValue(QuestRecordType questRecordType, String value) {
-        return Arrays.asList(getQRValue(questRecordType).split(";")).contains(value);
+    public boolean hasQRValue(int questId, String value) {
+        return Arrays.asList(getQRValue(questId).split(";")).contains(value);
     }
 
     @Override
-    public void setQRValue(QuestRecordType questRecordType, String value) {
-        final QuestRecord qr = user.getQuestManager().setQuestInfoEx(questRecordType.getQuestId(), value);
+    public void setQRValue(int questId, String value) {
+        final QuestRecord qr = user.getQuestManager().setQuestInfoEx(questId, value);
         user.write(MessagePacket.questRecord(qr));
         user.validateStat();
     }
 
     @Override
-    public void addQRValue(QuestRecordType questRecordType, String value) {
-        final String existingValue = getQRValue(questRecordType);
+    public void addQRValue(int questId, String value) {
+        final String existingValue = getQRValue(questId);
         if (existingValue == null || existingValue.isEmpty()) {
-            setQRValue(questRecordType, value);
+            setQRValue(questId, value);
         } else {
-            setQRValue(questRecordType, String.format("%s;%s", existingValue, value));
+            setQRValue(questId, String.format("%s;%s", existingValue, value));
         }
     }
 
@@ -702,6 +733,10 @@ public final class ScriptManagerImpl implements ScriptManager {
         return field.getFieldId();
     }
 
+    public FieldObject getSource() {
+        return source;
+    }
+
     @Override
     public void spawnMob(int templateId, int summonType, int x, int y, boolean isLeft) {
         final Optional<MobTemplate> mobTemplateResult = MobProvider.getMobTemplate(templateId);
@@ -816,13 +851,13 @@ public final class ScriptManagerImpl implements ScriptManager {
     // EVENT METHODS ---------------------------------------------------------------------------------------------------
 
     @Override
-    public boolean checkParty(int memberCount, int levelMin) {
+    public boolean checkParty(int memberCount, Predicate<User> predicate) {
         final List<User> members = field.getUserPool().getPartyMembers(user.getPartyId());
         if (members.size() < memberCount) {
             return false;
         }
         for (User member : members) {
-            if (member.getLevel() < levelMin) {
+            if (!predicate.test(member)) {
                 return false;
             }
         }
@@ -913,6 +948,11 @@ public final class ScriptManagerImpl implements ScriptManager {
     @Override
     public void broadcastSoundEffect(String effectPath) {
         field.broadcastPacket(FieldEffectPacket.sound(effectPath));
+    }
+
+    @Override
+    public void broadcastChangeBgm(String uol) {
+        field.broadcastPacket(FieldEffectPacket.changeBgm(uol));
     }
 
 

@@ -10,6 +10,7 @@ import kinoko.server.header.OutHeader;
 import kinoko.server.packet.OutPacket;
 import kinoko.world.GameConstants;
 import kinoko.world.field.OpenGate;
+import kinoko.world.field.TownPortal;
 import kinoko.world.field.affectedarea.AffectedArea;
 import kinoko.world.field.drop.Drop;
 import kinoko.world.field.drop.DropEnterType;
@@ -236,10 +237,14 @@ public final class FieldPacket {
         return outPacket;
     }
 
-    public static OutPacket townPortalRemoved(User user, boolean animate) {
+    public static OutPacket townPortalCreated(TownPortal townPortal, boolean animate) {
+        return townPortalCreated(townPortal.getOwner(), townPortal.getX(), townPortal.getY(), animate);
+    }
+
+    public static OutPacket townPortalRemoved(TownPortal townPortal, boolean animate) {
         final OutPacket outPacket = OutPacket.of(OutHeader.TownPortalRemoved);
         outPacket.encodeByte(!animate); // nState : remove animation if false
-        outPacket.encodeInt(user.getCharacterId()); // dwCharacterID
+        outPacket.encodeInt(townPortal.getOwner().getCharacterId()); // dwCharacterID
         return outPacket;
     }
 
@@ -281,7 +286,7 @@ public final class FieldPacket {
     }
 
     public static OutPacket reactorLeaveField(Reactor reactor) {
-        final OutPacket outPacket = OutPacket.of(OutHeader.ReactorEnterField);
+        final OutPacket outPacket = OutPacket.of(OutHeader.ReactorLeaveField);
         outPacket.encodeInt(reactor.getId());
         outPacket.encodeByte(reactor.getState()); // nState
         outPacket.encodeShort(reactor.getX()); // ptPos.x

@@ -6,6 +6,7 @@ import kinoko.server.event.EventType;
 import kinoko.server.packet.OutPacket;
 import kinoko.util.Tuple;
 import kinoko.world.field.Field;
+import kinoko.world.field.FieldObject;
 import kinoko.world.field.mob.MobAppearType;
 import kinoko.world.item.BodyPart;
 import kinoko.world.item.InventoryType;
@@ -15,6 +16,7 @@ import kinoko.world.user.User;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public interface ScriptManager {
     // USER METHODS ----------------------------------------------------------------------------------------------------
@@ -52,6 +54,8 @@ public interface ScriptManager {
 
     int getLevel();
 
+    int getJob();
+
     void addExp(int exp);
 
     void setJob(Job job);
@@ -80,6 +84,8 @@ public interface ScriptManager {
     }
 
     boolean addItems(List<Tuple<Integer, Integer>> items);
+
+    boolean addItemWithExpiration(int itemId, int expirationInSeconds);
 
     default boolean canAddItem(int itemId, int quantity) {
         return canAddItems(List.of(Tuple.of(itemId, quantity)));
@@ -120,13 +126,29 @@ public interface ScriptManager {
 
     void forceCompleteQuest(int questId);
 
-    String getQRValue(QuestRecordType questRecordType);
+    String getQRValue(int questId);
 
-    boolean hasQRValue(QuestRecordType questRecordType, String value);
+    default String getQRValue(QuestRecordType questRecordType) {
+        return getQRValue(questRecordType.getQuestId());
+    }
 
-    void setQRValue(QuestRecordType questRecordType, String value);
+    boolean hasQRValue(int questId, String value);
 
-    void addQRValue(QuestRecordType questRecordType, String value);
+    default boolean hasQRValue(QuestRecordType questRecordType, String value) {
+        return hasQRValue(questRecordType.getQuestId(), value);
+    }
+
+    void setQRValue(int questId, String value);
+
+    default void setQRValue(QuestRecordType questRecordType, String value) {
+        setQRValue(questRecordType.getQuestId(), value);
+    }
+
+    void addQRValue(int questId, String value);
+
+    default void addQRValue(QuestRecordType questRecordType, String value) {
+        addQRValue(questRecordType.getQuestId(), value);
+    }
 
 
     // WARP METHODS ----------------------------------------------------------------------------------------------------
@@ -164,6 +186,8 @@ public interface ScriptManager {
 
     int getFieldId();
 
+    FieldObject getSource();
+
     default void spawnMob(int templateId, MobAppearType appearType, int x, int y, boolean isLeft) {
         spawnMob(templateId, appearType.getValue(), x, y, isLeft);
     }
@@ -185,7 +209,11 @@ public interface ScriptManager {
 
     // EVENT METHODS ---------------------------------------------------------------------------------------------------
 
-    boolean checkParty(int memberCount, int levelMin);
+    boolean checkParty(int memberCount, Predicate<User> predicate);
+
+    default boolean checkParty(int memberCount, int levelMin) {
+        return checkParty(memberCount, (user) -> user.getLevel() >= levelMin);
+    }
 
     EventState getEventState(EventType eventType);
 
@@ -208,6 +236,8 @@ public interface ScriptManager {
     void broadcastScreenEffect(String effectPath);
 
     void broadcastSoundEffect(String effectPath);
+
+    void broadcastChangeBgm(String uol);
 
 
     // CONVERSATION METHODS --------------------------------------------------------------------------------------------

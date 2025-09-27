@@ -43,7 +43,7 @@ public final class UserPool extends FieldObjectPool<User> {
     public synchronized void addUser(User user) {
         // Update client with existing users in pool
         forEach((existingUser) -> {
-            user.write(UserPacket.userEnterField(user));
+            user.write(UserPacket.userEnterField(existingUser));
             for (Pet pet : existingUser.getPets()) {
                 user.write(PetPacket.petActivated(existingUser, pet));
             }
@@ -134,8 +134,7 @@ public final class UserPool extends FieldObjectPool<User> {
         });
         field.getTownPortalPool().forEach((townPortal) -> {
             final User owner = townPortal.getOwner();
-            if ((!owner.hasParty() && owner.getCharacterId() == user.getCharacterId()) ||
-                    (owner.hasParty() && owner.getPartyId() == user.getPartyId())) {
+            if (owner.getCharacterId() == user.getCharacterId() || (owner.hasParty() && owner.getPartyId() == user.getPartyId())) {
                 if (townPortal.getTownField() == field) {
                     final Optional<PortalInfo> portalPointResult = townPortal.getTownPortalPoint();
                     if (portalPointResult.isPresent()) {
@@ -143,7 +142,7 @@ public final class UserPool extends FieldObjectPool<User> {
                         user.write(FieldPacket.townPortalCreated(owner, portalPoint.getX(), portalPoint.getY(), false));
                     }
                 } else {
-                    user.write(FieldPacket.townPortalCreated(owner, townPortal.getX(), townPortal.getY(), false));
+                    user.write(FieldPacket.townPortalCreated(townPortal, false));
                 }
             }
         });

@@ -31,7 +31,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
@@ -66,7 +65,7 @@ public final class ChannelServerNode extends ServerNode {
     public void submitMigrationRequest(int accountId, int characterId, byte[] machineId, byte[] clientKey, Consumer<Optional<MigrationInfo>> consumer) {
         final CompletableFuture<Optional<MigrationInfo>> migrationRequestFuture = new CompletableFuture<>();
         migrationRequestFuture.thenAccept(consumer).exceptionally(e -> {
-            log.error("Exception caught while consuming migration request", e);
+            log.error("Exception caught while processing migration request", e);
             e.printStackTrace();
             return null;
         });
@@ -86,7 +85,7 @@ public final class ChannelServerNode extends ServerNode {
     public void submitTransferRequest(MigrationInfo migrationInfo, Consumer<Optional<TransferInfo>> consumer) {
         final CompletableFuture<Optional<TransferInfo>> transferRequestFuture = new CompletableFuture<>();
         transferRequestFuture.thenAccept(consumer).exceptionally(e -> {
-            log.error("Exception caught while consuming transfer request", e);
+            log.error("Exception caught while processing transfer request", e);
             e.printStackTrace();
             return null;
         });
@@ -110,7 +109,7 @@ public final class ChannelServerNode extends ServerNode {
         return clientStorage.isConnected(user);
     }
 
-    public Set<User> getConnectedUsers() {
+    public List<User> getConnectedUsers() {
         return clientStorage.getConnectedUsers();
     }
 
@@ -145,7 +144,7 @@ public final class ChannelServerNode extends ServerNode {
     public void submitUserQueryRequest(List<String> characterNames, Consumer<List<RemoteUser>> consumer) {
         final CompletableFuture<List<RemoteUser>> userRequestFuture = new CompletableFuture<>();
         userRequestFuture.thenAccept(consumer).exceptionally(e -> {
-            log.error("Exception caught while consuming user query request", e);
+            log.error("Exception caught while processing user query request", e);
             e.printStackTrace();
             return null;
         });
@@ -157,7 +156,7 @@ public final class ChannelServerNode extends ServerNode {
     public void submitUserQueryRequestAll(Consumer<List<RemoteUser>> consumer) {
         final CompletableFuture<List<RemoteUser>> userRequestFuture = new CompletableFuture<>();
         userRequestFuture.thenAccept(consumer).exceptionally(e -> {
-            log.error("Exception caught while consuming user query request", e);
+            log.error("Exception caught while processing user query request", e);
             e.printStackTrace();
             return null;
         });

@@ -3,8 +3,8 @@ package kinoko.provider.item;
 import kinoko.provider.ItemProvider;
 import kinoko.provider.ProviderError;
 import kinoko.provider.WzProvider;
-import kinoko.provider.wz.property.WzListProperty;
-import kinoko.provider.wz.property.WzVectorProperty;
+import kinoko.provider.wz.serialize.WzProperty;
+import kinoko.provider.wz.serialize.WzVector;
 import kinoko.util.Rect;
 import kinoko.world.GameConstants;
 import kinoko.world.item.*;
@@ -56,8 +56,8 @@ public final class ItemInfo {
     }
 
     public Rect getRect() {
-        final WzVectorProperty lt = (WzVectorProperty) itemInfos.get(ItemInfoType.lt);
-        final WzVectorProperty rb = (WzVectorProperty) itemInfos.get(ItemInfoType.rb);
+        final WzVector lt = (WzVector) itemInfos.get(ItemInfoType.lt);
+        final WzVector rb = (WzVector) itemInfos.get(ItemInfoType.rb);
         return new Rect(
                 lt.getX(),
                 lt.getY(),
@@ -68,7 +68,7 @@ public final class ItemInfo {
 
     public List<Integer> getSkill() {
         final List<Integer> skill = new ArrayList<>();
-        final WzListProperty skillList = (WzListProperty) itemInfos.get(ItemInfoType.skill);
+        final WzProperty skillList = (WzProperty) itemInfos.get(ItemInfoType.skill);
         for (var entry : skillList.getItems().entrySet()) {
             skill.add(WzProvider.getInteger(entry.getValue()));
         }
@@ -106,12 +106,18 @@ public final class ItemInfo {
         return ((getReqLevel() - 1) / 10) + 1;
     }
 
-    public boolean isTradeBlock() {
-        return getInfo(ItemInfoType.tradeBlock) != 0;
+    public boolean isTradeBlock(Item item) {
+        final boolean isTradeBlock = getInfo(ItemInfoType.tradeBlock) != 0; // && getInfo(ItemInfoType.tradBlock) != 0;
+        final boolean isBinded = item.getItemType() == ItemType.EQUIP && item.hasAttribute(ItemAttribute.EQUIP_BINDED);
+        return (isTradeBlock || isBinded || isCash() || isQuest()) && !item.isPossibleTrading();
     }
 
     public boolean isEquipTradeBlock() {
         return getInfo(ItemInfoType.equipTradeBlock) != 0;
+    }
+
+    public boolean isAccountSharable() {
+        return getInfo(ItemInfoType.accountSharable) != 0;
     }
 
     public boolean isAbleToEquip(int gender, int level, int job, int subJob, int totalStr, int totalDex, int totalInt, int totalLuk, int pop, int durability, int weaponId, int petTemplateId) {
@@ -220,14 +226,14 @@ public final class ItemInfo {
                 "spec=" + itemSpecs + ']';
     }
 
-    public static ItemInfo from(int itemId, WzListProperty itemProp) throws ProviderError {
+    public static ItemInfo from(int itemId, WzProperty itemProp) throws ProviderError {
         final Map<ItemInfoType, Object> info = new EnumMap<>(ItemInfoType.class);
         final Map<ItemSpecType, Object> spec = new EnumMap<>(ItemSpecType.class);
 
         for (var entry : itemProp.getItems().entrySet()) {
             switch (entry.getKey()) {
                 case "info" -> {
-                    if (!(entry.getValue() instanceof WzListProperty infoProp)) {
+                    if (!(entry.getValue() instanceof WzProperty infoProp)) {
                         throw new ProviderError("Failed to resolve item info property");
                     }
                     for (var infoEntry : infoProp.getItems().entrySet()) {
@@ -239,7 +245,7 @@ public final class ItemInfo {
                     }
                 }
                 case "spec" -> {
-                    if (!(entry.getValue() instanceof WzListProperty specProp)) {
+                    if (!(entry.getValue() instanceof WzProperty specProp)) {
                         throw new ProviderError("Failed to resolve item spec property");
                     }
                     for (var specEntry : specProp.getItems().entrySet()) {

@@ -111,7 +111,7 @@ public final class SkillHandler {
             return;
         }
         // Check seal
-        if (user.getSecondaryStat().hasOption(CharacterTemporaryStat.Seal)) {
+        if (user.getSecondaryStat().hasOption(CharacterTemporaryStat.Seal) && skill.skillId != Magician.DISPEL) {
             log.error("Tried to use skill {} while sealed", skill.skillId);
             user.dispose();
             return;
@@ -148,6 +148,7 @@ public final class SkillHandler {
         final int skillId = inPacket.decodeInt(); // nSkillID
         final boolean active = inPacket.decodeBoolean(); // bActive
         if (SkillConstants.isKeydownSkill(skillId)) {
+            user.getField().broadcastPacket(UserRemote.skillCancel(user, skillId));
             return;
         }
         // Remove stat matching skill ID
@@ -253,7 +254,7 @@ public final class SkillHandler {
         skill.skillId = inPacket.decodeInt();
         skill.slv = inPacket.decodeInt();
 
-        if (skill.skillId != Thief.MONSTER_BOMB) {
+        if (skill.skillId != Thief.FLASHBANG && skill.skillId != Thief.MONSTER_BOMB) {
             handleSkill(user, skill);
         }
         user.getField().broadcastPacket(UserRemote.throwGrenade(user, skill), user);
@@ -273,6 +274,12 @@ public final class SkillHandler {
     }
 
     private static void handleSkill(User user, Skill skill) {
+        if (skill.skillId == WildHunter.JAGUAR_OSHI_DIGESTED && user.getHp() <= 0) {
+            log.error("Tried to use skill {} while dead", skill.skillId);
+            user.dispose();
+            return;
+        }
+
         // Resolve skill info
         final Optional<SkillInfo> skillInfoResult = SkillProvider.getSkillInfoById(skill.skillId);
         if (skillInfoResult.isEmpty()) {

@@ -32,7 +32,7 @@ public final class VictoriaIsland extends ScriptHandler {
         //   Kerning City : Kerning City (103000000)
         //   Lith Harbor : Lith Harbor (104000000)
         //   Nautilus : Nautilus Harbor (120000000)
-        final boolean isBeginner = JobConstants.isBeginnerJob(sm.getUser().getJob());
+        final boolean isBeginner = JobConstants.isBeginnerJob(sm.getJob());
         final int price = isBeginner ? 100 : 1000;
         final List<Integer> towns = Stream.of(
                 100000000, // Henesys : Henesys
@@ -214,6 +214,12 @@ public final class VictoriaIsland extends ScriptHandler {
     public static void enter_VDS(ScriptManager sm) {
         // Sleepywood : Sleepywood (105000000)
         //   east00 (1759, 312)
+        final int playerLevel = sm.getUser().getLevel();
+        if (playerLevel < 50) {
+            sm.scriptProgressMessage("You cannot enter, because you do not meet the level requirement.");
+            sm.message("You must be Lv. 50 or above to enter this area.");
+            return;
+        }
         sm.playPortalSE();
         sm.warp(105010000, "west00"); // Swamp : Silent Swamp
     }
@@ -393,6 +399,28 @@ public final class VictoriaIsland extends ScriptHandler {
             sm.sayNext("Yes...time for some fishing!");
         } else {
             sm.sayOk("I need you to have an USE slot available to reward you properly!");
+        }
+    }
+
+    @Script("q2230e")
+    public static void q2230e(ScriptManager sm) {
+        // A Mysterious Small Egg (2230 - end)
+        sm.askMenu("Hello, traveler. You have finally come to see me. Have you fulfilled your duties?", Map.of(0, "What duties? Who are you?"));
+        sm.sayNext("You found a small egg in your pocket? That egg is your duty, your responsibility. Life is hard when you're all by yourself. In times like this, there's nothing quite like having a friend that will be there for you at all times. Have you heard of a #bpet#k?\r\nPeople raise pets to ease the burden, sorrow, and loneliness, because knowing that you have someone, or something in this matter, on your side will really bring a peace of mind. But everything has consequences, and with it comes responsibility...");
+        sm.sayBoth("Raising a pet requires a huge amount of responsibility. Remember, a pet is a form of life, as well, so you'll need to feed it, name it, share your thoughts with it, and ultimately form a bond. That's how the owners get attached to these pets.");
+        sm.sayBoth("I wanted to instill this in you, and that's why I sent you a baby that I cherish. The egg you have brought is #bRune Snail#k, a creature that is born through the power of Mana. Since you took great care of it as you brought the egg here, the egg will hatch soon.");
+        sm.sayBoth("The Rune Snail is a pet of many skills. It'll pick up items, feed you with potions, and do other things that will astound you. The downside is that since it was born out of power of Mana, its lifespan is very short. Once it turns into a doll, it'll never be able to be revived.");
+        if (!sm.askYesNo("Now do you understand? Every action comes with consequences, and pets are no exception. The egg of the snail shall hatch soon.")) {
+            // TODO: This line is not GMS-like
+            sm.sayOk("You aren't ready to take on the responsibility of a pet? I understand.. not everyone has the ability to do so.");
+            return;
+        }
+        if (sm.canAddItem(5000054, 1) && sm.removeItem(4032086)) {
+            sm.addItemWithExpiration(5000054, 5 * 60 * 60); // 5 hour duration
+            sm.forceCompleteQuest(2230);
+            sm.sayNext("This snail will only be alive for #b5 hours#k. Shower it with love. Your love will be reciprocated in the end.");
+        } else {
+            sm.sayOk("I need you to have a CASH slot available to reward you properly!");
         }
     }
 }
