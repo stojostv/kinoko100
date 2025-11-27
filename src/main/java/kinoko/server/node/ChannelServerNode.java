@@ -9,6 +9,7 @@ import kinoko.server.ServerConstants;
 import kinoko.server.event.EventManager;
 import kinoko.server.event.EventState;
 import kinoko.server.event.EventType;
+import kinoko.server.expedition.ExpeditionRequest;
 import kinoko.server.field.ChannelFieldStorage;
 import kinoko.server.field.Instance;
 import kinoko.server.field.InstanceStorage;
@@ -215,6 +216,10 @@ public final class ChannelServerNode extends ServerNode {
 
     public void submitGuildRequest(User user, GuildRequest guildRequest) {
         centralClientFuture.channel().writeAndFlush(CentralPacket.guildRequest(user.getCharacterId(), guildRequest));
+    }
+
+    public void submitExpeditionRequest(User user, ExpeditionRequest expeditionRequest) {
+        centralClientFuture.channel().writeAndFlush(CentralPacket.expeditionRequest(user.getCharacterId(), expeditionRequest));
     }
 
     public void submitBoardRequest(User user, GuildBoardRequest boardRequest) {
